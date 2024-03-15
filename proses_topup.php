@@ -101,7 +101,7 @@ elseif (isset($_GET['status'])) {
         if ($transaksi && $update_topup) {
             echo "
                 <script>
-                        alert('Konfirmasi Selesai,Saldo Di Isi Ke Akun Dengan Nama $nama_user Dengan Nominam Rp.$total_topup');
+                        alert('Konfirmasi Selesai,Saldo Di Isi Ke Akun Dengan Nama $nama_user Dengan Nominal Rp.$total_topup');
                         window.location.href='master_topup.php';
                 </script>";
         } else {
@@ -124,7 +124,7 @@ elseif (isset($_GET['status'])) {
         if ($update_topup) {
             echo "
                 <script>
-                        alert('Konfirmasi Berhasil,Salo Tidak Di Tambahkan');
+                        alert('Konfirmasi Berhasil,Saldo Tidak Di Tambahkan');
                         window.location.href='master_topup.php';
                 </script>";
         } else {
@@ -167,20 +167,6 @@ elseif (isset($_POST['bayar_topup'])) {
                 </script>";
         die;
     }
-    // Melihat Data Manager
-    $id_manager = $_POST['id_manager'];
-    $sql = "SELECT * FROM user
-    WHERE id_user = $id_manager";
-    $manager = mysqli_query($conn, $sql);
-    $manager_data = mysqli_fetch_assoc($manager);
-    $saldo_manager = $manager_data['saldo'];
-
-    // Pengurangan Saldo Manager
-    $saldo_manager -= $total_topup;
-
-    // Mengurangi Saldo Manager
-    $sql = "UPDATE `user` SET `saldo` = '$saldo_manager' WHERE `user`.`id_user` = $id_manager;";
-    $manager_saldo_akhir = mysqli_query($conn, $sql);
 
     // Merubah Status Topup
     $status_topup = "Kirim Bukti Pembayaran";
@@ -189,7 +175,7 @@ elseif (isset($_POST['bayar_topup'])) {
             WHERE `transaksi_topup`.`id_topup` = '$id_topup';";
     $update_topup = mysqli_query($conn, $sql);
 
-    if ($manager_saldo_akhir && $update_topup) {
+    if ($update_topup) {
         echo "
             <script>
                     alert('Transaksi Topup Berhasil');

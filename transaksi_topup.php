@@ -46,7 +46,6 @@ $count = mysqli_num_rows($querry);
                         <th>Waktu Pembayaran</th>
                         <th>Total Topup</th>
                         <th>Status Topup</th>
-                        <th>Max Waktu</th>
                         <th>Aksi</th>
 
                     </tr>
@@ -74,9 +73,6 @@ $count = mysqli_num_rows($querry);
                         <td>Rp. <?= number_format($row['total_topup']); ?></td>
                         <td>
                             <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_topup']; ?></div>
-                        </td>
-                        <td>
-                            <span id="countdown" class="text-dark fw-medium fs-6"></span>
                         </td>
                         <td align="center">
                             <?php if ($row['status_topup'] == "Menunggu Pembayaran") { ?>

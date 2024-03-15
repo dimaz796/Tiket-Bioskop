@@ -36,21 +36,6 @@ ON seat.id_seat = detail_order.id_seat
 WHERE `order`.`id_order` = $id_order";
 $order = mysqli_query($conn, $sql);
 
-while ($order_data = mysqli_fetch_array($order)) {
-    $id_order = $order_data['id_order'];
-    $day = $order_data['day'];
-    $title = $order_data['title'];
-    $date = $order_data['date'];
-    $clock = $order_data['clock'];
-    $name_teater = $order_data['name_teater'];
-    $trx = $order_data['trx'];
-    $status_cetak = $order_data['status_cetak'];
-    $password_trx = $order_data['password_trx'];
-    $date = date("d F Y", strtotime($date));
-    $name_seat[] = $order_data['variable_seat'] . $order_data['number_seat'];
-}
-$tiket = count($name_seat);
-$seat = implode(', ', $name_seat);
 
 
 ?>
@@ -62,63 +47,58 @@ $seat = implode(', ', $name_seat);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiket Anda</title>
 </head>
+<style>
+
+</style>
 
 <body>
+    <div class="container">
+        <?php foreach ($order as $key) { ?>
+            <table class="table table-borderless justify-content-center">
+                <tr>
+                    <td style="background-color: wheat;"><?= $key['title'] ?></td>
+                    <td style="background-color: wheat;" colspan="2"><label class="fs-4 fw-semibold"><?= $key['title'] ?></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;"><?= $key['date'] ?></td>
+                    <td style="background-color: wheat;" rowspan="2" colspan="2"><label class="fs-4 fw-semibold">Tanggal : <?= $key['day'] . ',' . date("d F Y", strtotime($key['date'])); ?></label></td>
 
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="row rounded-4 p-4 bg-dark shadow box-area img">
-            <!-- Header -->
-            <div class="col-8 ">
-                <div class="fs-2 fw-bold text-warning"><?= strtoupper($title) ?></div>
-            </div>
-            <div class="col-4">
-                <h2 class="text-center">Movi<span class="span">3</span> </h2>
-            </div>
-            <!-- Tanggal Mulai -->
-            <div class="col-4 mt-5 border-end">
-                <div class="text-secondary fs-5 text-light"><?= $day ?></div>
-                <div class="fs-4 fw-semibold text-light"><?= strtoupper($date) ?></div>
-            </div>
-            <!-- Teater -->
-            <div class="col-5 mt-5 border-end">
-                <div class="text-secondary fs-5 ms-2">TEATER</div>
-                <div class="fs-4 fw-semibold ms-2 text-light">TEATER <?= $name_teater ?></div>
-            </div>
-            <!-- Jadwal Jam -->
-            <div class="col-3 mt-5 ">
-                <div class="text-secondary fs-5 ms-2">JAM</div>
-                <div class="fs-4 fw-semibold ms-2 text-light">
-                    <?php $clock = substr($clock, 11);
-                    $clock = substr($clock, 0, -3);
-                    echo $clock; ?>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-4 mt-5 col-5">
-                <div class="text-secondary fs-4">BOOKING</div>
-                <div class="text-secondary fs-4"><?= $tiket ?> TIKET</div>
-            </div>
-            <div class="col-sm-6 col-xl-5 mt-5 col-7">
-                <div class="fw-medium fs-4 text-light"><?= $trx ?></div>
-                <div class="fw-normal fs-4 text-light"><?= $seat ?></div>
-            </div>
-            <div class="col-sm-12 col-xl-3 mt-5">
-                <div class="d-flex  d-flex justify-content-center align-items-center">
-                    <img src="assets/img/img-qrqode/<?= $trx ?>.png" style="width: 50%;">
-                </div>
-            </div>
-            <div class="col-12 mt-1">
-                <hr>
-            </div>
-            <div class="col-12 mt-2">
-                <div class="text-center text-secondary">Ini Adalah Pesanan Atas Nama <?= $_SESSION['nama_user'] ?>!</div>
-            </div>
-        </div>
-
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;">Time : <?= $key['clock'] ?></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;">Kursi : <?= $key['variable_seat'] . $key['number_seat'] ?></td>
+                    <td style="background-color: wheat;" rowspan="2"><label class="fs-4 fw-semibold">Kursi : <?= $key['variable_seat'] . $key['number_seat'] ?></label></td>
+                    <td style="background-color: wheat;" rowspan="4"><label class="fw-bold" style="font-size: 100px;"><?= $key['name_teater'] ?></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;">Teater <?= $key['name_teater'] ?></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;"><?= $key['price'] ?></td>
+                    <td style="background-color: wheat;"><label class="fs-4 fw-semibold">Harga : <?= $key['price'] ?></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;">Movi3 </td>
+                    <td style="background-color: wheat;"><label class="fs-4 fw-semibold">Movi3</label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;"><?= $key['trx'] ?></td>
+                    <td style="background-color: wheat;" rowspan="2" colspan="2"><label class="fs-4 fw-semibold"> <?= $key['trx'] ?></label></td>
+                </tr>
+                <tr>
+                    <td style="background-color: wheat;"><?= $key['date'] ?></td>
+                </tr>
+            </table>
+        <?php } ?>
     </div>
 </body>
 
 <script>
-    windows.print();
+    // window.onload = function() {
+    window.print();
+    // }
 </script>
 
 </html>

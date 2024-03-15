@@ -116,6 +116,9 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                             <a class="nav-link" href="berlangsung.php">Film Berlangsung</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="riwayat.php">Riwayat Transaksi</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="cetak.php">Cetak Tiket</a>
                         </li>
                         <div class="dropdown">

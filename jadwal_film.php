@@ -15,6 +15,7 @@ $result = mysqli_query($conn, "SELECT *
     ON film.id_film=schedule.id_film 
     WHERE film.id_film=$id_film AND schedule.date = '$tanggal'
     ORDER BY schedule.clock ASC");
+$count = mysqli_num_rows($result);
 
 while ($film_data = mysqli_fetch_array($result)) {
     $title = $film_data['title'];
@@ -43,6 +44,14 @@ $dateDmy = date("d-m-Y", strtotime($tanggal));
                 <img src="./assets/img/film/<?= $image ?>" class="pb-2" style="width: 80%;">
             </div>
             <div class="col-6 mt-5">
+                <?php if ($count < 1) {
+                    echo "
+                    <script>
+                    alert('Admin Belum Menambahkan Jadwal Di Film Ini,Coba Lagi Nanti');
+                    window.location.href='detail_film.php?id_film=$id_film';
+                    </script>";
+                    die;
+                } ?>
                 <div class="d-flex">
                     <div class="kotak text-start"><?= $dimension ?></div>
                     <p class="bulet span text-start ms-3 p-2 fw-semibold"><?= $age ?></p>

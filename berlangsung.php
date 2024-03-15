@@ -40,7 +40,7 @@ $querry = mysqli_query($conn, $sql);
             <?php foreach ($querry as $row) : ?>
                 <div class="col-md-3 col-sm-4 col-6">
                     <div class="card card-transparent shadow-lg bg-body-dark rounded mt-4 border border-dark" style="height: 95%;overflow: hidden;">
-                        <a href="<?= $status . '?id_film=' . $row['id_film'] ?> "><img src="./assets/img/film/  <?= $row['image'] ?>" class="card-img-top w-100 p-3 rounded" style="height: 28rem;overflow: hidden;"></a>
+                        <a href="<?= $status . '?id_film=' . $row['id_film'] ?> "><img src="./assets/img/film/<?= $row['image'] ?>" class="card-img-top w-100 p-3 rounded" style="height: 28rem;overflow: hidden;"></a>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>

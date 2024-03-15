@@ -42,6 +42,10 @@ if ($_SESSION['id_role'] != 3) {
                             echo "<div class='alert alert-danger text-center text-dark ' role='alert'>
                                Kode Transaksi Atau Password Transaksi Salah
                             </div>";
+                        } elseif ($_GET['pesan'] == 'sudah') {
+                            echo "<div class='alert alert-danger text-center text-dark ' role='alert'>
+                            Kode Transaksi Ini Sudah Pernah Mencetak Tiket,Jadi Tidak Bisa Lagi
+                            </div>";
                         } else {
                             echo "<div class='alert alert-info text-center text-dark' role='alert'>
                             Anda Harus Mengisi Terlebih Dahulu

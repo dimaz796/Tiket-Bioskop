@@ -5,6 +5,70 @@ include('conn.php');
 if (isset($_POST['pesan'])) {
     $id_user = $_SESSION['id_user'];
 
+    //Jika Anda Kasir
+    if ($_SESSION['id_role'] == 3) {
+        // Mengambil Data Dari COnfirm
+        $id_film = $_POST['id_film'];
+        $price = $_POST['price'];
+        $total = $_POST['total'];
+        $seat = $_POST['seat'];
+        $id_schedule = $_POST['id_schedule'];
+        $id_teater = $_POST['id_teater'];
+        $date = $_POST['date'];
+        $status_order = 'Sudah Di Bayar';
+
+        // Membuat Field Order
+        $sql = "INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `id_teater`, `status_order`, `Total`) 
+        VALUES (NULL, '$date', '$id_user', '$id_schedule', '$id_teater', '$status_order', '$total');";
+        $querry = mysqli_query($conn, $sql);
+
+        // Mencari Id Order
+        $sql = "SELECT id_order FROM `order` order by id_order desc limit 1";
+        $order =  mysqli_query($conn, $sql);
+        $data_order = mysqli_fetch_assoc($order);
+        $id_order = $data_order['id_order'];
+
+        // Membuat Detail Order 
+        foreach ($order as $key) {
+            $id_order = $key['id_order'];
+
+            $order = mysqli_query($conn, $sql);
+            foreach ($seat as $index => $value) {
+                $sql = "INSERT INTO `detail_order` VALUES (NULL, '$id_order', '$value', '$price','Terisi');";
+                $detail_order =  mysqli_query($conn, $sql);
+            }
+        }
+        // Membuat Kode TRansaksi
+        $date_kode = str_replace("-", "", $date);
+        $kode_trx = "1933" . $date_kode . $id_user . $id_order;
+
+        // Membuat Password Untuk Transaksi
+        $bilangan_acak = '';
+        for ($i = 0; $i < 6; $i++) {
+            $bilangan_acak .= mt_rand(0, 9);
+        }
+
+        // Membuat Field Tabel Transaksi
+        $sql = "INSERT INTO trx
+                VALUES ('$kode_trx', '$id_order', '$bilangan_acak','Belum Di Cetak');";
+        $create_trx =  mysqli_query($conn, $sql);
+
+        if ($create_trx) {
+            echo "
+            <script>
+                    alert('Transaksi Berhasil,Tiket Akan Segera Di Cetak');
+                    window.location.href='proses_cetak.php?cetak=ada&trx=$kode_trx&password_trx=$bilangan_acak';
+            </script>";
+        } else {
+            echo "
+            <script>
+                alert('Transaksi Gagal,Periksa Kembali');
+                window.location.href='confirm_order.php';
+            </script>";
+        }
+        die;
+    }
+
     $sql = "SELECT id_order FROM `order` WHere id_user = $id_user AND status_order = 'Belum Bayar'";
     $cek_order =  mysqli_query($conn, $sql);
     $count = mysqli_num_rows($cek_order);
