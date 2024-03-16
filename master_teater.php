@@ -48,9 +48,9 @@ if ($_SESSION['id_role'] != 1) {
             </thead>
             <tbody>
                 <?php
-                foreach ($teater as $row) { ?>
+                foreach ($teater as $index => $row) { ?>
                     <tr>
-                        <td><?= $row['id_teater']; ?></td>
+                        <td><?= $index + 1; ?></td>
                         <td><?= $row['name_teater']; ?></td>
                         <td align="center"><a href="edit_teater.php?id=<?= $row['id_teater'] ?>">
                                 <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |

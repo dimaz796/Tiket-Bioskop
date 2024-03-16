@@ -120,7 +120,23 @@ if (isset($_POST['simpan'])) {
 		</script>";
     }
 } else {
-    $id_film = $_GET['id'];
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM `schedule` 
+    WHERE `schedule`.`id_film` = '$id'";
+    $cek_film = mysqli_query($conn, $sql);
+
+    $count_film = mysqli_fetch_assoc($cek_film);
+    if ($count_film > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Jadwal Yang Menggunakan Film ini,Data Film Tidak Dapat Di Hapus');
+                window.location.href='master_film.php?id=$id';
+        </script>";
+        die;
+    }
+
+
     $sql = "DELETE FROM `film` WHERE id_film=$id_film";
     $hapus = mysqli_query($conn, $sql);
 

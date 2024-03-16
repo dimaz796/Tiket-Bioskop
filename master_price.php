@@ -21,7 +21,7 @@
     <?php
     include "navbar.php";
 
-    $sql = "SELECT * FROM `price` ORDER BY id_price ASC";
+    $sql = "SELECT * FROM `price` ";
     $price = mysqli_query($conn, $sql);
     ?>
     <div class="container">
@@ -34,8 +34,8 @@
         <table id="example" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>ID Harga</th>
-                    <th>Haris</th>
+                    <th>No</th>
+                    <th>Hari</th>
                     <th>Harga</th>
                     <th>Aksi</th>
                 </tr>
@@ -45,11 +45,11 @@
                 foreach ($price as $index => $row) { ?>
                     <tr>
                         <td><?= $index + 1; ?></td>
-                        <td><?= $row['name_day']; ?></td>
+                        <td><?= $row['day']; ?></td>
                         <td><?= $row['price']; ?></td>
                         <td align="center">
-                            <a href="edit_price.php?id=<?= $row['id_price'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
-                            <a href="proses_price.php?id=<?= $row['id_price'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
+                            <a href="edit_price.php?day=<?= $row['day'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
+                            <a href="proses_price.php?day=<?= $row['day'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
                         </td>
                     </tr>
                 <?php } ?>

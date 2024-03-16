@@ -17,13 +17,7 @@
             </script>";
     }
 
-    $sql = "SELECT * FROM `film` WHERE status_film != 'Berakhir' AND tayang <= CURDATE()";
-    $film = mysqli_query($conn, $sql);
-    $films = mysqli_fetch_all($film);
 
-    $sql = "SELECT * FROM `teater`";
-    $teater = mysqli_query($conn, $sql);
-    $teaters = mysqli_fetch_all($teater);
 
     $id = $_GET['id'];
     $result = mysqli_query($conn, "SELECT * FROM schedule WHERE id_schedule=$id");
@@ -39,69 +33,87 @@
         $clock = substr($clock, 11);
     }
 
+    $sql = $sql = "SELECT id_film,title FROM `Film` WHERE Berakhir >= '$date' AND tayang <= '$date'";
+    $film = mysqli_query($conn, $sql);
+    $films = mysqli_fetch_all($film);
+
+    $sql = "SELECT * FROM `teater`";
+    $teater = mysqli_query($conn, $sql);
+    $teaters = mysqli_fetch_all($teater);
+
 
     ?>
     <div class="container mt-3">
-
-        <form method="post" action="proses_schedule.php">
+        <form method="post" action="proses_schedule.php" id="form-jadwal" class="mt-4">
             <h1>Edit Jadwal</h1>
 
-            <input type="hidden" name="id" value="<?= $id ?>">
             <label for="" class="fs-6 mt-1 mb-1">Tanggal</label>
             <input type="date" name="date" id="tanggal" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $date ?>" required>
 
             <label for="" class="fs-6 mt-1 mb-1">Hari</label>
-            <input type="hari" name="hari" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary " id="input-hari" readonly>
+            <input type="hari" name="hari" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary " id="input-hari" value="<?= $day ?>" readonly>
 
             <label for="" class="fs-6 mt-1 mb-1">Jam</label>
-            <input type="time" name="jam" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $clock ?>">
+            <input type="time" name="jam" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $clock ?>" required>
 
             <label for="" class="fs-6 mt-1 mb-1">Film</label>
-            <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" style="height: 25px; width: 610px;" required>
+            <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" id="pilih_film" style="height: 25px; width: 610px;" required>
+                <option value="" class="bg-dark"></option>
                 <?php foreach ($films as $row) : ?>
                     <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_film = ($id_film == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
                 <?php endforeach ?>
             </select>
 
             <label for="" class="fs-6 mt-1 mb-1">Teater</label>
-            <select name="teater" class="form-select w-50 h-50 enter mb-4 p-1" style="height: 25px; width: 610px;" required>
+            <select name="teater" class="form-select w-50 h-50 enter mb-5 p-1" style="height: 25px; width: 610px;" required>
+                <option value="" class="bg-dark"></option>
                 <?php foreach ($teaters as $row) : ?>
                     <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_teater = ($id_teater == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
                 <?php endforeach ?>
             </select>
 
-            <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+            <input type="hidden" name="clock_lama" value="<?= $clock ?>">
+            <input type="hidden" name="id" value="<?= $id ?>">
+            <button type="submit" name="ubah" class="btn btn-warning w-50 enter mt-4">Simpan</button>
         </form>
-
 
     </div>
     <script>
         // Mendapatkan elemen input
-        var dayValue = '<?= $day ?>';
-        input = document.getElementById('tanggal');
-        if (input) {
-            // Menambahkan event listener untuk input
-            input.addEventListener('input', function() {
-                // Mendapatkan nilai yang dimasukkan pengguna
-                var tanggalvalue = input.value;
-                // Buat objek Date dari nilai tanggal
-                var dateObj = new Date(tanggalvalue);
+        var input = document.getElementById('tanggal');
 
-                // Dapatkan indeks hari (0 untuk Minggu, 1 untuk Senin, dst)
-                var dayIndex = dateObj.getDay();
+        // Menambahkan event listener untuk input
+        input.addEventListener('input', function() {
+            // Mendapatkan nilai yang dimasukkan pengguna
+            var tanggalvalue = input.value;
+            // Buat objek Date dari nilai tanggal
+            var dateObj = new Date(tanggalvalue);
 
-                // Array nama hari
-                var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            // Dapatkan indeks hari (0 untuk Minggu, 1 untuk Senin, dst)
+            var dayIndex = dateObj.getDay();
 
-                // Dapatkan nama hari dari array menggunakan indeks
-                var dayName = days[dayIndex];
+            // Array nama hari
+            var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+            // Dapatkan nama hari dari array menggunakan indeks
+            var dayName = days[dayIndex];
 
 
-                // Menampilkan nilai yang dimasukkan pengguna
-                document.getElementById('input-hari').value = dayName;
-            });
-        }
-        document.getElementById('input-hari').value = dayValue;
+            // Menampilkan nilai yang dimasukkan pengguna
+            document.getElementById('input-hari').value = dayName;
+            var xhr = new XMLHttpRequest();
+
+            // Ekseskusi Ajax
+            xhr.open('GET', 'ajax_schedule.php?tanggal=' + tanggalvalue, true);
+
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    pilih_film.innerHTML = xhr.responseText;
+                }
+            };
+
+        });
     </script>
 </body>
 

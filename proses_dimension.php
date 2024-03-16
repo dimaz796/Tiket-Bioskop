@@ -41,10 +41,23 @@ if (isset($_POST['simpan'])) {
 		</script>";
     }
 } else {
-    include 'connection.php';
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM `dimension` WHERE id_dimension=$id";
+    $id_dimension = $_GET['id'];
+
+    $sql = "SELECT * FROM `film` 
+            WHERE `film`.id_dimension = $id_dimension;";
+    $cek_dimension = mysqli_query($conn, $sql);
+
+    $count_dimension = mysqli_fetch_assoc($cek_dimension);
+    if ($count_dimension > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Film Yang Menggunakan Dimension ini,Data Dimenison Tidak Dapat Di Hapus');
+                window.location.href='master_dimension.php?id=$id_dimension';
+        </script>";
+        die;
+    }
+    $sql = "DELETE FROM `dimension` WHERE id_dimension=$id_dimension";
     $hapus = mysqli_query($conn, $sql);
 
     if ($hapus) {

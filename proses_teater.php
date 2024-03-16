@@ -43,8 +43,24 @@ if (isset($_POST['simpan'])) {
 } else {
     include 'connection.php';
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM `teater` WHERE id_teater=$id";
+    $id_teater = $_GET['id'];
+
+    //Cek Transaksi Topup 
+    $sql = "SELECT * FROM `schedule` 
+    WHERE `schedule`.id_teater = $id_teater";
+    $cek_teater = mysqli_query($conn, $sql);
+
+    $count_teater = mysqli_fetch_assoc($cek_teater);
+    if ($count_teater > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Transaksi Topup Yang Menggunakan Teater ini,Data Teater Tidak Dapat Di Hapus');
+                window.location.href='master_teater.php?id=$id_teater';
+        </script>";
+        die;
+    }
+
+    $sql = "DELETE FROM `teater` WHERE id_teater=$id_teater";
     $hapus = mysqli_query($conn, $sql);
 
     if ($hapus) {

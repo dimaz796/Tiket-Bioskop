@@ -12,10 +12,11 @@
     include "navbar.php";
     include "conn.php";
 
-    $sql = "SELECT * FROM `Film` status_film 
-            WHERE status_film != 'Berakhir' AND tayang <= CURDATE()";
+    // Jika tidak ada input dari JavaScript, jalankan query seperti biasa
+    $sql = "SELECT id_film,title FROM `Film` WHERE status_film = 'Berlangsung' AND tayang <= CURDATE()";
     $film = mysqli_query($conn, $sql);
     $films = mysqli_fetch_all($film);
+
 
     $sql = "SELECT * FROM `teater`";
     $teater = mysqli_query($conn, $sql);
@@ -25,7 +26,7 @@
 
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_schedule.php" class="mt-4">
+        <form method="post" action="proses_schedule.php" id="form-jadwal" class="mt-4">
             <h1>Tambah Jadwal</h1>
 
             <label for="" class="fs-6 mt-1 mb-1">Tanggal</label>
@@ -38,7 +39,7 @@
             <input type="time" name="jam" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" required>
 
             <label for="" class="fs-6 mt-1 mb-1">Film</label>
-            <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" style="height: 25px; width: 610px;" required>
+            <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" id="pilih_film" style="height: 25px; width: 610px;" required>
                 <option value="" class="bg-dark"></option>
                 <?php foreach ($films as $row) : ?>
                     <option value="<?= $row[0] ?>" class="bg-dark"><?= $row[1] ?></option>
@@ -80,6 +81,18 @@
 
             // Menampilkan nilai yang dimasukkan pengguna
             document.getElementById('input-hari').value = dayName;
+            var xhr = new XMLHttpRequest();
+
+            // Ekseskusi Ajax
+            xhr.open('GET', 'ajax_schedule.php?tanggal=' + tanggalvalue, true);
+
+            xhr.send();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    pilih_film.innerHTML = xhr.responseText;
+                }
+            };
+
         });
     </script>
 </body>

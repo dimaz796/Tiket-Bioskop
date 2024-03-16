@@ -41,12 +41,12 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($dimension as $row) { ?>
+                foreach ($dimension as $value => $row) { ?>
                     <tr>
-                        <td><?= $row['id_dimension']; ?></td>
+                        <td><?= $value + 1; ?></td>
                         <td><?= $row['name_dimension']; ?></td>
-                        <td align="center"><a href="edit_dimension.php?id=<?= $row['id_dimension'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
-                            <a href="proses_dimension.php?id=<?= $row['id_dimension'] ?>"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
+                        <td align="center"><a href="edit_dimension.php?id=<?= $row['id_dimension'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
+                            <a href="proses_dimension.php?id=<?= $row['id_dimension'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -64,7 +64,7 @@
         });
 
         function konfirmasiHapus() {
-            var agree = confirm("Apakah Anda yakin ingin menghapus Film Ini?");
+            var agree = confirm("Apakah Anda yakin ingin menghapus Dimension Ini?");
             if (agree) {
                 return true;
             } else {

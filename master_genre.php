@@ -41,9 +41,9 @@
             </thead>
             <tbody>
                 <?php
-                foreach ($genre as $row) { ?>
+                foreach ($genre as $index => $row) { ?>
                     <tr>
-                        <td><?= $row['id_genre']; ?></td>
+                        <td><?= $index + 1; ?></td>
                         <td><?= $row['name_genre']; ?></td>
                         <td align="center"><a href="edit_genre.php?id=<?= $row['id_genre'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
                             <a href="proses_genre.php?id=<?= $row['id_genre'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>

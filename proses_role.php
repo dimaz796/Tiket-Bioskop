@@ -41,10 +41,24 @@ if (isset($_POST['simpan'])) {
 		</script>";
     }
 } else {
-    include 'connection.php';
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM `role` WHERE id_role=$id";
+    $id_role = $_GET['id'];
+
+    $sql = "SELECT * FROM `user` 
+            WHERE `user`.id_role = $id_role";
+    $cek_role = mysqli_query($conn, $sql);
+
+    $count_role = mysqli_fetch_assoc($cek_role);
+    if ($count_role > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada User Yang Menggunakan Role ini,Data Role Tidak Dapat Di Hapus');
+                window.location.href='master_role.php?id=$id_role';
+        </script>";
+        die;
+    }
+
+    $sql = "DELETE FROM `role` WHERE id_role=$id_role";
     $hapus = mysqli_query($conn, $sql);
 
     if ($hapus) {

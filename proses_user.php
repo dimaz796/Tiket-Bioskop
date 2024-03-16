@@ -196,8 +196,39 @@ if (isset($_POST['simpan'])) {
 } else {
 
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM `user` WHERE id_user=$id";
+    $id_user = $_GET['id'];
+
+    // Cek User Pernah Transaksi Tiket
+    $sql = "SELECT * FROM `order` 
+            WHERE `order`.id_user = $id_user";
+    $cek_user = mysqli_query($conn, $sql);
+
+    $count_user = mysqli_fetch_assoc($cek_user);
+    if ($count_user > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Transaksi Yang Menggunakan user ini,Data User Tidak Dapat Di Hapus');
+                window.location.href='master_user.php?id=$id_user';
+        </script>";
+        die;
+    }
+
+    //Cek Transaksi Topup 
+    $sql = "SELECT * FROM `transaksi_topup` 
+    WHERE `transaksi_topup`.id_user = $id_user";
+    $cek_user = mysqli_query($conn, $sql);
+
+    $count_user = mysqli_fetch_assoc($cek_user);
+    if ($count_user > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Transaksi Topup Yang Menggunakan user ini,Data User Tidak Dapat Di Hapus');
+                window.location.href='master_user.php?id=$id_user';
+        </script>";
+        die;
+    }
+
+    $sql = "DELETE FROM `user` WHERE id_user=$id_user";
     $hapus = mysqli_query($conn, $sql);
 
     if ($hapus) {

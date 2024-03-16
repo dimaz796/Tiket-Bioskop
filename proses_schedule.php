@@ -37,7 +37,7 @@ if (isset($_POST['simpan'])) {
 
     // Menentukan Harga
     $sql = "SELECT price FROM `price`
-    WHERE name_day = '$day'";
+    WHERE `day` = '$day'";
     $cp = mysqli_query($conn, $sql);
     $data_price = mysqli_fetch_assoc($cp);
     $price = $data_price['price'];
@@ -124,12 +124,12 @@ if (isset($_POST['simpan'])) {
     	</script>";
     }
 } elseif (isset($_POST['ubah'])) {
-    $id = $_POST['id'];
+    $id_schedule = $_POST['id'];
     if ($_POST['date'] . " " . $_POST['jam'] < date('Y-m-d H:i')) {
         echo "
 		<script>
                 alert('Waktu Sudah Terlewati,Input Dengan Benar!');
-				window.location.href='edit_schedule.php?id=$id';
+				window.location.href='edit_schedule.php?id=$id_schedule';
 		</script>";
         die;
     }
@@ -137,14 +137,14 @@ if (isset($_POST['simpan'])) {
     // Mengambil Data Order
     $sql = "SELECT * FROM `order` 
             INNER JOIN schedule ON `order`.id_schedule = schedule.id_schedule
-            WHERE `order`.id_schedule = $id;";
+            WHERE `order`.id_schedule = $id_schedule;";
     $cek_order = mysqli_query($conn, $sql);
     $count_order = mysqli_fetch_assoc($cek_order);
     if ($count_order > 0) {
         echo "
 		<script>
                 alert('Sudah Ada Yang Memesan di jadwal ini,Data Jadwal Tidak Dapat Di Ubah');
-				window.location.href='edit_schedule.php?id=$id';
+				window.location.href='edit_schedule.php?id=$id_schedule';
 		</script>";
         die;
     }
@@ -162,22 +162,22 @@ if (isset($_POST['simpan'])) {
         $tanggal = date("d F Y", strtotime($berakhir_film));
         echo "
          <script>
-                 alert('Waktu Jadwal Melebihi Tanggal Film Berakhir Yaitu Dengan Judul $judul_film Berakhir Tanggal $tanggal');
-                 window.location.href='edit_schedule.php?id=$id';
+                 alert('Waktu Jadwal Melebihi Tanggal Film Berakhir , Yaitu Dengan Judul $judul_film Berakhir Tanggal $tanggal');
+                 window.location.href='edit_schedule.php?id=$id_schedule';
          </script>";
         die;
     }
 
-    $sql = "DELETE FROM `schedule` WHERE id_schedule=$id";
-    $hapus = mysqli_query($conn, $sql);
 
     $date = $_POST['date'];
     $day = $_POST['hari'];
     $clock_new =  $date . " " . $_POST['jam'];
     $id_teater = $_POST['teater'];
+    $clock_lama = $date . " " . $_POST['clock_lama'];
+
 
     $sql = "SELECT price FROM `price`
-    WHERE name_day = '$day'";
+    WHERE `day` = '$day'";
     $cp = mysqli_query($conn, $sql);
     $data_price = mysqli_fetch_assoc($cp);
     $price = $data_price['price'];
@@ -186,57 +186,66 @@ if (isset($_POST['simpan'])) {
     $timestamp = strtotime($clock_new);
     $clock_new = round($timestamp / 60);
 
+    $timestamp = strtotime($clock_lama);
+    $clock_lama = round($timestamp / 60);
+
+
     $clock_end_new = $clock_new + $durasi;
 
 
     $sql = "SELECT * FROM `schedule` WHERE date = '$date' AND id_teater = '$id_teater'";
     $jadwal = mysqli_query($conn, $sql);
 
-    foreach ($jadwal as $schedule) {
-        // Menganbil Data Dari Jadwal
-        $clock = $schedule['clock'];
-        $id_judul_film = $schedule['id_film'];
+    if ($clock_lama != $clock_new) {
 
-        // Mengambil Data Film 
-        $sql = "SELECT title FROM `film` WHERE id_film = $id_judul_film";
-        $query = mysqli_query($conn, $sql);
-        $row = $query->fetch_assoc();
-        $title = $row['title'];
+        foreach ($jadwal as $schedule) {
+            // Menganbil Data Dari Jadwal
+            $clock = $schedule['clock'];
+            $id_judul_film = $schedule['id_film'];
 
-        // Membuat Waktu Mulai Yang Sudah Ada Menjadi Menit
-        $timestamp = strtotime($clock);
-        $clock = round($timestamp / 60);
+            // Mengambil Data Film 
+            $sql = "SELECT title FROM `film` WHERE id_film = $id_judul_film";
+            $query = mysqli_query($conn, $sql);
+            $row = $query->fetch_assoc();
+            $title = $row['title'];
 
-        // Membuat Waktu Berakhir Yang Sudah Ada Menjadi Menit
-        $clock_end = $schedule['clock_end'];
-        $timestamp = strtotime($clock_end);
-        $clock_end = round($timestamp / 60);
+            // Membuat Waktu Mulai Yang Sudah Ada Menjadi Menit
+            $timestamp = strtotime($clock);
+            $clock = round($timestamp / 60);
 
-        if (($clock_new >= $clock && $clock_end_new <= $clock_end) || ($clock_end_new >= $clock && $clock_new <= $clock_end)) {
+            // Membuat Waktu Berakhir Yang Sudah Ada Menjadi Menit
+            $clock_end = $schedule['clock_end'];
+            $timestamp = strtotime($clock_end);
+            $clock_end = round($timestamp / 60);
 
-            // Merubah Menit Menjadi Tanggal Jam Lama
-            $timestamp = $clock * 60;
-            $clock = date("Y-m-d H:i:s", $timestamp);
 
-            // Merubah Menit Menjadi Tanggal Jam Lama
-            $timestamp = $clock_end * 60;
-            $clock_end = date("Y-m-d H:i:s", $timestamp);
+            if (($clock_new >= $clock && $clock_end_new <= $clock_end) || ($clock_end_new >= $clock && $clock_new <= $clock_end)) {
 
-            // Menbuat tanggal menjadi melihat jamnya saja
-            $clock = substr($clock, 0, -3);
-            $clock = substr($clock, 11);
+                // Merubah Menit Menjadi Tanggal Jam Lama
+                $timestamp = $clock * 60;
+                $clock = date("Y-m-d H:i:s", $timestamp);
 
-            $clock_end = substr($clock_end, 0, -3);
-            $clock_end = substr($clock_end, 11);
+                // Merubah Menit Menjadi Tanggal Jam Lama
+                $timestamp = $clock_end * 60;
+                $clock_end = date("Y-m-d H:i:s", $timestamp);
 
-            echo "
+                // Menbuat tanggal menjadi melihat jamnya saja
+                $clock = substr($clock, 0, -3);
+                $clock = substr($clock, 11);
+
+                $clock_end = substr($clock_end, 0, -3);
+                $clock_end = substr($clock_end, 11);
+
+                echo "
             <script>
             alert('Jadwal Di Teater Tersebut Sudah DI Isi Oleh Film $title, Dari Jam $clock Dan Berakhir Jam $clock_end');
-            window.location.href='edit_schedule.php?id=$id';
+            window.location.href='edit_schedule.php?id=$id_schedule';
             </script>";
-            die;
+                die;
+            }
         }
     }
+
 
     // Merubah Menit Menjadi Tanggal 
     $timestamp = $clock_end_new * 60;
@@ -246,8 +255,9 @@ if (isset($_POST['simpan'])) {
     $timestamp = $clock_new * 60;
     $clock_new = date("Y-m-d H:i:s", $timestamp);
 
-    $sql = "INSERT INTO `schedule` 
-    VALUES (NULL, '$date', '$day', '$clock_new', '$clock_end_new', '$price', '$id_film', '$id_teater');";
+    $sql = "UPDATE `schedule` SET `date` = '$date', `day` = '$day', `clock` = '$clock_new', 
+            `clock_end` = '$clock_end_new', `price` = '$price', `id_film` = '$id_film', `id_teater` = '$id_teater' 
+            WHERE `schedule`.`id_schedule` = $id_schedule;";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "
@@ -264,6 +274,23 @@ if (isset($_POST['simpan'])) {
     }
 } else {
     $id = $_GET['id'];
+
+    // Cek Order
+    $sql = "SELECT * FROM `order` 
+    INNER JOIN schedule ON `order`.id_schedule = schedule.id_schedule
+    WHERE `order`.id_schedule = $id;";
+    $cek_order = mysqli_query($conn, $sql);
+    $count_order = mysqli_fetch_assoc($cek_order);
+    if ($count_order > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Yang Memesan di jadwal ini,Data Jadwal Tidak Dapat Di Hapus');
+                window.location.href='master_schedule.php?id=$id';
+        </script>";
+        die;
+    }
+
+    // Hapus Schedule
     $sql = "DELETE FROM `schedule` WHERE id_schedule=$id";
     $hapus = mysqli_query($conn, $sql);
 
