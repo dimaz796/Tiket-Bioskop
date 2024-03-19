@@ -1,16 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['status']) && $_SESSION['status'] == "login") {
-  if ($_SESSION['id_role'] == 1) {
-    echo "<script>window.location.href='Dimas_home_admin.php'</script>";
-  } elseif ($_SESSION['id_role'] == 2) {
-    echo "<script>window.location.href='Dimas_home_manager.php'</script>";
-  } elseif ($_SESSION['id_role'] == 3) {
-    echo "<script>window.location.href='Dimas_home_kasir.php'</script>";
-  }
-}
-?>
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 

@@ -42,6 +42,7 @@ if (isset($row)) {
 }
 
 include "assets/phpqrcode/qrlib.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -205,17 +206,15 @@ include "assets/phpqrcode/qrlib.php";
                             <td><?= $row['nama_user']; ?></td>
                             <td>Rp. <?= number_format($row['total']); ?></td>
                             <td>
-                                <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
+                                <div class="bg-<?= $status ?> text-center rounded-2"><label class="ps-2 pe-2 pt-1 pb-1"><?= $row['status_order']; ?></label></div>
                             </td>
                             <td align="center">
-
                                 <a href="tiket_order.php?id_order=<?= $row['id_order'] ?>">
                                     <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                                 </a>
                                 <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
-                                    <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
+                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                                 </a>
-
                             </td>
                         </tr>
                     <?php } ?>

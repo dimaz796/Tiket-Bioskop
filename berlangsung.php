@@ -15,7 +15,7 @@ INNER JOIN dimension
 ON dimension.id_dimension = film.id_dimension
 INNER JOIN genre 
 ON genre.id_genre = film.id_genre
-WHERE film.status_film = 'Berlangsung'
+WHERE status_film = 'Berlangsung' AND tayang <= CURDATE()
 ORDER BY film.berakhir DESC
 ";
 $querry = mysqli_query($conn, $sql);

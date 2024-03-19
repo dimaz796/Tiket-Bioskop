@@ -48,7 +48,6 @@ $count = mysqli_num_rows($querry);
             <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Nomor</th>
                         <th>kode transaksi</th>
                         <th>Judul film</th>
                         <th>Tanggal Pemesanan</th>
@@ -69,24 +68,8 @@ $count = mysqli_num_rows($querry);
                         $status = 'success';
                     } ?>
                     <tr>
-                        <td><?= $index + 1 ?></td>
                         <td>
                             <?php
-                            // include "assets/qr_code/qr_code/qrlib.php";
-                            // $tempdir = "img-qrcode/";
-                            // if (!file_exists($tempdir)) {
-                            //     mkdir($tempdir, 0755);
-                            // $date = str_replace("-", "", $row['date']);
-                            // $kode = "1933" . $date . $row['id_user'] . $row['id_order'];
-                            //     $file_name = "trx" . $row['id_order'] . ".png";
-                            //     $file_path = $tempdir . $file_name;
-
-                            //     QRcode::png($kode, $file_path, "H", 6, 6);
-                            //     echo "<img src='" . $file_path . "'>";
-                            // }
-                            // echo $kode;
-                            // require_once("assets/phpqrcode/qrlib.php");
-                            // QRcode::png("$kode", "trx" . ($row['id_order']) . ".png", "M", 2, 2);
                             echo $row['trx'];
                             ?>
                         </td>
@@ -97,11 +80,11 @@ $count = mysqli_num_rows($querry);
                         <td><?= $row['nama_user']; ?></td>
                         <td>Rp. <?= number_format($row['total']); ?></td>
                         <td>
-                            <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
+                            <div class="bg-<?= $status ?> text-center rounded-2 d-flex"><small class="p-1"><?= $row['status_order']; ?></small></div>
                         </td>
                         <td align="center">
                             <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
-                                <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
+                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                             </a>
 
                         </td>

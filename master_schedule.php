@@ -64,12 +64,14 @@ $querry = mysqli_query($conn, $sql);
                     <td><?= $row['title']; ?></td>
                     <td><?= $row['name_teater']; ?></td>
                     <td align="center">
-                        <a href="edit_schedule.php?id=<?= $row['id_schedule'] ?>">
-                            <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
-                        </a> |
-                        <a href="proses_schedule.php?id=<?= $row['id_schedule'] ?>" onclick="return konfirmasiHapus()">
-                            <button class=" btn btn-warning"><i class="bi bi-trash3"></i></button>
-                        </a>
+                        <div class="d-flex gap-2">
+                            <a href="edit_schedule.php?id=<?= $row['id_schedule'] ?>">
+                                <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
+                            </a>
+                            <a href="proses_schedule.php?id=<?= $row['id_schedule'] ?>" onclick="return konfirmasiHapus()">
+                                <button class=" btn btn-warning"><i class="bi bi-trash3"></i></button>
+                            </a>
+                        </div>
                     </td>
                 </tr>
             <?php } ?>

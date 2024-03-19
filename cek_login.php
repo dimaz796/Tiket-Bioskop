@@ -35,12 +35,12 @@ if (isset($_POST['login'])) {
     } elseif ($login['id_role'] == 2) {
       echo "<script>
 			alert('Login Berhasil,Anda Adalah Manager!');
-			window.location.href='home_admin.php';
+			window.location.href='laporan.php';
 		</script>";
     } elseif ($login['id_role'] == 3) {
       echo "<script>
 				alert('Login Berhasil,Anda Adalah Kasir!');
-				window.location.href='home_admin.php';
+				window.location.href='home_kasir.php';
 			</script>";
     } elseif ($login['id_role'] == 4) {
       echo "<script>

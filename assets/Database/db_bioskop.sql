@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2024 at 04:17 PM
+-- Generation Time: Mar 16, 2024 at 07:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -94,7 +94,7 @@ CREATE TABLE `dimension` (
 
 INSERT INTO `dimension` (`id_dimension`, `name_dimension`) VALUES
 (1, '2D'),
-(3, '3D');
+(5, '3D');
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,6 @@ CREATE TABLE `genre` (
 --
 
 INSERT INTO `genre` (`id_genre`, `name_genre`) VALUES
-(1, 'Romance'),
 (2, 'Horor'),
 (3, 'Action'),
 (4, 'Adventure'),
@@ -166,11 +165,12 @@ INSERT INTO `genre` (`id_genre`, `name_genre`) VALUES
 (8, 'Fantasy'),
 (9, 'Thriller'),
 (10, 'Mystery'),
-(11, 'Animation'),
+(11, 'Animationns'),
 (12, 'Musical'),
 (13, 'Biography'),
 (14, 'Historical'),
-(15, 'Documentary');
+(15, 'Documentary'),
+(16, 'Romance');
 
 -- --------------------------------------------------------
 
@@ -213,8 +213,7 @@ INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `id_teater`, 
 --
 
 CREATE TABLE `price` (
-  `id_price` int(12) NOT NULL,
-  `name_day` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
+  `day` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
   `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -222,14 +221,14 @@ CREATE TABLE `price` (
 -- Dumping data for table `price`
 --
 
-INSERT INTO `price` (`id_price`, `name_day`, `price`) VALUES
-(1, 'Senin', 30000),
-(2, 'Selasa', 30000),
-(3, 'Rabu', 30000),
-(4, 'Kamis', 30000),
-(5, 'Jumat', 35000),
-(6, 'Sabtu', 40000),
-(7, 'Minggu', 40000);
+INSERT INTO `price` (`day`, `price`) VALUES
+('Senin', 30000),
+('Selasa', 30000),
+('Rabu', 30000),
+('Kamis', 30000),
+('Jumat', 35000),
+('Sabtu', 40000),
+('Minggu', 40000);
 
 -- --------------------------------------------------------
 
@@ -250,8 +249,7 @@ INSERT INTO `role` (`id_role`, `name_role`) VALUES
 (1, 'Admin'),
 (2, 'Manager'),
 (3, 'Kasir'),
-(4, 'User'),
-(7, 'asdad');
+(4, 'User');
 
 -- --------------------------------------------------------
 
@@ -281,9 +279,22 @@ INSERT INTO `schedule` (`id_schedule`, `date`, `day`, `clock`, `clock_end`, `pri
 (30, '2024-03-09', 'Sabtu', '2024-03-09 12:00:00', '2024-03-09 14:01:00', 35000, 10, 1),
 (31, '2024-03-09', 'Sabtu', '2024-03-09 14:00:00', '2024-03-09 16:01:00', 35000, 1, 4),
 (32, '2024-03-09', 'Sabtu', '2024-03-09 12:00:00', '2024-03-09 14:01:00', 35000, 9, 2),
-(36, '2024-03-14', 'Kamis', '2024-03-14 18:00:00', '2024-03-14 20:01:00', 10000, 9, 1),
+(36, '2024-03-24', 'Minggu', '2024-03-24 18:00:00', '2024-03-24 19:31:00', 40000, 14, 1),
 (37, '2024-03-13', 'Rabu', '2024-03-13 13:16:00', '2024-03-13 15:17:00', 30000, 10, 1),
-(38, '2024-03-15', 'Jumat', '2024-03-15 18:35:00', '2024-03-15 20:36:00', 35000, 9, 2);
+(38, '2024-03-15', 'Jumat', '2024-03-15 18:35:00', '2024-03-15 20:36:00', 35000, 9, 2),
+(40, '2024-04-16', 'Selasa', '2024-04-16 12:00:00', '2024-04-16 14:01:00', 30000, 16, 5),
+(42, '2024-03-16', 'Sabtu', '2024-03-16 23:05:00', '2024-03-17 01:09:00', 40000, 11, 4),
+(43, '2024-03-28', 'Kamis', '2024-03-28 23:29:00', '2024-03-29 01:33:00', 30000, 11, 1),
+(44, '2024-04-06', 'Sabtu', '2024-04-06 23:29:00', '2024-04-07 01:30:00', 40000, 16, 1),
+(45, '2024-03-18', 'Sabtu', '2024-03-17 19:00:00', '2024-03-17 21:04:00', 40002, 3, 5),
+(46, '2024-03-18', 'Senin', '2024-03-18 12:00:00', '2024-03-18 14:04:00', 30000, 11, 5),
+(47, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 13:38:00', 30000, 12, 2),
+(48, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 13:38:00', 30000, 12, 4),
+(49, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 14:04:00', 30000, 11, 3),
+(50, '2024-03-27', 'Rabu', '2024-03-27 18:00:00', '2024-03-27 19:38:00', 30000, 12, 3),
+(51, '2024-03-17', 'Minggu', '2024-03-17 13:16:00', '2024-03-17 15:20:00', 40000, 11, 1),
+(52, '2024-03-17', 'Minggu', '2024-03-17 17:00:00', '2024-03-17 19:01:00', 40000, 10, 2),
+(53, '2024-03-24', 'Minggu', '2024-03-24 17:00:00', '2024-03-24 18:38:00', 40000, 12, 2);
 
 -- --------------------------------------------------------
 
@@ -1820,8 +1831,7 @@ INSERT INTO `user` (`id_user`, `id_role`, `username`, `password`, `nama_user`, `
 (6, 4, 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 'tes', '08345424', 0),
 (7, 4, 'ZZ', 'dc18d83abfd9f87d396e8fd6b6ac0fe1', 'ZZ', '085634242', 0),
 (8, 4, 'aasdq', '8ca39209498cc55df0c7a39c6737bacc', 'Dimas', '1231231231', 0),
-(9, 1, 'dimas', '7d49e40f4b3d8f68c19406a58303f826', 'dimas', '8823131', 0),
-(11, 2, 'dimas', 'asd', 'dimas', '04928494202', 0);
+(9, 1, 'dimas', '7d49e40f4b3d8f68c19406a58303f826', 'dimas', '8823131', 0);
 
 --
 -- Indexes for dumped tables
@@ -1865,7 +1875,7 @@ ALTER TABLE `order`
 -- Indexes for table `price`
 --
 ALTER TABLE `price`
-  ADD PRIMARY KEY (`id_price`);
+  ADD PRIMARY KEY (`day`);
 
 --
 -- Indexes for table `role`
@@ -1928,7 +1938,7 @@ ALTER TABLE `detail_order`
 -- AUTO_INCREMENT for table `dimension`
 --
 ALTER TABLE `dimension`
-  MODIFY `id_dimension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_dimension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `film`
@@ -1940,7 +1950,7 @@ ALTER TABLE `film`
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -1949,22 +1959,16 @@ ALTER TABLE `order`
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `price`
---
-ALTER TABLE `price`
-  MODIFY `id_price` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `id_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `seat`
@@ -1982,7 +1986,7 @@ ALTER TABLE `teater`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

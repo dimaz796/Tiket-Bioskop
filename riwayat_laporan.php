@@ -46,7 +46,7 @@ $total = 0;
         } else {
         ?>
 
-            <h1>Riwayat Transaksi Anda</h1>
+            <h1>Riwayat Transaksi</h1>
 
             <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
                 <thead>
@@ -84,7 +84,7 @@ $total = 0;
                                 <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                             </a>
                             <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
-                                <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
+                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                             </a>
                         </td>
                     </tr>

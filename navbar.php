@@ -42,41 +42,62 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                         <li class="nav-item">
                             <a class="nav-link" href="home_admin.php">Beranda</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_film.php">Film</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_seat.php">Kursi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_genre.php">Genre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_dimension.php">Dimensi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_schedule.php">Jadwal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_teater.php">Teater</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_price.php">Price</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_transaksi.php">Transaksi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_topup.php">Topup</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_user.php">User</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="master_role.php">Role</a>
-                        </li>
-
                     </ul>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Data Master
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="master_film.php">Film</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_seat.php">Kursi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_genre.php">Genre</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_dimension.php">Dimensi</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_schedule.php">Jadwal</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_teater.php">Teater</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_price.php">Price</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Data User
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="master_user.php">User</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_role.php">Role</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Data Transaksi
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="master_transaksi.php">Transaksi Tiket</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="master_topup.php">Transaksi Topup</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="dropdown ms-auto">
                         <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= $_SESSION['nama_user'] ?>
@@ -89,13 +110,10 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                 <?php elseif ($id_role == 2) : ?>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home_admin.php">Beranda</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="laporan.php">Laporan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="riwayat_laporan.php">Riwayat</a>
+                            <a class="nav-link me-2" href="riwayat_laporan.php">Riwayat</a>
                         </li>
                         <div class="dropdown ms-auto"">
                             <button class=" btn btn-warning dropdown-toggle fixed-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,7 +128,7 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                 <?php elseif ($id_role == 3) : ?>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="home_admin.php">Beranda</a>
+                            <a class="nav-link" href="home_kasir.php">Beranda</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="berlangsung.php">Film Berlangsung</a>
@@ -119,7 +137,7 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                             <a class="nav-link" href="riwayat.php">Riwayat Transaksi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cetak.php">Cetak Tiket</a>
+                            <a class="nav-link me-2" href="cetak.php">Cetak Tiket</a>
                         </li>
                         <div class="dropdown">
                             <button class="btn btn-warning dropdown-toggle fixed-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -141,15 +159,24 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                         <li class="nav-item">
                             <a class="nav-link" href="berlangsung.php">Berlangsung</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="transaksi.php">Transaksi</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link" href="riwayat.php">Riwayat</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link" href="transaksi_topup.php">Riwayat Topup</a>
-                        </li>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Riwayat
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="transaksi.php">Menunggu Pembayaran</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="riwayat.php">Transaksi Tiket</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="transaksi_topup.php">Transaksi Topup</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
                         <div class="dropdown ms-auto">
                             <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?= $_SESSION['nama_user'] ?>

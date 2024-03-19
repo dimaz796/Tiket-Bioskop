@@ -16,7 +16,7 @@ $count = mysqli_num_rows($querry);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Transaksi</title>
+    <title>Transaksi Topup</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="<link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Xf3Hc5v04gJprXDWb0sRfJotWItgAxjGDD0C5ib/2lhoAweRr+m3N5wPUZjpjwnX" crossorigin="anonymous">
@@ -36,7 +36,7 @@ $count = mysqli_num_rows($querry);
         } else {
         ?>
 
-            <h1 class="mt-4">Transaksi Topup Anda</h1>
+            <h1 class="mt-4">Transaksi Topup</h1>
 
 
             <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
