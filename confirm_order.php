@@ -1,5 +1,12 @@
     <?php
     include "navbar.php";
+
+    if ((!isset($_SESSION['id_role'])) || ($_SESSION['id_role'] == 1) || ($_SESSION['id_role'] == 2)) {
+        echo "
+        <script>
+        window.location.href='login.php?pesan=kemana';
+       </script>";
+    }
     if (isset($_POST['pesan'])) :
         $id_film = $_POST['id_film'];
         $id_schedule = $_POST['id_schedule'];

@@ -1,5 +1,23 @@
 <?php
 include "navbar.php";
+
+function encrypt($string)
+{
+    $output = false;
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '23432MLKJSDF0L2934897@00001';
+    $secret_iv = 'X0000W9876H5982@7676765';
+
+    // hash
+    $key = hash('sha256', $secret_key);
+
+    // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+    $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+    $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+    $output = base64_encode($output);
+    return $output;
+}
 $id_user = $_SESSION['id_user'];
 
 $sql = "SELECT film.title,order.id_order,order.date,user.nama_user,schedule.clock,teater.name_teater,order.status_order,order.total FROM `order`
@@ -96,10 +114,10 @@ $count = mysqli_num_rows($querry);
                             <a href="pembayaran.php?id_order=<?= $row['id_order'] ?>&total=<?= $row['total'] ?>">
                                 <button class="btn btn-success"><i class="bi bi-credit-card"></i></button>
                             </a>
-                            <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
+                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
                                 <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
                             </a>
-                            <a href="proses_transaksi.php?id_order=<?= $row['id_order'] ?>&pesan=hapus">
+                            <a href="proses_transaksi.php?id_order=<?= $row['id_order'] ?>&pesan=hapus" onclick="return konfirmasiHapus()">
                                 <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </a>
                         </td>
@@ -119,7 +137,7 @@ $count = mysqli_num_rows($querry);
         });
 
         function konfirmasiHapus() {
-            var agree = confirm("Apakah Anda yakin ingin menghapus Film Ini?");
+            var agree = confirm("Apakah Anda yakin Membatalkan Pesanan Ini?");
             if (agree) {
                 return true;
             } else {

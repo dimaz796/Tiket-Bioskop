@@ -1,6 +1,13 @@
 <?php
 include "navbar.php";
 
+if (!isset($_SESSION['id_role']) || $_SESSION['id_role'] == 3 || $_SESSION['id_role'] == 2) {
+    echo "
+    <script>
+    window.location.href='login.php?pesan=kemana';
+   </script>";
+}
+
 $id_topup = $_GET['id_topup'];
 
 $sql = "SELECT * FROM transaksi_topup 

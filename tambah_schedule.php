@@ -10,6 +10,12 @@
 <body>
     <?php
     include "navbar.php";
+    if ($_SESSION['id_role'] != 1) {
+        echo "
+        <script>
+        window.location.href='login.php?pesan=kemana';
+       </script>";
+    }
     include "conn.php";
 
     // Jika tidak ada input dari JavaScript, jalankan query seperti biasa

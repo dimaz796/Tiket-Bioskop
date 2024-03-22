@@ -10,6 +10,12 @@
 <body>
     <?php
     include "navbar.php";
+    if ($_SESSION['id_role'] != 1) {
+        echo "
+        <script>
+        window.location.href='login.php?pesan=kemana';
+       </script>";
+    }
     $arr_day = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
     ?>
     <div class="container mt-3">

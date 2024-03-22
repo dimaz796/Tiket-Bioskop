@@ -1,6 +1,20 @@
 <?php
 include "navbar.php";
-$id_order = $_GET['id_order'];
+function decrypt($string)
+{
+    $output = false;
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '23432MLKJSDF0L2934897@00001';
+    $secret_iv  = 'X0000W9876H5982@7676765';
+
+    $key    = hash('sha256', $secret_key);
+    $iv     = substr(hash('sha256', $secret_iv), 0, 16);
+    $output = openssl_decrypt(base64_decode($string), $encrypt_method, $key, 0, $iv);
+
+    return $output;
+}
+$enc_order = $_GET['id_order'];
+$id_order = decrypt($enc_order);
 
 $sql = "SELECT `order`.id_order,`detail_order`.id_detail_order,`detail_order`.id_seat,`schedule`.price FROM `order`
 INNER JOIN `schedule` 

@@ -2,8 +2,10 @@
 include "navbar.php";
 
 if ($_SESSION['id_role'] != 4) {
-    echo "<script>window.location.href='login.php';</script>";
-    exit; // Keluar dari skrip agar tidak mengeksekusi kode di bawah
+    echo "
+         <script>
+         window.location.href='login.php?pesan=kemana';
+        </script>";
 }
 
 

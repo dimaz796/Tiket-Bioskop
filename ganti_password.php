@@ -11,6 +11,12 @@
     <?php
     include "navbar.php";
     include "conn.php";
+    if ($_SESSION['id_role'] != 4) {
+        echo "
+             <script>
+             window.location.href='login.php?pesan=kemana';
+            </script>";
+    }
     $id_user = $_SESSION['id_user'];
     $sql = "SELECT * FROM `role`";
     $role = mysqli_query($conn, $sql);

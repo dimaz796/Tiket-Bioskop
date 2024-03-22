@@ -8,7 +8,13 @@
     <!-- Tambahkan Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<?= include "navbar.php" ?>
+<?php include "navbar.php";
+if ($_SESSION['id_role'] == 2) {
+    echo "
+    <script>
+    window.location.href='login.php?pesan=kemana';
+   </script>";
+} ?>
 
 <body>
     <div class="container">

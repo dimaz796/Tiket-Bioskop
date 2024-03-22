@@ -1,5 +1,24 @@
 <?php
 include "navbar.php";
+
+function encrypt($string)
+{
+    $output = false;
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '23432MLKJSDF0L2934897@00001';
+    $secret_iv = 'X0000W9876H5982@7676765';
+
+    // hash
+    $key = hash('sha256', $secret_key);
+
+    // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+    $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+    $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+    $output = base64_encode($output);
+    return $output;
+}
+
 $id_user = $_SESSION['id_user'];
 $date_now = date('Y-m-d');
 
@@ -125,11 +144,11 @@ include "assets/phpqrcode/qrlib.php";
                             </td>
                             <td align="center">
 
-                                <a href="tiket_order.php?id_order=<?= $row['id_order'] ?>">
+                                <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
                                     <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                                 </a>
-                                <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
-                                    <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
+                                <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
+                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                                 </a>
 
                             </td>
@@ -209,10 +228,10 @@ include "assets/phpqrcode/qrlib.php";
                                 <div class="bg-<?= $status ?> text-center rounded-2"><label class="ps-2 pe-2 pt-1 pb-1"><?= $row['status_order']; ?></label></div>
                             </td>
                             <td align="center">
-                                <a href="tiket_order.php?id_order=<?= $row['id_order'] ?>">
+                                <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
                                     <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
                                 </a>
-                                <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
+                                <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
                                     <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                                 </a>
                             </td>

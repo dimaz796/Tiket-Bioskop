@@ -21,6 +21,13 @@
     <?php
     include "navbar.php";
 
+    if ($_SESSION['id_role'] != 1) {
+        echo "
+        <script>
+        window.location.href='login.php?pesan=kemana';
+       </script>";
+    }
+
     $sql = "SELECT * FROM `role` ORDER BY id_role ASC";
     $role = mysqli_query($conn, $sql);
     ?>

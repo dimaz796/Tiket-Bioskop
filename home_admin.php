@@ -1,11 +1,11 @@
 <?php
 include "navbar.php";
-// if ($_SESSION['id_role'] != 1) {
-//     echo "
-//          <script>
-// 			window.location.href='login.php';
-// 		</script>";
-// }
+if ($_SESSION['id_role'] != 1) {
+    echo "
+         <script>
+         window.location.href='login.php?pesan=kemana';
+        </script>";
+}
 
 $sql = "SELECT COUNT(*) AS total FROM film";
 $result = $conn->query($sql);

@@ -198,7 +198,7 @@ if (isset($_POST['pesan'])) {
         foreach ($order as $key) {
             $id_seat = $key['id_seat'];
 
-            $sql = "UPDATE `seat` SET `status_seat` = 'Tersedia' WHERE `seat`.`id_seat` = $id_seat;";
+            $sql = "UPDATE `seat` SET `status_seat` = 'Kosong' WHERE `seat`.`id_seat` = $id_seat;";
             $seat =  mysqli_query($conn, $sql);
 
             $sql = "DELETE FROM detail_order WHERE id_order = $id_order";

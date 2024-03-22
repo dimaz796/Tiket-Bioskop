@@ -1,5 +1,11 @@
 <?php
 include "navbar.php";
+if ((!isset($_SESSION['id_role'])) || ($_SESSION['id_role'] == 1) || ($_SESSION['id_role'] == 2)) {
+    echo "
+    <script>
+    window.location.href='login.php?pesan=kemana';
+   </script>";
+}
 if ($_SESSION['id_role'] == 3 || $_SESSION['id_role'] == 4) :
     if (isset($_POST['beli'])) :
         $seat_kosong = $_POST['seat_kosong'];
@@ -297,7 +303,7 @@ if ($_SESSION['id_role'] == 3 || $_SESSION['id_role'] == 4) :
     else :
         echo "
          <script>
-			window.location.href='login.php';
+         window.location.href='login.php?pesan=kemana';
 		</script>";
     endif;
 endif

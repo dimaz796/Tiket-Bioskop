@@ -1,5 +1,11 @@
 <?php
 include "navbar.php";
+if ($_SESSION['id_role'] != 1) {
+    echo "
+    <script>
+    window.location.href='login.php?pesan=kemana';
+   </script>";
+}
 $id_user = $_SESSION['id_user'];
 
 $sql = "SELECT * FROM transaksi_topup 

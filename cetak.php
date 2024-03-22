@@ -3,8 +3,9 @@ include "navbar.php";
 if ($_SESSION['id_role'] != 3) {
     echo "
          <script>
-			window.location.href='login.php';
+			window.location.href='login.php?pesan=kemana';
 		</script>";
+    die;
 } ?>
 <!DOCTYPE html>
 <html lang="en">

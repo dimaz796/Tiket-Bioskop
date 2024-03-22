@@ -13,10 +13,9 @@
     if ($_SESSION['id_role'] != 1) {
         echo "
              <script>
-                window.location.href='login.php';
+             window.location.href='login.php?pesan=kemana';
             </script>";
     }
-
     $id = $_GET['id'];
     $result = mysqli_query($conn, "SELECT * FROM `genre` WHERE id_genre=$id");
 

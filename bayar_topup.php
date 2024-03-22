@@ -1,5 +1,13 @@
 <?php
 include "conn.php";
+session_start();
+if ($_SESSION['id_role'] != 4) {
+    echo "
+         <script>
+			window.location.href='login.php?pesan=kemana';
+		</script>";
+    die;
+}
 $id_topup = $_GET['id_topup'];
 
 $sql = "SELECT * FROM transaksi_topup 

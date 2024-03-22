@@ -13,7 +13,7 @@
 	if ($_SESSION['id_role'] != 1) {
 		echo "
              <script>
-                window.location.href='login.php';
+             window.location.href='login.php?pesan=kemana';
             </script>";
 	}
 

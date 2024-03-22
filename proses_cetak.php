@@ -1,5 +1,6 @@
 <?php
 include "conn.php";
+
 include "assets/phpqrcode/qrlib.php";
 function encrypt($string)
 {

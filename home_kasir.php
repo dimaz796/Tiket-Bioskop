@@ -10,6 +10,13 @@
 </head>
 <?php
 include "navbar.php";
+if ($_SESSION['id_role'] != 3) {
+    echo "
+         <script>
+         window.location.href='login.php?pesan=kemana';
+        </script>";
+}
+
 $id_user = $_SESSION['id_user'];
 $nama_user = $_SESSION['nama_user'];
 ?>

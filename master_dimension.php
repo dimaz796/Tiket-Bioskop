@@ -20,6 +20,12 @@
 
     <?php
     include "navbar.php";
+    if ($_SESSION['id_role'] != 1) {
+        echo "
+        <script>
+        window.location.href='login.php?pesan=kemana';
+       </script>";
+    }
 
     $sql = "SELECT * FROM `dimension` ORDER BY id_dimension ASC";
     $dimension = mysqli_query($conn, $sql);

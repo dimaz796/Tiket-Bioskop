@@ -2,6 +2,13 @@
 session_start();
 include "conn.php";
 include "assets/Link_bootstrap/link_bootstrap.php";
+if ($_SESSION['id_role'] != 3) {
+    echo "
+         <script>
+			window.location.href='login.php?pesan=kemana';
+		</script>";
+    die;
+}
 function decrypt($string)
 {
     $output = false;

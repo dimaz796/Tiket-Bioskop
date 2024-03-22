@@ -1,5 +1,31 @@
 <?php
 include "navbar.php";
+
+if ($_SESSION['id_role'] != 1) {
+    echo "
+    <script>
+    window.location.href='login.php?pesan=kemana';
+   </script>";
+}
+
+function encrypt($string)
+{
+    $output = false;
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '23432MLKJSDF0L2934897@00001';
+    $secret_iv = 'X0000W9876H5982@7676765';
+
+    // hash
+    $key = hash('sha256', $secret_key);
+
+    // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+    $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+    $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+    $output = base64_encode($output);
+    return $output;
+}
+
 $id_user = $_SESSION['id_user'];
 
 $sql = "SELECT film.title,order.id_order,order.date,user.nama_user,user.id_user,schedule.clock,teater.name_teater,order.status_order,order.total,trx.trx FROM `order`
@@ -83,7 +109,7 @@ $count = mysqli_num_rows($querry);
                             <div class="bg-<?= $status ?> text-center rounded-2 d-flex"><small class="p-1"><?= $row['status_order']; ?></small></div>
                         </td>
                         <td align="center">
-                            <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
+                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
                                 <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
                             </a>
 

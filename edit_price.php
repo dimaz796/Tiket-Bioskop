@@ -10,12 +10,12 @@
 <body>
     <?php
     include "navbar.php";
-    // if ($_SESSION['id_price'] != 1) {
-    //     echo "
-    //          <script>
-    //             window.location.href='login.php';
-    //         </script>";
-    // }
+    if ($_SESSION['id_role'] != 1) {
+        echo "
+             <script>
+             window.location.href='login.php?pesan=kemana';
+            </script>";
+    }
 
     $day = $_GET['day'];
     $result = mysqli_query($conn, "SELECT * FROM `price` WHERE `day` = '$day'");
