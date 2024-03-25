@@ -19,9 +19,9 @@ foreach ($querry as $isi) {
     $id_film = $isi['id_film'];
     $tayang = $isi['tayang'];
     $berakhir = $isi['berakhir'];
-    if (date("Y-m-d h:i:sa") < $tayang) {
+    if (date("Y-m-d") < $tayang) {
         $status = "Akan Datang";
-    } elseif (date("Y-m-d h:i:sa") > $berakhir) {
+    } elseif (date("Y-m-d") > $berakhir) {
         $status = "Berakhir";
     } else {
         $status = "Berlangsung";

@@ -1,3 +1,25 @@
+<?php
+include "conn.php";
+
+$sql = "SELECT * FROM `film`
+ORDER BY id_film ASC";
+$cekfilm = mysqli_query($conn, $sql);
+
+foreach ($cekfilm as $isi) {
+  $id_film = $isi['id_film'];
+  $tayang = $isi['tayang'];
+  $berakhir = $isi['berakhir'];
+  if (date("Y-m-d") < $tayang) {
+    $status = "Akan Datang";
+  } elseif (date("Y-m-d") > $berakhir) {
+    $status = "Berakhir";
+  } else {
+    $status = "Berlangsung";
+  }
+  $sql = "UPDATE `film` SET `status_film` = '$status' WHERE `film`.`id_film` = $id_film;";
+  $upt_film = mysqli_query($conn, $sql);
+}
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 

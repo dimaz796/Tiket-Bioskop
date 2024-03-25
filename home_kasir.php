@@ -123,6 +123,7 @@ $nama_user = $_SESSION['nama_user'];
                                                                         $sql = "SELECT DATE(`order`.date) AS tanggal, COUNT(`detail_order`.id_detail_order) AS jumlah
                 FROM `order`
                 JOIN `detail_order` ON detail_order.id_order = order.id_order
+                WHERE `order`.id_user = '$id_user'
                 GROUP BY DATE(`order`.date) 
                 ORDER BY DATE(`order`.date);
                 

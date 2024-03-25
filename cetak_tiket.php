@@ -99,6 +99,7 @@ $order = mysqli_query($conn, $sql);
                 </tr>
             </table>
         <?php } ?>
+        <a href="cetak.php" class="btn btn-primary d-flex justify-content-center align-items-center mt-5">Kembali</a>
     </div>
 </body>
 
