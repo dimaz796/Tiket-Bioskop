@@ -31,34 +31,38 @@
     $sql = "SELECT * FROM `role` ORDER BY id_role ASC";
     $role = mysqli_query($conn, $sql);
     ?>
-    <div class="container">
-        <h1>Data Role</h1>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Data Role</h1>
 
-        <div class="mb-3">
-            <a class="btn btn-warning" href="tambah_role.php"><i class="bi bi-person-add"></i>Tambah Data Role</a>
+                <div class="mb-3 mt-4">
+                    <a class="btn btn-warning" href="tambah_role.php"><i class="bi bi-person-add text-dark"></i>Tambah Data Role</a>
+                </div>
+
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Role</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($role as $index => $row) { ?>
+                            <tr>
+                                <td><?= $index + 1; ?></td>
+                                <td><?= $row['name_role']; ?></td>
+                                <td align="center"><a href="edit_role.php?id=<?= $row['id_role'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
+                                    <a href="proses_role.php?id=<?= $row['id_role'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        <table id="example" class="table table-striped" style="width:100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Role</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($role as $index => $row) { ?>
-                    <tr>
-                        <td><?= $index + 1; ?></td>
-                        <td><?= $row['name_role']; ?></td>
-                        <td align="center"><a href="edit_role.php?id=<?= $row['id_role'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
-                            <a href="proses_role.php?id=<?= $row['id_role'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

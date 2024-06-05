@@ -81,6 +81,23 @@ if (isset($_POST['simpan'])) {
     }
 } else {
     $id = $_GET['id'];
+
+
+    //Cek Transaksi Topup 
+    $sql = "SELECT * FROM `schedule` 
+    WHERE id_teater = $id";
+    $cek_teater = mysqli_query($conn, $sql);
+
+    $count_teater = mysqli_fetch_assoc($cek_teater);
+    if ($count_teater > 0) {
+        echo "
+        <script>
+                alert('Sudah Ada Jadwal Yang Menggunakan Teater ini, Data Kursi Tidak Dapat Di Hapus');
+                window.location.href='master_seat.php?';
+        </script>";
+        die;
+    }
+
     $sql = "DELETE FROM `seat` WHERE id_teater=$id";
     $hapus = mysqli_query($conn, $sql);
 

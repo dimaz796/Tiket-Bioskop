@@ -19,21 +19,26 @@
     $arr_day = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_price.php" onsubmit="return validateForm()">
-            <h1>Tambah Price</h1>
-            <label class="mb-1">Hari</label>
-            <select name="day" id="pilihan" class="form-select w-50 mb-4" aria-label="Default select example">
-                <option class="bg-dark" value="">Silahkan Pilih Hari</option>
-                <?php foreach ($arr_day as $day) : ?>
-                    <option value="<?= $day ?>" class="bg-dark"><?= $day ?></option>
-                <?php endforeach ?>
-            </select>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Daftar Harga</h1>
+                <form method="post" action="proses_price.php" onsubmit="return validateForm()">
 
-            <label class="mb-1">Harga</label>
-            <input type="number" name="price" class="form-control w-50 enter mb-4" placeholder=" Masukan Harga" required>
-            <button type="submit" name="simpan" class="btn btn-warning w-50 ">Simpan</button>
-        </form>
+                    <label class="mb-1">Hari</label>
+                    <select name="day" id="pilihan" class="form-select w-50 mb-4" aria-label="Default select example">
+                        <option class="bg-dark" value="">Silahkan Pilih Hari</option>
+                        <?php foreach ($arr_day as $day) : ?>
+                            <option value="<?= $day ?>" class="bg-dark"><?= $day ?></option>
+                        <?php endforeach ?>
+                    </select>
 
+                    <label class="mb-1">Harga</label>
+                    <input type="number" name="price" class="form-control w-50 enter mb-4" placeholder=" Masukan Harga" required>
+                    <button type="submit" name="simpan" class="btn btn-warning w-50 ">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
     <script>
         function validateForm() {

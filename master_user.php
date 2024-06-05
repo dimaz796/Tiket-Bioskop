@@ -31,47 +31,51 @@
 
 
     <div class="main">
-        <div class="container">
-            <h1>Data user</h1>
+        <div class="container mt-3">
+            <div class="card bg-dark ">
+                <div class="card-body bg-dark rounded p-4">
+                    <h1 class="text-light">Data User</h1>
 
-            <div class="mb-3 me-auto">
-                <a class="btn btn-warning " href="tambah_user.php"><i class="bi bi-person-add"></i> Tambah Data User</a>
-            </div>
+                    <div class="mb-3 mt-4">
+                        <a class="btn btn-warning " href="tambah_user.php"><i class="bi bi-person-add text-dark"></i> Tambah Data User</a>
+                    </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <table id="example" class='table table-bordered table-striped table-hover'>
-                        <thead>
-                            <tr>
-                                <th>ID user</th>
-                                <th>Nama user</th>
-                                <th>Telepon</th>
-                                <th>Username</th>
-                                <th>Role</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            foreach ($user as $row) { ?>
-                                <tr>
-                                    <td><?= $row['id_user']; ?></td>
-                                    <td><?= $row['nama_user']; ?></td>
-                                    <td><?= $row['telepon']; ?></td>
-                                    <td><?= $row['username']; ?></td>
-                                    <td><?= $row['name_role']; ?></td>
-                                    <td align="center">
-                                        <a href="edit_user.php?id=<?= $row['id_user'] ?>">
-                                            <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
-                                        </a> |
-                                        <a href="proses_user.php?id=<?= $row['id_user'] ?>" onclick="return konfirmasiHapus()">
-                                            <button class="btn btn-warning"><i class="bi bi-trash3"></i></button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                    <div class="row">
+                        <div class="col-12">
+                            <table id="example" class='table table-bordered table-striped table-hover'>
+                                <thead>
+                                    <tr>
+                                        <th>ID user</th>
+                                        <th>Nama user</th>
+                                        <th>Telepon</th>
+                                        <th>Username</th>
+                                        <th>Role</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($user as $row) { ?>
+                                        <tr>
+                                            <td><?= $row['id_user']; ?></td>
+                                            <td><?= $row['nama_user']; ?></td>
+                                            <td><?= $row['telepon']; ?></td>
+                                            <td><?= $row['username']; ?></td>
+                                            <td><?= $row['name_role']; ?></td>
+                                            <td align="center">
+                                                <a href="edit_user.php?id=<?= $row['id_user'] ?>">
+                                                    <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
+                                                </a> |
+                                                <a href="proses_user.php?id=<?= $row['id_user'] ?>" onclick="return konfirmasiHapus()">
+                                                    <button class="btn btn-warning"><i class="bi bi-trash3"></i></button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

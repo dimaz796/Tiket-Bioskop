@@ -40,45 +40,51 @@
 
     ?>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Kursi</h1>
 
-        <form method="post" action="proses_seat.php" id="myForm">
-            <h1>Edit Seat</h1>
-            <table>
-                <?php
-                foreach ($seat as $index2 => $st) :
-                    $isi = '';
-                    $id_seat = $st['id_seat'];
-                    $value = $st['variable_seat'] . $st['number_seat'];
-                    $isi .= "<input type='checkbox' class='btn-check' id='$id_seat' name='seat[]' value='$value' selected>";
+                <form method="post" action="proses_seat.php" id="myForm">
 
-                    $status_seat = ($st['status_seat'] == 'Rusak') ? 'btn-outline-danger' : 'btn-outline-warning';
-                    $isi .= "<label class='btn $status_seat label' for='$id_seat'>$value</label>";
+                    <table>
+                        <?php
+                        foreach ($seat as $index2 => $st) :
+                            $isi = '';
+                            $id_seat = $st['id_seat'];
+                            $value = $st['variable_seat'] . $st['number_seat'];
+                            $isi .= "<input type='checkbox' class='btn-check' id='$id_seat' name='seat[]' value='$value' selected>";
 
-                    if ($st['number_seat'] == 1) {
-                        echo "<tr>
+                            $status_seat = ($st['status_seat'] == 'Rusak') ? 'btn-outline-danger' : 'btn-outline-warning';
+                            $isi .= "<label class='btn $status_seat label' for='$id_seat'>$value</label>";
+
+                            if ($st['number_seat'] == 1) {
+                                echo "<tr>
                         <td>
                         $isi
                         </td>";
-                    } else if ($st['number_seat'] == $last_seat) {
-                        echo "<td>$isi</td></tr>";
-                    } else {
-                        echo "<td>$isi</td>";
-                    }
-                endforeach;
-                ?>
-            </table>
-            <label for="" class="enter mt-4 mb-2">Keterangan</label>
-            <select name="keterangan" class="form-select w-50 h-50 enter" style="height: 25px; width: 610px;" required>
-                <option value="" class="bg-dark"></option>
-                <option value="Rusak" class="bg-dark">Rusak</option>
-                <option value="Tersedia" class="bg-dark">Tersedia</option>
-            </select>
-            <input type="hidden" name="id" id="" value="<?= $_GET['id'] ?>">
+                            } else if ($st['number_seat'] == $last_seat) {
+                                echo "<td>$isi</td></tr>";
+                            } else {
+                                echo "<td>$isi</td>";
+                            }
+                        endforeach;
+                        ?>
+                    </table>
+                    <label for="" class="enter mt-4 mb-2">Keterangan</label>
+                    <select name="keterangan" class="form-select w-50 h-50 enter" style="height: 25px; width: 610px;" required>
+                        <option value="" class="bg-dark"></option>
+                        <option value="Rusak" class="bg-dark">Rusak</option>
+                        <option value="Tersedia" class="bg-dark">Tersedia</option>
+                    </select>
+                    <input type="hidden" name="id" id="" value="<?= $_GET['id'] ?>">
 
-            <button type="submit" name="ubah" class="btn btn-warning enter mt-4 w-50">Ubah</button>
-        </form>
+                    <button type="submit" name="ubah" class="btn btn-warning enter mt-4 w-50">Ubah</button>
+                </form>
 
+            </div>
+        </div>
     </div>
+
     <script>
         document.getElementById("myForm").addEventListener("submit", function(event) {
             var checkboxes = document.querySelectorAll("input[type='checkbox']");

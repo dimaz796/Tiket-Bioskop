@@ -53,19 +53,21 @@ if ($_SESSION['id_role'] != 3) {
                            </div>";
                     }
                 } ?>
-                <form action="proses_cetak.php" method="post">
+                <form id="myForm" action="proses_cetak.php" method="post" target="_blank">
                     <div class="input-group mb-3">
                         <input type="number" class="form-control form-control-lg bg-light fs-6" name="trx" placeholder="Kode Transaksi" required>
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control form-control-lg bg-ligth fs-6" name="password_trx" placeholder="Password Transaksi" required>
+                        <input type="number" class="form-control form-control-lg bg-light fs-6" name="password_trx" placeholder="Password Transaksi" required>
                     </div>
 
-                    <div class="input-group mb-3 ">
-                        <button class="btn btn-lg btn-dark w-100 fs-6 border-light" name="cetak" type="submit">Cetak</button>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-lg btn-dark w-100 fs-6 border-light" type="submit" name="cetak">Cetak</button>
                     </div>
                 </form>
+
+
             </div>
         </div>
     </div>

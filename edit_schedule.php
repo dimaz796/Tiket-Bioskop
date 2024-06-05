@@ -44,43 +44,52 @@
 
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_schedule.php" id="form-jadwal" class="mt-4">
-            <h1>Edit Jadwal</h1>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Jadwal</h1>
+                <form method="post" action="proses_schedule.php" id="form-jadwal" class="mt-4">
 
-            <label for="" class="fs-6 mt-1 mb-1">Tanggal</label>
-            <input type="date" name="date" id="tanggal" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $date ?>" required>
 
-            <label for="" class="fs-6 mt-1 mb-1">Hari</label>
-            <input type="hari" name="hari" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary " id="input-hari" value="<?= $day ?>" readonly>
+                    <label for="" class="fs-6 mt-1 mb-1">Tanggal</label>
+                    <input type="date" name="date" id="tanggal" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $date ?>" required>
 
-            <label for="" class="fs-6 mt-1 mb-1">Jam</label>
-            <input type="time" name="jam" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $clock ?>" required>
+                    <label for="" class="fs-6 mt-1 mb-1">Hari</label>
+                    <input type="hari" name="hari" class=" w-50 h-50 enter mb-4 p-1 rounded text-body-secondary " id="input-hari" value="<?= $day ?>" readonly>
 
-            <label for="" class="fs-6 mt-1 mb-1">Film</label>
-            <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" id="pilih_film" style="height: 25px; width: 610px;" required>
-                <option value="" class="bg-dark"></option>
-                <?php foreach ($films as $row) : ?>
-                    <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_film = ($id_film == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
-                <?php endforeach ?>
-            </select>
+                    <label for="" class="fs-6 mt-1 mb-1">Jam</label>
+                    <input type="time" name="jam" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" value="<?= $clock ?>" required>
 
-            <label for="" class="fs-6 mt-1 mb-1">Teater</label>
-            <select name="teater" class="form-select w-50 h-50 enter mb-5 p-1" style="height: 25px; width: 610px;" required>
-                <option value="" class="bg-dark"></option>
-                <?php foreach ($teaters as $row) : ?>
-                    <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_teater = ($id_teater == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
-                <?php endforeach ?>
-            </select>
+                    <label for="" class="fs-6 mt-1 mb-1">Film</label>
+                    <select name="film" class="form-select w-50 h-50 enter mb-4 p-1" id="pilih_film" style="height: 25px; width: 610px;" required>
+                        <option value="" class="bg-dark"></option>
+                        <?php foreach ($films as $row) : ?>
+                            <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_film = ($id_film == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
+                        <?php endforeach ?>
+                    </select>
 
-            <input type="hidden" name="clock_lama" value="<?= $clock ?>">
-            <input type="hidden" name="id" value="<?= $id ?>">
-            <button type="submit" name="ubah" class="btn btn-warning w-50 enter mt-4">Simpan</button>
-        </form>
+                    <label for="" class="fs-6 mt-1 mb-1">Teater</label>
+                    <select name="teater" class="form-select w-50 h-50 enter mb-5 p-1" style="height: 25px; width: 610px;" required>
+                        <option value="" class="bg-dark"></option>
+                        <?php foreach ($teaters as $row) : ?>
+                            <option value="<?= $row[0] ?>" class="bg-dark" <?= $cek_teater = ($id_teater == $row[0]) ? 'selected' : '' ?>><?= $row[1] ?></option>
+                        <?php endforeach ?>
+                    </select>
 
+                    <input type="hidden" name="clock_lama" value="<?= $clock ?>">
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                    <button type="submit" name="ubah" class="btn btn-warning w-50 enter mt-4">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
     <script>
         // Mendapatkan elemen input
         var input = document.getElementById('tanggal');
+
+        const today = new Date().toISOString().split('T')[0];
+        // Set nilai atribut 'max' dari input tanggal ke tanggal hari ini
+        document.getElementById('tanggal').setAttribute('min', today);
 
         // Menambahkan event listener untuk input
         input.addEventListener('input', function() {

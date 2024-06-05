@@ -67,7 +67,7 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                                 <a class="dropdown-item" href="master_teater.php">Teater</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="master_price.php">Price</a>
+                                <a class="dropdown-item" href="master_price.php">Harga</a>
                             </li>
                         </ul>
 
@@ -115,6 +115,22 @@ include "assets/Link_bootstrap/link_bootstrap.php";
                         <li class="nav-item">
                             <a class="nav-link me-2" href="riwayat_laporan.php">Riwayat</a>
                         </li>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cetak Laporan
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="laporan_harian.php">Laporan Harian</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="laporan_mingguan.php">Laporan Lebih Dari 1 Hari</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
                         <div class="dropdown ms-auto"">
                             <button class=" btn btn-warning dropdown-toggle fixed-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= $_SESSION['nama_user'] ?>

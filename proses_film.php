@@ -94,13 +94,13 @@ if (isset($_POST['simpan'])) {
     if ($gambar == "") {
         $sql = "UPDATE `film` SET `title` = '$title', `category_age` = '$age', `id_genre` = '$genre', `id_dimension` = '$dimension', `trailer` = '$trailer',
                 `description` = '$deskripsi', `producer` = '$produser', `directur` = '$directur', `writer` = '$writer', `distributor` = '$distributor',
-                `actor` = 'Dimas,Adit,Tyas', `durasi` = '121',`update_at` = '$diupdate', 
+                `actor` = 'Dimas,Adit,Tyas', `durasi` = '$durasi',`update_at` = '$diupdate', 
                 `tayang` = '$tayang', `berakhir` = '$berakhir', `status_film` = '$status' WHERE `film`.`id_film` = $id_film;";
         $result = mysqli_query($conn, $sql);
     } else {
         $sql = "UPDATE `film` SET `title` = '$title', `image` = '$gambar', `category_age` = '$age', `id_genre` = '$genre', `id_dimension` = '$dimension', `trailer` = '$trailer',
                 `description` = '$deskripsi', `producer` = '$produser', `directur` = '$directur', `writer` = '$writer', `distributor` = '$distributor',
-                `actor` = 'Dimas,Adit,Tyas', `durasi` = '121',`update_at` = '$diupdate', 
+                `actor` = 'Dimas,Adit,Tyas', `durasi` = '$durasi',`update_at` = '$diupdate', 
                 `tayang` = '$tayang', `berakhir` = '$berakhir', `status_film` = '$status' WHERE `film`.`id_film` = $id_film;";
         $result = mysqli_query($conn, $sql);
     }
@@ -120,10 +120,10 @@ if (isset($_POST['simpan'])) {
 		</script>";
     }
 } else {
-    $id = $_GET['id'];
+    $id_film = $_GET['id'];
 
     $sql = "SELECT * FROM `schedule` 
-    WHERE `schedule`.`id_film` = '$id'";
+    WHERE `schedule`.`id_film` = '$id_film'";
     $cek_film = mysqli_query($conn, $sql);
 
     $count_film = mysqli_fetch_assoc($cek_film);
@@ -131,7 +131,7 @@ if (isset($_POST['simpan'])) {
         echo "
         <script>
                 alert('Sudah Ada Jadwal Yang Menggunakan Film ini,Data Film Tidak Dapat Di Hapus');
-                window.location.href='master_film.php?id=$id';
+                window.location.href='master_film.php?id=$id_film';
         </script>";
         die;
     }

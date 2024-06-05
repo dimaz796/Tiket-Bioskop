@@ -23,7 +23,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 INNER JOIN detail_order 

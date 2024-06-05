@@ -14,7 +14,7 @@
         $tiket = $_POST['tiket'];
         $seat = $_POST['seat'];
 
-
+        $tambahan = "";
         $sql = "SELECT *
             FROM `film`
             INNER JOIN `dimension` 
@@ -51,7 +51,15 @@
 
         <body class="body">
             <div class="container d-flex justify-content-center align-items-center min-vh-80 mt-5 mb-5">
+
                 <div class="row rounded-4 p-4  bg-dark shadow box-area ">
+                    <?php if ($_SESSION['id_role'] == 3) {
+                        $tambahan = "target='_blank'";
+                    } ?>
+                    <div class="me-auto w-25 d-flex">
+                        <a href="berlangsung.php" class="btn btn-dark border-light btn-sm "> <- </a>
+                    </div>
+
                     <div class="col-12">
                         <div class="fs-3 text-center fw-bold mb-5">KONFIRMASI PEMBAYARAN</div>
                     </div>
@@ -103,7 +111,8 @@
                     </div>
                     <!-- Total -->
                     <div class="col-12 mt-5">
-                        <form action="proses_transaksi.php" method="post">
+
+                        <form action="proses_transaksi.php" method="post" <?= $tambahan ?>>
                             <input type="hidden" name="id_film" value="<?= $id_film ?>">
                             <?php
                             foreach ($seat as $index => $seat) {
@@ -124,8 +133,9 @@
                             <input type="hidden" name="id_teater" value="<?= $id_teater ?>">
                             <input type="hidden" name="date" value="<?= $datenow ?>">
                             <div class="w-100 d-flex justify-content-center">
-                                <button type="submit" name="pesan" onclick="updateTargetDate()" class="btn btn-dark border-light btn-sm mt-5 w-100 h-100 fs-5 text-center mb-5">Confirm Order</button>
+                                <button type="submit" name="pesan" onclick="updateTargetDate()" class="btn btn-dark border-light btn-sm mt-5 w-100 h-100 fs-5 text-center mb-5">Konfirmasi Pembayaran</button>
                             </div>
+
                         </form>
                     </div>
                 </div>

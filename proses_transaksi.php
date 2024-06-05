@@ -18,8 +18,8 @@ if (isset($_POST['pesan'])) {
         $status_order = 'Sudah Di Bayar';
 
         // Membuat Field Order
-        $sql = "INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `id_teater`, `status_order`, `Total`) 
-        VALUES (NULL, '$date', '$id_user', '$id_schedule', '$id_teater', '$status_order', '$total');";
+        $sql = "INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`,  `status_order`, `Total`) 
+        VALUES (NULL, '$date', '$id_user', '$id_schedule', '$status_order', '$total');";
         $querry = mysqli_query($conn, $sql);
 
         // Mencari Id Order
@@ -91,8 +91,8 @@ if (isset($_POST['pesan'])) {
     $date = $_POST['date'];
     $status_order = 'Belum Bayar';
 
-    $sql = "INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `id_teater`, `status_order`, `Total`) 
-            VALUES (NULL, '$date', '$id_user', '$id_schedule', '$id_teater', '$status_order', '$total');";
+    $sql = "INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `status_order`, `Total`) 
+            VALUES (NULL, '$date', '$id_user', '$id_schedule', '$status_order', '$total');";
     $querry = mysqli_query($conn, $sql);
 
     $sql = "SELECT id_order FROM `order` order by id_order desc limit 1";

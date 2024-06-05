@@ -41,87 +41,94 @@ $count = mysqli_num_rows($querry);
         ";
         } else {
         ?>
+            <div class="container mt-3">
+                <div class="card bg-dark ">
+                    <div class="card-body bg-dark rounded p-4">
+                        <h1 class="text-light">Riwayat Transaksi Topup</h1>
 
-            <h1 class="mt-4">Transaksi Topup Anda</h1>
+                        <div class="mb-3 mt-4">
 
-            <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Transaksi</th>
-                        <th>Nama User</th>
-                        <th>Waktu Pembayaran</th>
-                        <th>Total Topup</th>
-                        <th>Status Topup</th>
-                        <th>Aksi</th>
 
-                    </tr>
-                </thead>
+                            <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Transaksi</th>
+                                        <th>Nama User</th>
+                                        <th>Waktu Pembayaran</th>
+                                        <th>Total Topup</th>
+                                        <th>Status Topup</th>
+                                        <th>Aksi</th>
 
-                <?php
-                foreach ($querry as $index => $row) {
-                    if ($row['status_topup'] == 'Menunggu Pembayaran') {
-                        $status = 'danger';
-                    } elseif ($row['status_topup'] == 'Menunggu Persetujuan Admin') {
-                        $status = 'primary';
-                    } elseif ($row['status_topup'] == 'Transaksi Berhasil') {
-                        $status = 'success';
-                    } elseif ($row['status_topup'] == 'Kirim Bukti Pembayaran') {
-                        $status = 'warning text-dark';
-                    } elseif ($row['status_topup'] == 'Transaksi Gagal') {
-                        $status = 'danger';
-                    }
-                    $id_topup = $row['id_topup'];
-                ?>
-                    <tr>
-                        <td><?= $row['id_topup']; ?></td>
-                        <td><?= $row['nama_user']; ?></td>
-                        <td><?= $row['date']; ?></td>
-                        <td>Rp. <?= number_format($row['total_topup']); ?></td>
-                        <td>
-                            <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_topup']; ?></div>
-                        </td>
-                        <td align="center">
-                            <?php if ($row['status_topup'] == "Menunggu Pembayaran") { ?>
-                                <a href="bayar_topup.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
-                                    <button class="btn btn-success"><i class="bi bi-credit-card"></i></button>
-                                </a>
-                                <a href="proses_topup.php?id_topup=<?= $row['id_topup'] ?>&status=hapus">
-                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                                </a>
-                            <?php } elseif ($row['status_topup'] == "Menunggu Persetujuan Admin") { ?>
-                                <a href="detail_bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
-                                    <button class="btn btn-primary"><i class="bi bi-credit-card"></i></button>
-                                </a>
-                            <?php } elseif ($row['status_topup'] == "Transaksi Berhasil") { ?>
-                                <a href="detail_bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>">
-                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                                </a>
-                            <?php } elseif ($row['status_topup'] == "Kirim Bukti Pembayaran") { ?>
-                                <a href="bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
-                                    <button class="btn btn-warning"><i class="bi bi-file-earmark-image"></i></button>
-                                </a>
-                                <a href="struk_topup.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
-                                    <button class="btn btn-primary"><i class="bi bi-archive"></i></button>
-                                </a>
-                            <?php } ?>
+                                    </tr>
+                                </thead>
 
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        <?php } ?>
-    </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+                                <?php
+                                foreach ($querry as $index => $row) {
+                                    if ($row['status_topup'] == 'Menunggu Pembayaran') {
+                                        $status = 'danger';
+                                    } elseif ($row['status_topup'] == 'Menunggu Persetujuan Admin') {
+                                        $status = 'primary';
+                                    } elseif ($row['status_topup'] == 'Transaksi Berhasil') {
+                                        $status = 'success';
+                                    } elseif ($row['status_topup'] == 'Kirim Bukti Pembayaran') {
+                                        $status = 'warning text-dark';
+                                    } elseif ($row['status_topup'] == 'Transaksi Gagal') {
+                                        $status = 'danger';
+                                    }
+                                    $id_topup = $row['id_topup'];
+                                ?>
+                                    <tr>
+                                        <td><?= $row['id_topup']; ?></td>
+                                        <td><?= $row['nama_user']; ?></td>
+                                        <td><?= $row['date']; ?></td>
+                                        <td>Rp. <?= number_format($row['total_topup']); ?></td>
+                                        <td>
+                                            <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_topup']; ?></div>
+                                        </td>
+                                        <td align="center">
+                                            <?php if ($row['status_topup'] == "Menunggu Pembayaran") { ?>
+                                                <a href="bayar_topup.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
+                                                    <button class="btn btn-success"><i class="bi bi-credit-card"></i></button>
+                                                </a>
+                                                <a href="proses_topup.php?id_topup=<?= $row['id_topup'] ?>&status=hapus">
+                                                    <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                                </a>
+                                            <?php } elseif ($row['status_topup'] == "Menunggu Persetujuan Admin") { ?>
+                                                <a href="detail_bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
+                                                    <button class="btn btn-primary"><i class="bi bi-credit-card"></i></button>
+                                                </a>
+                                            <?php } elseif ($row['status_topup'] == "Transaksi Berhasil") { ?>
+                                                <a href="detail_bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>">
+                                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                                </a>
+                                            <?php } elseif ($row['status_topup'] == "Kirim Bukti Pembayaran") { ?>
+                                                <a href="bukti_pembayaran.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
+                                                    <button class="btn btn-warning"><i class="bi bi-file-earmark-image"></i></button>
+                                                </a>
+                                                <a href="struk_topup.php?id_topup=<?= $row['id_topup'] ?>&total=<?= $row['total_topup'] ?>">
+                                                    <button class="btn btn-primary"><i class="bi bi-archive"></i></button>
+                                                </a>
+                                            <?php } ?>
 
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-    </script>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+            <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#example').DataTable();
+                });
+            </script>
 
 </body>
 

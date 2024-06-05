@@ -30,36 +30,40 @@
     $sql = "SELECT * FROM `dimension` ORDER BY id_dimension ASC";
     $dimension = mysqli_query($conn, $sql);
     ?>
-    <div class="container">
-        <h1>Data Dimensi</h1>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Data Dimensi</h1>
 
-        <div class="mb-3">
-            <a class="btn btn-warning" href="tambah_dimension.php"><i class="bi bi-person-add"></i>Tambah Data Dimensi</a>
+                <div class="mb-3 mt-4">
+                    <a class="btn btn-warning" href="tambah_dimension.php"><i class="bi bi-person-add text-dark"></i>Tambah Data Dimensi</a>
+                </div>
+
+                <table id="example" class='table table-bordered table-striped table-hover'>
+                    <thead>
+                        <tr>
+                            <th>ID Dimensi</th>
+                            <th>Nama Dimensi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($dimension as $value => $row) { ?>
+                            <tr>
+                                <td><?= $value + 1; ?></td>
+                                <td><?= $row['name_dimension']; ?></td>
+                                <td align="center"><a href="edit_dimension.php?id=<?= $row['id_dimension'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
+                                    <a href="proses_dimension.php?id=<?= $row['id_dimension'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+
+
+                </table>
+            </div>
         </div>
-
-        <table id="example" class='table table-bordered table-striped table-hover'>
-            <thead>
-                <tr>
-                    <th>ID Dimensi</th>
-                    <th>Nama Dimensi</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($dimension as $value => $row) { ?>
-                    <tr>
-                        <td><?= $value + 1; ?></td>
-                        <td><?= $row['name_dimension']; ?></td>
-                        <td align="center"><a href="edit_dimension.php?id=<?= $row['id_dimension'] ?>"><button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
-                            <a href="proses_dimension.php?id=<?= $row['id_dimension'] ?>" onclick="return konfirmasiHapus()"><button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-
-
-        </table>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>

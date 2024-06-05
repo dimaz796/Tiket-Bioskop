@@ -18,15 +18,20 @@
     }
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_dimension.php">
-            <h1>Tambah Dimensi</h1>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Dimensi</h1>
 
-            <label for="" class="fs-5 mt-3 mb-2">Nama Dimensi</label>
+                <form method="post" action="proses_dimension.php">
 
-            <input type="text" name="nama" class="form-control w-50 enter mb-5" placeholder=" Masukan Nama Dimension" required>
-            <button type="submit" name="simpan" class="btn btn-warning w-50">Simpan</button>
-        </form>
+                    <label for="" class="fs-5 mt-3 mb-2">Nama Dimensi</label>
 
+                    <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Nama Dimension" required>
+                    <button type="submit" name="simpan" class="btn btn-warning w-50">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

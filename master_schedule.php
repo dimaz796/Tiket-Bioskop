@@ -7,6 +7,12 @@ if ($_SESSION['id_role'] != 1) {
 		</script>";
 }
 
+function waktu($waktu)
+{
+    $date = date('H:i', strtotime($waktu));
+
+    return $date;
+}
 $sql = "SELECT * FROM `schedule`
 INNER JOIN film 
 ON film.id_film = schedule.id_film
@@ -29,55 +35,59 @@ $querry = mysqli_query($conn, $sql);
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Data Jadwal</h1>
 
-        <h1>Data Jadwal</h1>
+                <div class="mb-3 mt-4">
+                    <a class="btn btn-warning" href="tambah_schedule.php"><i class="bi bi-person-add text-dark"></i>Tambah Data Jadwal</a>
+                </div>
 
-        <div class="mb-3">
-            <a class="btn btn-warning" href="tambah_schedule.php"><i class="bi bi-person-add"></i>Tambah Data Jadwal</a>
+                <table id="example" class="table table-bordered table-striped table-hover mb-5" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID Jadwal</th>
+                            <th>Tanggal</th>
+                            <th>Hari</th>
+                            <th>Jam Mulai</th>
+                            <th>Jam Berakhri</th>
+                            <th>Harga</th>
+                            <th>Film</th>
+                            <th>Teater</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <?php
+                    foreach ($querry as $index => $row) { ?>
+
+                        <tr>
+                            <td><?= $index + 1; ?></td>
+                            <td><?= $row['date']; ?></td>
+                            <td><?= $row['day']; ?></td>
+                            <td><?= waktu($row['clock']) ?></td>
+                            <td><?= waktu($row['clock_end']) ?></td>
+                            <td><?= $row['price']; ?></td>
+                            <td><?= $row['title']; ?></td>
+                            <td><?= $row['name_teater']; ?></td>
+                            <td align="center">
+                                <div class="d-flex gap-2">
+                                    <a href="edit_schedule.php?id=<?= $row['id_schedule'] ?>">
+                                        <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
+                                    </a>
+                                    <a href="proses_schedule.php?id=<?= $row['id_schedule'] ?>" onclick="return konfirmasiHapus()">
+                                        <button class=" btn btn-warning"><i class="bi bi-trash3"></i></button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-
-        <table id="example" class="table table-bordered table-striped table-hover mb-5" style="width:100%">
-            <thead>
-                <tr>
-                    <th>ID Jadwal</th>
-                    <th>Tanggal</th>
-                    <th>Hari</th>
-                    <th>Jam Mulai</th>
-                    <th>Jam Berakhri</th>
-                    <th>Harga</th>
-                    <th>Film</th>
-                    <th>Teater</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-
-            <?php
-            foreach ($querry as $index => $row) { ?>
-                <tr>
-                    <td><?= $index + 1; ?></td>
-                    <td><?= $row['date']; ?></td>
-                    <td><?= $row['day']; ?></td>
-                    <td><?= $row['clock']; ?></td>
-                    <td><?= $row['clock_end']; ?></td>
-                    <td><?= $row['price']; ?></td>
-                    <td><?= $row['title']; ?></td>
-                    <td><?= $row['name_teater']; ?></td>
-                    <td align="center">
-                        <div class="d-flex gap-2">
-                            <a href="edit_schedule.php?id=<?= $row['id_schedule'] ?>">
-                                <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
-                            </a>
-                            <a href="proses_schedule.php?id=<?= $row['id_schedule'] ?>" onclick="return konfirmasiHapus()">
-                                <button class=" btn btn-warning"><i class="bi bi-trash3"></i></button>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
-
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

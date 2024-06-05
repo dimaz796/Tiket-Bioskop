@@ -15,6 +15,11 @@ $seat = mysqli_query($conn, $sql);
 $row = $seat->fetch_assoc();
 $total_seat = $row['total_seat'];
 
+$sql = "SELECT *  FROM `teater` WHERE id_teater = '$id_teater'";
+$teater = mysqli_query($conn, $sql);
+$data_teater = $teater->fetch_assoc();
+$name_teater = $data_teater['name_teater'];
+
 $sql = "SELECT count(*) as total_seat_terisi FROM `detail_order` 
         INNER JOIN `order` ON `order`.id_order=`detail_order`.id_order 
         INNER JOIN `schedule` ON `schedule`.id_schedule=`order`.id_schedule 
@@ -53,7 +58,7 @@ $seat_kosong = $total_seat - $total_seat_terisi;
                     <label class="form-label fs-2 text-center mb-3 fw-semibold">Masukan Jumlah Tiket</label>
                 </div>
                 <div class="col-4">
-                    <label class="form-label fs-4 ">Studio : <?= $id_teater ?></label>
+                    <label class="form-label fs-4 ">Studio : <?= $name_teater ?></label>
                 </div>
                 <div class="col-6">
                     <label class="form-label fs-6 ">Kursi Tersedia : <?= $seat_kosong ?></label>

@@ -27,18 +27,23 @@
 
     ?>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Harga</h1>
 
-        <form method="post" action="proses_price.php">
-            <h1>Edit Harga</h1>
+                <form method="post" action="proses_price.php">
 
-            <input type="hidden" name="day" value="<?= $name_day ?>">
 
-            <label class="mb-1">Harga</label>
-            <input type="number" name="price" class="form-control w-50 enter mb-4" value="<?= $price ?>" required>
+                    <input type="hidden" name="day" value="<?= $name_day ?>">
 
-            <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
-        </form>
+                    <label class="mb-1">Harga</label>
+                    <input type="number" name="price" class="form-control w-50 enter mb-4" value="<?= $price ?>" required>
 
+                    <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

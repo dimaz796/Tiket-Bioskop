@@ -1,4 +1,6 @@
 <?php
+
+
 include 'conn.php';
 
 if (isset($_POST['simpan'])) {
@@ -49,6 +51,7 @@ if (isset($_POST['simpan'])) {
     $clock_end_new = $clock_new + $durasi;
 
 
+
     $sql = "SELECT * FROM `schedule` WHERE date = '$date' AND id_teater = '$id_teater'";
     $jadwal = mysqli_query($conn, $sql);
 
@@ -72,8 +75,14 @@ if (isset($_POST['simpan'])) {
         $timestamp = strtotime($clock_end);
         $clock_end = round($timestamp / 60);
 
+
+
         if (($clock_new >= $clock && $clock_end_new <= $clock_end) || ($clock_end_new >= $clock && $clock_new <= $clock_end)) {
 
+            // echo $clock_new . " - " . $clock_end_new  . " dan " . $clock_end . " - " . $clock . "<br> ";
+            // echo $clock_new . " lebih besar  " . $clock  . " dan " . $clock_new . " lebih kecil " . $clock_end . "<br> ";
+            // echo $clock_new . " - " . $clock_end_new  . " dan " . $clock_end . " - " . $clock . "<br> ";
+            // echo $clock_new . " - " . $clock_end_new  . " dan " . $clock_end . " - " . $clock . "<br> ";
             // Merubah Menit Menjadi Tanggal Jam Lama
             $timestamp = $clock * 60;
             $clock = date("Y-m-d H:i:s", $timestamp);
@@ -89,6 +98,7 @@ if (isset($_POST['simpan'])) {
             $clock_end = substr($clock_end, 0, -3);
             $clock_end = substr($clock_end, 11);
 
+
             echo "
             <script>
             alert('Jadwal Di Teater Tersebut Sudah DI Isi Oleh Film $title, Dari Jam $clock Dan Berakhir Jam $clock_end');
@@ -97,7 +107,6 @@ if (isset($_POST['simpan'])) {
             die;
         }
     }
-
     // Merubah Menit Menjadi Tanggal 
     $timestamp = $clock_end_new * 60;
     $clock_end_new = date("Y-m-d H:i:s", $timestamp);
@@ -105,6 +114,8 @@ if (isset($_POST['simpan'])) {
     // Merubah Menit Menjadi Tanggal 
     $timestamp = $clock_new * 60;
     $clock_new = date("Y-m-d H:i:s", $timestamp);
+
+
 
     $sql = "INSERT INTO `schedule` 
             VALUES (NULL, '$date', '$day', '$clock_new', '$clock_end_new', '$price', '$id_film', '$id_teater');";

@@ -28,15 +28,20 @@
 
     ?>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Role</h1>
 
-        <form method="post" action="proses_role.php">
-            <h1>Edit Role</h1>
-            <input type="hidden" name="id_role" value="<?= $id_role ?>">
-            Nama Role
-            <input type="text" name="nama" class="form-control w-50 mb-3" value="<?= $nama_role ?>">
-            <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
-        </form>
+                <form method="post" action="proses_role.php">
 
+                    <input type="hidden" name="id_role" value="<?= $id_role ?>">
+                    Nama Role
+                    <input type="text" name="nama" class="form-control w-50 mb-3" value="<?= $nama_role ?>">
+                    <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

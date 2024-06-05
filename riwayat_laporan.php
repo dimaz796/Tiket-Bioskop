@@ -8,13 +8,31 @@ if ((!isset($_SESSION['id_role'])) || ($_SESSION['id_role'] == 3) || ($_SESSION[
 }
 $id_user = $_SESSION['id_user'];
 
+function encrypt($string)
+{
+    $output = false;
+    $encrypt_method = "AES-256-CBC";
+    $secret_key = '23432MLKJSDF0L2934897@00001';
+    $secret_iv = 'X0000W9876H5982@7676765';
+
+    // hash
+    $key = hash('sha256', $secret_key);
+
+    // iv - encrypt method AES-256-CBC expects 16 bytes - else you will get a warning
+    $iv = substr(hash('sha256', $secret_iv), 0, 16);
+
+    $output = openssl_encrypt($string, $encrypt_method, $key, 0, $iv);
+    $output = base64_encode($output);
+    return $output;
+}
+
 $sql = "SELECT film.title,order.id_order,order.date,user.nama_user,schedule.clock,teater.name_teater,order.status_order,order.total FROM `order`
 INNER JOIN schedule 
 ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 WHERE order.status_order = 'Sudah Di Bayar'
@@ -43,61 +61,66 @@ $total = 0;
 </head>
 
 <body>
-    <div class="container pt-4">
-        <?php
-        if ($count == 0) {
-            echo "<h1>Tidak Ada Riwayat Transaksi</h1>
-        <label>Silahkan Order Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
-        ";
-        } else {
-        ?>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
 
-            <h1>Riwayat Transaksi</h1>
 
-            <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Judul film</th>
-                        <th>Order Tanggal</th>
-                        <th>Jam</th>
-                        <th>Teater</th>
-                        <th>Atas Nama</th>
-                        <th>Total</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
 
                 <?php
-                foreach ($querry as $index => $row) {
-                    if ($row['status_order'] == 'Belum Bayar') {
-                        $status = 'danger';
-                    } else {
-                        $status = 'success';
-                    } ?>
-                    <tr>
-                        <td><?= $index + 1 ?></td>
-                        <td><?= $row['title']; ?></td>
-                        <td><?= $row['date']; ?></td>
-                        <td><?= $row['clock']; ?></td>
-                        <td><?= $row['name_teater']; ?></td>
-                        <td><?= $row['nama_user']; ?></td>
-                        <td>Rp. <?= number_format($row['total']);
-                                $total += $row['total']; ?></td>
-                        <td align="center">
+                if ($count == 0) {
+                    echo "<h1>Tidak Ada Riwayat Transaksi</h1>
+        <label>Silahkan Order Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
+        ";
+                } else {
+                ?>
 
-                            <a href="trx.php?id_order=<?= $row['id_order'] ?>&total=<?= $row['total'] ?>">
-                                <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                            </a>
-                            <a href="detail_order.php?id_order=<?= $row['id_order'] ?>">
-                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                            </a>
-                        </td>
-                    </tr>
+                    <h1 class="text-light">Riwayat Transaksi</h1>
+
+                    <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Judul film</th>
+                                <th>Order Tanggal</th>
+                                <th>Jam</th>
+                                <th>Teater</th>
+                                <th>Atas Nama</th>
+                                <th>Total</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <?php
+                        foreach ($querry as $index => $row) {
+                            if ($row['status_order'] == 'Belum Bayar') {
+                                $status = 'danger';
+                            } else {
+                                $status = 'success';
+                            } ?>
+                            <tr>
+                                <td><?= $index + 1 ?></td>
+                                <td><?= $row['title']; ?></td>
+                                <td><?= $row['date']; ?></td>
+                                <td><?= $row['clock']; ?></td>
+                                <td><?= $row['name_teater']; ?></td>
+                                <td><?= $row['nama_user']; ?></td>
+                                <td>Rp. <?= number_format($row['total']);
+                                        $total += $row['total']; ?></td>
+                                <td align="center">
+
+
+                                    <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
+                                        <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
                 <?php } ?>
-                </tbody>
-            </table>
-        <?php } ?>
+            </div>
+        </div>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

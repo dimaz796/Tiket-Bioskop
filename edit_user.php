@@ -38,34 +38,39 @@
 
 	?>
 	<div class="container mt-3">
-		<form method="post" action="proses_user.php">
-			<h1>Edit User</h1>
-			<input type="hidden" name="id_role" value="<?= $id_role ?>">
-			<input type="hidden" name="id_user" value="<?= $id ?>">
-			<input type="hidden" name="saldo" value="<?= $saldo ?>">
-			<input type="hidden" name="username_lama" value="<?= $username_user ?>">
+		<div class="card bg-dark ">
+			<div class="card-body bg-dark rounded p-4">
+				<h1 class="text-light">Edit User</h1>
+				<form method="post" action="proses_user.php">
 
-			Nama User
-			<input type="text" name="nama_user" class="form-control w-50 mb-3" value="<?= $nama_user ?>" required>
+					<input type="hidden" name="id_role" value="<?= $id_role ?>">
+					<input type="hidden" name="id_user" value="<?= $id ?>">
+					<input type="hidden" name="saldo" value="<?= $saldo ?>">
+					<input type="hidden" name="username_lama" value="<?= $username_user ?>">
 
-			No Telepon
-			<input type="number" name="telepon" class="form-control w-50 enter mb-4" value="<?= $telepon ?>" required>
+					Nama User
+					<input type="text" name="nama_user" class="form-control w-50 mb-3" value="<?= $nama_user ?>" required>
 
-			Username
-			<input type="text" name="username" class="form-control w-50 mb-3" value="<?= $username_user ?>" required>
+					No Telepon
+					<input type="number" name="telepon" class="form-control w-50 enter mb-4" value="<?= $telepon ?>" required>
 
-			Password
-			<input type="text" name="password" class="form-control w-50 mb-3" placeholder="Jida Tidak Ganti Password Diamkan Saja">
+					Username
+					<input type="text" name="username" class="form-control w-50 mb-3" value="<?= $username_user ?>" required>
 
-			Role
-			<select name="id_role" class="form-select w-50 h-50 mb-3" style="height: 25px; width: 610px;" required>
-				<?php foreach ($DimasA as $row) : ?>
-					<option value="<?= $row[0] ?>" class="bg-dark" <?= $select = ($row[0] == $role) ? 'selected' : ''  ?>><?= $row[1] ?></option>
-				<?php endforeach ?>
-			</select>
+					Password
+					<input type="text" name="password" class="form-control w-50 mb-3" placeholder="Jida Tidak Ganti Password Diamkan Saja">
 
-			<button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
-		</form>
+					Role
+					<select name="id_role" class="form-select w-50 h-50 mb-3" style="height: 25px; width: 610px;" required>
+						<?php foreach ($DimasA as $row) : ?>
+							<option value="<?= $row[0] ?>" class="bg-dark" <?= $select = ($row[0] == $role) ? 'selected' : ''  ?>><?= $row[1] ?></option>
+						<?php endforeach ?>
+					</select>
+
+					<button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 

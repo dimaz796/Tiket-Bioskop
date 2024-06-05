@@ -26,19 +26,23 @@
 
 
     ?>
-    time_sleep_unti
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Dimensi</h1>
 
-        <form method="post" action="proses_dimension.php">
-            <h1>Edit Dimension</h1>
-            <input type="hidden" name="id_dimension" value="<?= $id_dimension ?>">
+                <form method="post" action="proses_dimension.php">
 
-            <label for="" class="fs-5 mt-3 mb-2">Nama Dimension</label>
+                    <input type="hidden" name="id_dimension" value="<?= $id_dimension ?>">
 
-            <input type="text" name="nama" class="form-control w-50" value="<?= $nama_dimension ?>"><br><br>
-            <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
-        </form>
+                    <label for="" class="fs-5 mt-3 mb-2">Nama Dimension</label>
 
+                    <input type="text" name="nama" class="form-control w-50" value="<?= $nama_dimension ?>"><br><br>
+                    <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

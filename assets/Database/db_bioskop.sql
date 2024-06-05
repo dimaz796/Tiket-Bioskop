@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2024 at 07:18 PM
+-- Generation Time: May 16, 2024 at 06:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -75,7 +75,137 @@ INSERT INTO `detail_order` (`id_detail_order`, `id_order`, `id_seat`, `price`, `
 (69, 27, 2513, 35000, 'Terisi'),
 (70, 27, 2525, 35000, 'Terisi'),
 (71, 28, 2603, 35000, 'Terisi'),
-(72, 28, 2604, 35000, 'Terisi');
+(72, 28, 2604, 35000, 'Terisi'),
+(73, 29, 2536, 30000, 'Terisi'),
+(74, 29, 2537, 30000, 'Terisi'),
+(84, 34, 2662, 35000, 'Terisi'),
+(85, 34, 2663, 35000, 'Terisi'),
+(86, 35, 2745, 35000, 'Terisi'),
+(87, 35, 2746, 35000, 'Terisi'),
+(88, 36, 2758, 30000, 'Terisi'),
+(89, 36, 2759, 30000, 'Terisi'),
+(90, 36, 2760, 30000, 'Terisi'),
+(91, 37, 2643, 30000, 'Terisi'),
+(92, 37, 2644, 30000, 'Terisi'),
+(93, 38, 2769, 30000, 'Terisi'),
+(94, 38, 2770, 30000, 'Terisi'),
+(95, 38, 2771, 30000, 'Terisi'),
+(96, 38, 2772, 30000, 'Terisi'),
+(97, 38, 2773, 30000, 'Terisi'),
+(98, 38, 2774, 30000, 'Terisi'),
+(99, 38, 2775, 30000, 'Terisi'),
+(100, 38, 2776, 30000, 'Terisi'),
+(101, 39, 2704, 30000, 'Terisi'),
+(102, 39, 2705, 30000, 'Terisi'),
+(103, 40, 2547, 30000, 'Terisi'),
+(104, 40, 2548, 30000, 'Terisi'),
+(105, 41, 2577, 30000, 'Terisi'),
+(106, 41, 2578, 30000, 'Terisi'),
+(109, 43, 2382, 30000, 'Terisi'),
+(110, 43, 2383, 30000, 'Terisi'),
+(114, 45, 2313, 30000, 'Terisi'),
+(115, 45, 2314, 30000, 'Terisi'),
+(116, 46, 2373, 30000, 'Terisi'),
+(117, 46, 2374, 30000, 'Terisi'),
+(118, 47, 2763, 50000, 'Terisi'),
+(119, 47, 2764, 50000, 'Terisi'),
+(120, 48, 2643, 50000, 'Terisi'),
+(121, 48, 2644, 50000, 'Terisi'),
+(122, 49, 2646, 50000, 'Terisi'),
+(123, 49, 2660, 50000, 'Terisi'),
+(124, 50, 2645, 50000, 'Terisi'),
+(125, 50, 2647, 50000, 'Terisi'),
+(126, 51, 2760, 40000, 'Terisi'),
+(127, 51, 2761, 40000, 'Terisi'),
+(129, 53, 2386, 30000, 'Terisi'),
+(130, 53, 2387, 30000, 'Terisi'),
+(131, 54, 2385, 30000, 'Terisi'),
+(132, 54, 2397, 30000, 'Terisi'),
+(133, 55, 2364, 30000, 'Terisi'),
+(134, 55, 2365, 30000, 'Terisi'),
+(135, 56, 2301, 30000, 'Terisi'),
+(136, 56, 2302, 30000, 'Terisi'),
+(137, 57, 2286, 30000, 'Terisi'),
+(138, 58, 2355, 30000, 'Terisi'),
+(139, 59, 2336, 30000, 'Terisi'),
+(140, 60, 2411, 30000, 'Terisi'),
+(141, 60, 2412, 30000, 'Terisi'),
+(142, 61, 2421, 30000, 'Terisi'),
+(143, 61, 2422, 30000, 'Terisi'),
+(144, 62, 2421, 30000, 'Terisi'),
+(145, 62, 2422, 30000, 'Terisi'),
+(146, 63, 2421, 30000, 'Terisi'),
+(147, 63, 2422, 30000, 'Terisi'),
+(148, 64, 2289, 30000, 'Terisi'),
+(149, 64, 2290, 30000, 'Terisi'),
+(150, 65, 2361, 30000, 'Terisi'),
+(151, 65, 2362, 30000, 'Terisi'),
+(152, 66, 2313, 30000, 'Terisi'),
+(153, 66, 2314, 30000, 'Terisi'),
+(158, 69, 2374, 30000, 'Terisi'),
+(159, 69, 2375, 30000, 'Terisi'),
+(160, 70, 2310, 30000, 'Terisi'),
+(161, 70, 2311, 30000, 'Terisi'),
+(162, 71, 2319, 30000, 'Terisi'),
+(163, 71, 2320, 30000, 'Terisi'),
+(164, 72, 2319, 30000, 'Terisi'),
+(165, 72, 2320, 30000, 'Terisi'),
+(166, 73, 2319, 30000, 'Terisi'),
+(167, 73, 2320, 30000, 'Terisi'),
+(170, 75, 2289, 50000, 'Terisi'),
+(171, 75, 2290, 50000, 'Terisi'),
+(172, 76, 2314, 50000, 'Terisi'),
+(173, 77, 2313, 50000, 'Terisi'),
+(174, 77, 2315, 50000, 'Terisi'),
+(175, 77, 2316, 50000, 'Terisi'),
+(176, 77, 2317, 50000, 'Terisi'),
+(177, 77, 2318, 50000, 'Terisi'),
+(178, 78, 2313, 50000, 'Terisi'),
+(179, 78, 2315, 50000, 'Terisi'),
+(180, 78, 2316, 50000, 'Terisi'),
+(181, 78, 2317, 50000, 'Terisi'),
+(182, 78, 2318, 50000, 'Terisi'),
+(183, 79, 2299, 50000, 'Terisi'),
+(184, 79, 2300, 50000, 'Terisi'),
+(185, 80, 2299, 50000, 'Terisi'),
+(186, 80, 2300, 50000, 'Terisi'),
+(187, 81, 2299, 50000, 'Terisi'),
+(188, 81, 2300, 50000, 'Terisi'),
+(189, 82, 2302, 50000, 'Terisi'),
+(190, 82, 2303, 50000, 'Terisi'),
+(191, 83, 2302, 50000, 'Terisi'),
+(192, 83, 2303, 50000, 'Terisi'),
+(193, 84, 2311, 50000, 'Terisi'),
+(194, 84, 2312, 50000, 'Terisi'),
+(195, 85, 2302, 50000, 'Terisi'),
+(196, 85, 2303, 50000, 'Terisi'),
+(197, 86, 2302, 50000, 'Terisi'),
+(198, 86, 2303, 50000, 'Terisi'),
+(199, 87, 2311, 50000, 'Terisi'),
+(200, 87, 2312, 50000, 'Terisi'),
+(201, 88, 2291, 50000, 'Terisi'),
+(202, 88, 2292, 50000, 'Terisi'),
+(203, 89, 2293, 50000, 'Terisi'),
+(204, 89, 2294, 50000, 'Terisi'),
+(205, 90, 2293, 50000, 'Terisi'),
+(206, 90, 2294, 50000, 'Terisi'),
+(207, 91, 2293, 50000, 'Terisi'),
+(208, 91, 2294, 50000, 'Terisi'),
+(209, 92, 2329, 50000, 'Terisi'),
+(210, 92, 2330, 50000, 'Terisi'),
+(211, 93, 2313, 50000, 'Terisi'),
+(212, 93, 2314, 50000, 'Terisi'),
+(213, 94, 2337, 50000, 'Terisi'),
+(214, 94, 2338, 50000, 'Terisi'),
+(215, 95, 2287, 30000, 'Terisi'),
+(216, 95, 2288, 30000, 'Terisi'),
+(217, 96, 2321, 30000, 'Terisi'),
+(218, 96, 2322, 30000, 'Terisi'),
+(219, 96, 2323, 30000, 'Terisi'),
+(220, 96, 2324, 30000, 'Terisi'),
+(221, 96, 2325, 30000, 'Terisi'),
+(222, 97, 5068, 30000, 'Terisi'),
+(223, 97, 5069, 30000, 'Terisi');
 
 -- --------------------------------------------------------
 
@@ -94,7 +224,8 @@ CREATE TABLE `dimension` (
 
 INSERT INTO `dimension` (`id_dimension`, `name_dimension`) VALUES
 (1, '2D'),
-(5, '3D');
+(5, '3D'),
+(6, '5D');
 
 -- --------------------------------------------------------
 
@@ -129,16 +260,16 @@ CREATE TABLE `film` (
 --
 
 INSERT INTO `film` (`id_film`, `title`, `image`, `category_age`, `id_genre`, `id_dimension`, `trailer`, `description`, `producer`, `directur`, `writer`, `distributor`, `actor`, `durasi`, `created_at`, `update_at`, `tayang`, `berakhir`, `status_film`) VALUES
-(1, 'Annette', 'annete.jpeg', 'SU', '11,12', 1, 'asdasdads', 'adasdsadsas', 'dsaadasdasds', 'asdasdasds', 'Adits', 'asdasdasds', 'Dimas,Adit,Tyas', 121, '2024-02-06 11:03:55', '2024-03-13 06:11:40', '2024-03-01', '2024-03-13', 'Berakhir'),
-(3, 'Lampir', 'lampir.jpg', '13+', '2,9', 1, 'https://youtu.be/k1TU9UniYMU?si=-AHNCH2hCjK6Yite', 'Sekelompok sahabat yang sedang photoshoot pre-wedding di sebuah villa mewah nan vintage, ternyata malah terjebak di sarang keramat Mak Lampir yang konon bernafsu menjadi wanita tercantik dan abadi. Dapat kah mereka selamat dari permainan kematian Mak Lampir?', 'Gandhi Fernando, Philip Lesmana, Clarissa Tanoesoedibjo', 'Creator Pictures, Sinergi Pictures, Vision+', 'Kenny Gulardi', 'Creator Pictures, Sinergi Pictures, Vision+', 'Dimas,Adit,Tyas', 121, '2024-02-07 01:22:09', '2024-03-04 12:46:47', '2024-02-15', '2024-03-04', 'Berakhir'),
-(9, 'MADAME WEB', 'manade_web.jpg', '13+', '3,4', 1, 'https://youtu.be/s_76M4c4LTo?si=Fbesx5VwGusf16wH', 'Casie (Dakota Johnson), seorang paramedis yang nyaris kehilangan nyawanya saat bertugas. Ia terjatuh ke dalam air bersama mobil korban yang coba dibantunya. Setelah kejadian itu Casie mampu melihat masa depan tanpa ia tahu penyebabnya.', 'Lorenzo di Bonaventura', 'Columbia Pictures', 'Matt Sazama, Burk Sharpless, Claire Parker, S.j. Clarkson', 'Columbia Pictures', 'Dimas,Adit,Tyas', 121, '2024-02-17 06:37:04', '2024-03-07 18:12:45', '2024-03-06', '2024-03-31', 'Berlangsung'),
-(10, 'SPY X FAMILY CODE: WHITE', 'spy.jpg', '13+', '3,11', 1, 'https://youtu.be/hLUijsHg9jM?si=FRWQ9qs9cKqElDbG', 'Bercerita tentang perjalanan keluarga pertama yang dilakukan seluruh keluarga Forger. Seharusnya perjalanan ini menyenangkan, namun Anya menemukan rahasia yang dapat mengguncang perdamaian dunia... Komedi aksi mata-mata yang luar biasa digambarkan dalam skala yang megah dalam versi teatrikal! Sekali lagi, nasib dunia dipercayakan kepada sebuah keluarga yang mengalami serangkaian insiden!', 'Akifumi Fujio, Kazutaka Yamanaka', 'Toho Animation, Cloverworks, Wit Studio', 'Tatsuya Endo, Ichiro Okouchi', 'Toho Animation, Cloverworks, Wit Studio', 'Dimas,Adit,Tyas', 121, '2024-02-17 07:58:04', '2024-03-07 18:13:23', '2024-03-08', '2024-03-23', 'Berlangsung'),
-(11, 'MENDUNG TANPO UDAN', 'mendung-tampo-ujan.jpg', '17+', '1,6', 1, 'https://youtu.be/0WTAErVV-kk?si=xQblGcwxqmaO6i6b', 'Udan (Erick Estrada) adalah seorang mahasiswa tingkat akhir yang sangat terobsesi dengan musik. Obsesi ini tanpa disadari membuat Udan menjadi pribadi yang idealis dan keras kepala. Hingga suatu hari Udan bertemu dan jatuh hati dengan Mendung (Yunita Siregar), seorang perempuan cerdas yang memiliki impian menjadi seorang wanita karir yang independen. Hubungan dua insan yang memiliki impian bertolak belakang ini, perlahan melahirkan konflik yang memaksa mereka untuk memilih antara cinta dan karir.', 'Muhammad Hananto', 'Kris Budiman', 'Tony C Sihombing, Gianluigi Christoikov, Kris Budiman, Agit Romon', 'Nant Entertainment', 'Erick Estrada, Yunita Siregar, Wavi Zihan, Tommy Limm, Kerry Astina, Aulia Deas, Marcell Darwin', 124, '2024-02-17 08:00:54', '2024-02-29 00:40:45', '2024-02-29', '2024-03-28', 'Berlangsung'),
-(12, 'KUYANG: SEKUTU IBLIS YANG SELALU MENGINTAI', 'kuyang.jpg', '17+', '2,6', 1, 'https://youtu.be/6FAUOJTJA-Y?si=-qCkuwPtMIAUfV2v', 'Demi masa depan yang lebih baik Bimo (Dimas Aditya) memutuskan untuk menjadi PNS dan ditugaskan di sebuah desa di pedalaman sebagai CPNS. Bimo membawa serta istrinya Sriatun (Alyssa Abidin), yang menolak untuk ditinggal bersama orang tua Bimo di Jawa. Sejak kedatangan mereka di desa tersebut, kejadian-kejadian aneh mulai mereka alami. Sriatun merasa ada yang selalu mengawasi mereka. Bimo yang mengetahui masa lalu kelam desa tersebut mulai khawatir. Sekutu Iblis yang menghantui desa selama ini kini mengincar Sriatun yang sedang hamil untuk dijadikan tumbal. Bimo yang tidak ingin Sriatun bernasib sama seperti warga desa terdahulu berencana membawa Sriatun pergi dari desa tersebut. Namun kekuatan Sekutu Iblis berhasil menghalangi rencana Bimo. Satu-satunya cara menyelamatkan nyawa Sriatun adalah Bimo harus mengalahkan Sekutu Iblis dengan tangannya sendiri.', 'Aryanna Yuris, Eye Supriyadi', 'Yongki Ongestu', 'Alim Sudio', 'Aenigma Picture', 'Dimas Aditya, Alyssa Abidin, Putri Ayudya, Elly D. Luthan, Egy Fedly, Totos Rasiti, Andri Mashadi', 98, '2024-04-01 07:58:48', '2024-03-15 13:22:10', '2024-03-10', '2024-03-31', 'Berlangsung'),
-(13, '1 CM', '141CMX.jpg', 'SU', '5,6', 1, 'https://youtu.be/JN0GfXkmxlk?si=nXxfEM1KHxHqWipb', 'Berkisah tentang dua kelompok anak-anak yang sedang melakoni permainan tradisional perang-perangan untuk mempertahankan perbatasan sebuah negara yang tidak boleh tergeser bahkan 1 sentimeterpun, serunya dua kubu ini saling menangkap dan menyerang menggunakan senjata kayu dan bom air. Dilatar belakangi oleh kebhinekaan ras dan agama, membuat film edukasi ini sangat tersirat akan nilai nasionalisme, bagaimana anak-anak ini menjaga perbedaan yang ada dengan memperjuangkan tujuan yang sama.', 'Dedy Arliansyah Siregar, Paul Ginting, Dohardo Pakpahan', 'Dedy Arliansyah Siregar', 'Dedy Arliansyah Siregar', 'Lima Puluh Sembilan Vision', 'Raihan Firjatullah Valendiaz, Ovellia Angeline Yan, Icha Lubis, Mufty A Leatemia, Rhevany Aquina Shanum, Aidil Fitrah Ghassani, Destyn Clara Sinaga, Raisa Asahy Hsb, Cinta Adawiyatur Rahma, Rony Hafiz', 95, '2024-03-08 01:04:56', '2024-03-07 18:04:56', '2024-03-31', '2024-04-21', 'Akan Datang'),
-(14, 'BAD BOY IN LOVE', '14BBIL.jpg', '13+', '6', 1, 'https://youtu.be/I820drpTYl8?si=is1aY9_hmK82CYQ8', 'Di sekolahnya, JETHRO (Jeff Smith) disegani, jago tarung satu-lawan-satu, dan cerdas. Jethro sekelas dengan SARA (Nicole Parham), gadis Solo yang pemalu, sederhana, dan rambutnya selalu dikuncir. Tujuan Sara pindah ke Bogor adalah fokus belajar agar masuk kedokteran.Awalnya, Jethro tak memperhatikan Sara yang menurutnya kurang eksis. Sara diam-diam menyukai Jethro yang saat itu berpacaran dengan LEA (Cassandra Lee), gadis gaul idola banyak laki-laki. Suatu hari, Sara mengobati tangan Jethro yang terluka, Jethro mulai menyadari keberadaan Sara dan keduanya semakin dekat. ANIN (Tubagus Ali), teman dekat Sara, tidak menerima Sara yang mulai dekat dengan Jethro, ia menantang Jethro berkelahi seakan-akan memperebutkan Sara. Hal itu pun membuat Lea cemburu, mengira Jethro memiliki hubungan spesial dengan Sara. Pada akhirnya, apakah Sara dan Jethro menjadi pasangan?', 'Djonny Chen, Hanny R. Saputra, Rezha PN', 'Hanny R. Saputra', 'Oka Aurora', 'Silent D Pictures', 'Jeff Smith, Cassandra Lee, Nicole Parham, Garry Iskak, Dewi Rezer, Baron Y. Siregar, Tubagus Ali, Krisna Murti W, Cinta Dewi', 91, '2024-03-08 01:07:53', '2024-03-07 18:07:53', '2024-03-24', '2024-03-31', 'Akan Datang'),
-(15, 'IMAGINARY', '24IMAY.jpg', '13+', '2', 1, 'https://youtu.be/Lj0HODMVSnA?si=fMc7f2OKSTB6BZsS', 'Seorang wanita kembali ke rumah masa kecilnya dan menemukan bahwa teman khayalan yang ia tinggalkan ternyata nyata dan tidak bahagia karena ia meninggalkannya.', 'Jason Blum, Jeff Wadlow, Paul Uddo', 'Jeff Wadlow', 'Greg Erb', 'Lionsgate, Blumhouse Productions', 'Tom Payne, Dewanda Wise, Veronica Falcon, Betty Buckley, Dane Diliegro, Taegen Burns, Alix Angelis, Matthew Sato, Pyper Braun, Cecilia Leal, Sean Albertson', 104, '2024-03-08 01:10:19', '2024-03-07 18:10:19', '2024-03-25', '2024-04-04', 'Akan Datang'),
-(16, ' KUKEJAR MIMPI', '14KMII.jpg', '13+', '6', 1, 'https://youtu.be/Ec1N7_Tuz1E?si=nAhXF18VWbGGnV_j', 'Mimpi (Aisyah Aqilah) adalah seorang anak SMA dengan latar belakang sederhana yang ingin menjadi seorang cheerleader. Namun kondisi sekolahnya yang terpinggirkan itu tak punya kegiatan berarti, dan jauh dari prestasi. Yang ada justru malah terkenal karena tawurannya. Untuk itulah Mimpi bersama enam orang temannya berjuang untuk bisa merintis adanya aktifitas cheerleading di sekolah, dengan berusaha mengikuti kompetisi yang ada. Sayang, skill dan pengalaman mereka masih jauh dari cukup. Nasib mempertemukan Mimpi dengan Leo (Oka Antara), seorang mantan tentara yang terlilit hutang sehingga dikejar-kejar oleh debt collector. Mimpi butuh bimbingan, sementara Leo butuh uang. Keadaan ini membuat Leo melihat kesempatan untuk menjadi seorang pelatih demi imbalan uang dari Mimpi dan teman-temannya. Namun, kemajuan yang mereka capai terbentur pada penolakan dari keluarga dan lingkungan yang melihat cheerleading adalah seusuatu yang negatif. Ini membuat mereka semua nyaris putus asa. Tapi kedekatan dan kebersamaan yang telah terjalin, membuat Leo bersama anak-anak ini terus berjuang bersama untuk menggapai mimpi mereka', 'Benny Rahmadani', 'Kg Pictures', 'Cassandra Massardie', 'Kg Pictures', 'Dimas,Adit,Tyas', 121, '2024-03-08 01:16:34', '2024-03-09 05:41:43', '2024-04-01', '2024-04-29', 'Akan Datang');
+(1, 'Annette', 'annete.jpeg', 'SU', '11,12', 1, 'asdasdads', 'adasdsadsas', 'dsaadasdasds', 'asdasdasds', 'Adits', 'asdasdasds', 'Dimas,Adit,Tyas', 100, '2024-02-06 11:03:55', '2024-05-13 20:33:34', '2024-03-01', '2024-10-13', 'Berlangsung'),
+(3, 'Lampir', 'lampir.jpg', '13+', '2,9', 1, 'https://youtu.be/k1TU9UniYMU?si=-AHNCH2hCjK6Yite', 'Sekelompok sahabat yang sedang photoshoot pre-wedding di sebuah villa mewah nan vintage, ternyata malah terjebak di sarang keramat Mak Lampir yang konon bernafsu menjadi wanita tercantik dan abadi. Dapat kah mereka selamat dari permainan kematian Mak Lampir?', 'Gandhi Fernando, Philip Lesmana, Clarissa Tanoesoedibjo', 'Creator Pictures, Sinergi Pictures, Vision+', 'Kenny Gulardi', 'Creator Pictures, Sinergi Pictures, Vision+', 'Dimas,Adit,Tyas', 121, '2024-02-07 01:22:09', '2024-05-11 17:15:37', '2024-02-15', '2024-05-11', 'Berakhir'),
+(9, 'MADAME WEB', 'manade_web.jpg', '13+', '3,4', 1, 'https://youtu.be/s_76M4c4LTo?si=Fbesx5VwGusf16wH', 'Casie (Dakota Johnson), seorang paramedis yang nyaris kehilangan nyawanya saat bertugas. Ia terjatuh ke dalam air bersama mobil korban yang coba dibantunya. Setelah kejadian itu Casie mampu melihat masa depan tanpa ia tahu penyebabnya.', 'Lorenzo di Bonaventura', 'Columbia Pictures', 'Matt Sazama, Burk Sharpless, Claire Parker, S.j. Clarkson', 'Columbia Pictures', 'Dimas,Adit,Tyas', 121, '2024-02-17 06:37:04', '2024-05-08 00:50:29', '2024-03-06', '2024-07-25', 'Berlangsung'),
+(10, 'SPY X FAMILY CODE: WHITE', 'spy.jpg', '13+', '3,11', 1, 'https://youtu.be/hLUijsHg9jM?si=FRWQ9qs9cKqElDbG', 'Bercerita tentang perjalanan keluarga pertama yang dilakukan seluruh keluarga Forger. Seharusnya perjalanan ini menyenangkan, namun Anya menemukan rahasia yang dapat mengguncang perdamaian dunia... Komedi aksi mata-mata yang luar biasa digambarkan dalam skala yang megah dalam versi teatrikal! Sekali lagi, nasib dunia dipercayakan kepada sebuah keluarga yang mengalami serangkaian insiden!', 'Akifumi Fujio, Kazutaka Yamanaka', 'Toho Animation, Cloverworks, Wit Studio', 'Tatsuya Endo, Ichiro Okouchi', 'Toho Animation, Cloverworks, Wit Studio', 'Dimas,Adit,Tyas', 121, '2024-02-17 07:58:04', '2024-05-08 00:50:42', '2024-03-08', '2024-05-23', 'Berlangsung'),
+(11, 'MENDUNG TANPO UDAN', 'mendung-tampo-ujan.jpg', '17+', '6', 1, 'https://youtu.be/0WTAErVV-kk?si=xQblGcwxqmaO6i6b', 'Udan (Erick Estrada) adalah seorang mahasiswa tingkat akhir yang sangat terobsesi dengan musik. Obsesi ini tanpa disadari membuat Udan menjadi pribadi yang idealis dan keras kepala. Hingga suatu hari Udan bertemu dan jatuh hati dengan Mendung (Yunita Siregar), seorang perempuan cerdas yang memiliki impian menjadi seorang wanita karir yang independen. Hubungan dua insan yang memiliki impian bertolak belakang ini, perlahan melahirkan konflik yang memaksa mereka untuk memilih antara cinta dan karir.', 'Muhammad Hananto', 'Nant Entertainment', 'Tony C Sihombing, Gianluigi Christoikov, Kris Budiman, Agit Romon', 'Nant Entertainment', 'Dimas,Adit,Tyas', 121, '2024-02-17 08:00:54', '2024-05-11 16:55:02', '2024-02-29', '2024-05-09', 'Berakhir'),
+(12, 'KUYANG: SEKUTU IBLIS YANG SELALU MENGINTAI', 'kuyang.jpg', '17+', '2,6', 1, 'https://youtu.be/6FAUOJTJA-Y?si=-qCkuwPtMIAUfV2v', 'Demi masa depan yang lebih baik Bimo (Dimas Aditya) memutuskan untuk menjadi PNS dan ditugaskan di sebuah desa di pedalaman sebagai CPNS. Bimo membawa serta istrinya Sriatun (Alyssa Abidin), yang menolak untuk ditinggal bersama orang tua Bimo di Jawa. Sejak kedatangan mereka di desa tersebut, kejadian-kejadian aneh mulai mereka alami. Sriatun merasa ada yang selalu mengawasi mereka. Bimo yang mengetahui masa lalu kelam desa tersebut mulai khawatir. Sekutu Iblis yang menghantui desa selama ini kini mengincar Sriatun yang sedang hamil untuk dijadikan tumbal. Bimo yang tidak ingin Sriatun bernasib sama seperti warga desa terdahulu berencana membawa Sriatun pergi dari desa tersebut. Namun kekuatan Sekutu Iblis berhasil menghalangi rencana Bimo. Satu-satunya cara menyelamatkan nyawa Sriatun adalah Bimo harus mengalahkan Sekutu Iblis dengan tangannya sendiri.', 'Aryanna Yuris, Eye Supriyadi', 'Aenigma Picture', 'Alim Sudio', 'Aenigma Picture', 'Dimas,Adit,Tyas', 121, '2024-04-01 07:58:48', '2024-05-08 00:51:31', '2024-03-10', '2024-05-16', 'Berlangsung'),
+(13, '1 CM', '141CMX.jpg', 'SU', '5,6', 1, 'https://youtu.be/JN0GfXkmxlk?si=nXxfEM1KHxHqWipb', 'Berkisah tentang dua kelompok anak-anak yang sedang melakoni permainan tradisional perang-perangan untuk mempertahankan perbatasan sebuah negara yang tidak boleh tergeser bahkan 1 sentimeterpun, serunya dua kubu ini saling menangkap dan menyerang menggunakan senjata kayu dan bom air. Dilatar belakangi oleh kebhinekaan ras dan agama, membuat film edukasi ini sangat tersirat akan nilai nasionalisme, bagaimana anak-anak ini menjaga perbedaan yang ada dengan memperjuangkan tujuan yang sama.', 'Dedy Arliansyah Siregar, Paul Ginting, Dohardo Pakpahan', 'Lima Puluh Sembilan Vision', 'Dedy Arliansyah Siregar', 'Lima Puluh Sembilan Vision', 'Dimas,Adit,Tyas', 121, '2024-03-08 01:04:56', '2024-05-08 00:51:40', '2024-03-31', '2024-05-25', 'Berlangsung'),
+(14, 'BAD BOY IN LOVE', '14BBIL.jpg', '13+', '6', 1, 'https://youtu.be/I820drpTYl8?si=is1aY9_hmK82CYQ8', 'Di sekolahnya, JETHRO (Jeff Smith) disegani, jago tarung satu-lawan-satu, dan cerdas. Jethro sekelas dengan SARA (Nicole Parham), gadis Solo yang pemalu, sederhana, dan rambutnya selalu dikuncir. Tujuan Sara pindah ke Bogor adalah fokus belajar agar masuk kedokteran.Awalnya, Jethro tak memperhatikan Sara yang menurutnya kurang eksis. Sara diam-diam menyukai Jethro yang saat itu berpacaran dengan LEA (Cassandra Lee), gadis gaul idola banyak laki-laki. Suatu hari, Sara mengobati tangan Jethro yang terluka, Jethro mulai menyadari keberadaan Sara dan keduanya semakin dekat. ANIN (Tubagus Ali), teman dekat Sara, tidak menerima Sara yang mulai dekat dengan Jethro, ia menantang Jethro berkelahi seakan-akan memperebutkan Sara. Hal itu pun membuat Lea cemburu, mengira Jethro memiliki hubungan spesial dengan Sara. Pada akhirnya, apakah Sara dan Jethro menjadi pasangan?', 'Djonny Chen, Hanny R. Saputra, Rezha PN', 'Silent D Pictures', 'Oka Aurora', 'Silent D Pictures', 'Dimas,Adit,Tyas', 121, '2024-03-08 01:07:53', '2024-05-08 00:51:53', '2024-03-19', '2024-05-23', 'Berlangsung'),
+(15, 'IMAGINARY', '24IMAY.jpg', '13+', '2', 1, 'https://youtu.be/Lj0HODMVSnA?si=fMc7f2OKSTB6BZsS', 'Seorang wanita kembali ke rumah masa kecilnya dan menemukan bahwa teman khayalan yang ia tinggalkan ternyata nyata dan tidak bahagia karena ia meninggalkannya.', 'Jason Blum, Jeff Wadlow, Paul Uddo', 'Lionsgate, Blumhouse Productions', 'Greg Erb', 'Lionsgate, Blumhouse Productions', 'Dimas,Adit,Tyas', 121, '2024-03-08 01:10:19', '2024-05-08 00:52:02', '2024-03-25', '2024-05-24', 'Berlangsung'),
+(16, ' KUKEJAR MIMPI', '14KMII.jpg', '13+', '6', 1, 'https://youtu.be/Ec1N7_Tuz1E?si=nAhXF18VWbGGnV_j', 'Mimpi (Aisyah Aqilah) adalah seorang anak SMA dengan latar belakang sederhana yang ingin menjadi seorang cheerleader. Namun kondisi sekolahnya yang terpinggirkan itu tak punya kegiatan berarti, dan jauh dari prestasi. Yang ada justru malah terkenal karena tawurannya. Untuk itulah Mimpi bersama enam orang temannya berjuang untuk bisa merintis adanya aktifitas cheerleading di sekolah, dengan berusaha mengikuti kompetisi yang ada. Sayang, skill dan pengalaman mereka masih jauh dari cukup. Nasib mempertemukan Mimpi dengan Leo (Oka Antara), seorang mantan tentara yang terlilit hutang sehingga dikejar-kejar oleh debt collector. Mimpi butuh bimbingan, sementara Leo butuh uang. Keadaan ini membuat Leo melihat kesempatan untuk menjadi seorang pelatih demi imbalan uang dari Mimpi dan teman-temannya. Namun, kemajuan yang mereka capai terbentur pada penolakan dari keluarga dan lingkungan yang melihat cheerleading adalah seusuatu yang negatif. Ini membuat mereka semua nyaris putus asa. Tapi kedekatan dan kebersamaan yang telah terjalin, membuat Leo bersama anak-anak ini terus berjuang bersama untuk menggapai mimpi mereka', 'Benny Rahmadani', 'Kg Pictures', 'Cassandra Massardie', 'Kg Pictures', 'Dimas,Adit,Tyas', 121, '2024-03-08 01:16:34', '2024-05-08 00:48:45', '2024-04-01', '2024-04-29', 'Berakhir');
 
 -- --------------------------------------------------------
 
@@ -183,7 +314,6 @@ CREATE TABLE `order` (
   `date` date NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_schedule` int(11) NOT NULL,
-  `id_teater` int(11) NOT NULL,
   `status_order` enum('Belum Bayar','Sudah Di Bayar') NOT NULL,
   `Total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -192,19 +322,78 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `id_teater`, `status_order`, `Total`) VALUES
-(15, '2024-03-07', 2, 20, 1, 'Sudah Di Bayar', 50000),
-(16, '2024-01-10', 2, 21, 1, 'Sudah Di Bayar', 300000),
-(17, '2024-03-07', 2, 21, 1, 'Sudah Di Bayar', 50000),
-(18, '2024-03-08', 2, 21, 1, 'Sudah Di Bayar', 90000),
-(19, '2024-02-14', 2, 31, 4, 'Sudah Di Bayar', 70000),
-(21, '2024-03-09', 2, 31, 4, 'Sudah Di Bayar', 140000),
-(22, '2024-03-13', 2, 37, 1, 'Sudah Di Bayar', 30000),
-(24, '2024-03-15', 4, 38, 2, 'Sudah Di Bayar', 70000),
-(25, '2024-03-15', 4, 38, 2, 'Belum Bayar', 70000),
-(26, '2024-03-15', 4, 38, 2, 'Sudah Di Bayar', 70000),
-(27, '2024-03-15', 4, 38, 2, 'Sudah Di Bayar', 70000),
-(28, '2024-03-15', 4, 38, 2, 'Sudah Di Bayar', 70000);
+INSERT INTO `order` (`id_order`, `date`, `id_user`, `id_schedule`, `status_order`, `Total`) VALUES
+(15, '2024-03-07', 2, 20, 'Sudah Di Bayar', 50000),
+(16, '2024-01-10', 2, 21, 'Sudah Di Bayar', 300000),
+(17, '2024-03-07', 2, 21, 'Sudah Di Bayar', 50000),
+(18, '2024-03-08', 2, 21, 'Sudah Di Bayar', 90000),
+(19, '2024-02-14', 2, 31, 'Sudah Di Bayar', 70000),
+(21, '2024-03-09', 2, 31, 'Sudah Di Bayar', 140000),
+(22, '2024-03-13', 2, 37, 'Sudah Di Bayar', 30000),
+(24, '2024-03-15', 4, 38, 'Sudah Di Bayar', 70000),
+(25, '2024-03-15', 4, 38, 'Belum Bayar', 70000),
+(26, '2024-03-15', 4, 38, 'Sudah Di Bayar', 70000),
+(27, '2024-03-15', 4, 38, 'Sudah Di Bayar', 70000),
+(28, '2024-03-15', 4, 38, 'Sudah Di Bayar', 70000),
+(29, '2024-03-19', 4, 55, 'Sudah Di Bayar', 60000),
+(34, '2024-03-22', 2, 56, 'Sudah Di Bayar', 70000),
+(35, '2024-03-22', 4, 56, 'Sudah Di Bayar', 70000),
+(36, '2024-03-25', 2, 57, 'Sudah Di Bayar', 90000),
+(37, '2024-03-25', 4, 57, 'Sudah Di Bayar', 60000),
+(38, '2024-03-25', 4, 57, 'Sudah Di Bayar', 240000),
+(39, '2024-03-25', 2, 57, 'Sudah Di Bayar', 60000),
+(40, '2024-03-27', 16, 58, 'Sudah Di Bayar', 60000),
+(41, '2024-03-27', 4, 58, 'Sudah Di Bayar', 60000),
+(43, '2024-03-27', 17, 59, 'Sudah Di Bayar', 60000),
+(45, '2024-03-27', 2, 59, 'Sudah Di Bayar', 60000),
+(46, '2024-03-27', 4, 59, 'Sudah Di Bayar', 60000),
+(47, '2024-05-08', 2, 62, 'Sudah Di Bayar', 100000),
+(48, '2024-05-08', 2, 62, 'Sudah Di Bayar', 100000),
+(49, '2024-05-08', 3, 62, 'Sudah Di Bayar', 100000),
+(50, '2024-05-08', 2, 62, 'Sudah Di Bayar', 100000),
+(51, '2024-05-12', 4, 64, 'Sudah Di Bayar', 80000),
+(53, '2024-05-14', 2, 75, 'Sudah Di Bayar', 60000),
+(54, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(55, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(56, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(57, '2024-05-14', 4, 75, 'Sudah Di Bayar', 30000),
+(58, '2024-05-14', 4, 75, 'Sudah Di Bayar', 30000),
+(59, '2024-05-14', 4, 75, 'Sudah Di Bayar', 30000),
+(60, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(61, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(62, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(63, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(64, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(65, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(66, '2024-05-14', 4, 75, 'Sudah Di Bayar', 60000),
+(69, '2024-05-14', 2, 74, 'Sudah Di Bayar', 60000),
+(70, '2024-05-14', 4, 74, 'Sudah Di Bayar', 60000),
+(71, '2024-05-14', 4, 74, 'Sudah Di Bayar', 60000),
+(72, '2024-05-14', 4, 74, 'Sudah Di Bayar', 60000),
+(73, '2024-05-14', 4, 74, 'Sudah Di Bayar', 60000),
+(75, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(76, '2024-05-15', 4, 76, 'Sudah Di Bayar', 50000),
+(77, '2024-05-15', 4, 76, 'Sudah Di Bayar', 250000),
+(78, '2024-05-15', 4, 76, 'Sudah Di Bayar', 250000),
+(79, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(80, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(81, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(82, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(83, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(84, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(85, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(86, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(87, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(88, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(89, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(90, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(91, '2024-05-15', 4, 76, 'Sudah Di Bayar', 100000),
+(92, '2024-05-15', 2, 76, 'Sudah Di Bayar', 100000),
+(93, '2024-05-15', 20, 78, 'Sudah Di Bayar', 100000),
+(94, '2024-05-15', 4, 78, 'Sudah Di Bayar', 100000),
+(95, '2024-05-16', 4, 80, 'Sudah Di Bayar', 60000),
+(96, '2024-05-16', 2, 80, 'Sudah Di Bayar', 150000),
+(97, '2024-05-16', 2, 81, 'Sudah Di Bayar', 60000);
 
 -- --------------------------------------------------------
 
@@ -228,7 +417,7 @@ INSERT INTO `price` (`day`, `price`) VALUES
 ('Kamis', 30000),
 ('Jumat', 35000),
 ('Sabtu', 40000),
-('Minggu', 40000);
+('Minggu', 12000);
 
 -- --------------------------------------------------------
 
@@ -282,19 +471,42 @@ INSERT INTO `schedule` (`id_schedule`, `date`, `day`, `clock`, `clock_end`, `pri
 (36, '2024-03-24', 'Minggu', '2024-03-24 18:00:00', '2024-03-24 19:31:00', 40000, 14, 1),
 (37, '2024-03-13', 'Rabu', '2024-03-13 13:16:00', '2024-03-13 15:17:00', 30000, 10, 1),
 (38, '2024-03-15', 'Jumat', '2024-03-15 18:35:00', '2024-03-15 20:36:00', 35000, 9, 2),
-(40, '2024-04-16', 'Selasa', '2024-04-16 12:00:00', '2024-04-16 14:01:00', 30000, 16, 5),
-(42, '2024-03-16', 'Sabtu', '2024-03-16 23:05:00', '2024-03-17 01:09:00', 40000, 11, 4),
+(42, '2024-05-14', 'Selasa', '2024-05-14 23:05:00', '2024-05-15 01:06:00', 30000, 9, 1),
 (43, '2024-03-28', 'Kamis', '2024-03-28 23:29:00', '2024-03-29 01:33:00', 30000, 11, 1),
 (44, '2024-04-06', 'Sabtu', '2024-04-06 23:29:00', '2024-04-07 01:30:00', 40000, 16, 1),
-(45, '2024-03-18', 'Sabtu', '2024-03-17 19:00:00', '2024-03-17 21:04:00', 40002, 3, 5),
-(46, '2024-03-18', 'Senin', '2024-03-18 12:00:00', '2024-03-18 14:04:00', 30000, 11, 5),
 (47, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 13:38:00', 30000, 12, 2),
 (48, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 13:38:00', 30000, 12, 4),
 (49, '2024-03-26', 'Selasa', '2024-03-26 12:00:00', '2024-03-26 14:04:00', 30000, 11, 3),
 (50, '2024-03-27', 'Rabu', '2024-03-27 18:00:00', '2024-03-27 19:38:00', 30000, 12, 3),
 (51, '2024-03-17', 'Minggu', '2024-03-17 13:16:00', '2024-03-17 15:20:00', 40000, 11, 1),
 (52, '2024-03-17', 'Minggu', '2024-03-17 17:00:00', '2024-03-17 19:01:00', 40000, 10, 2),
-(53, '2024-03-24', 'Minggu', '2024-03-24 17:00:00', '2024-03-24 18:38:00', 40000, 12, 2);
+(53, '2024-03-24', 'Minggu', '2024-03-24 17:00:00', '2024-03-24 18:38:00', 40000, 12, 2),
+(55, '2024-03-19', 'Selasa', '2024-03-19 18:00:00', '2024-03-19 20:01:00', 30000, 14, 2),
+(56, '2024-03-22', 'Jumat', '2024-03-22 15:00:00', '2024-03-22 17:01:00', 35000, 14, 3),
+(57, '2024-03-25', 'Senin', '2024-03-25 19:00:00', '2024-03-25 20:44:00', 30000, 15, 3),
+(58, '2024-03-27', 'Rabu', '2024-03-27 19:00:00', '2024-03-27 20:44:00', 30000, 15, 2),
+(59, '2024-03-27', 'Rabu', '2024-03-27 23:00:00', '2024-03-28 01:01:00', 30000, 9, 1),
+(61, '2024-03-27', 'Rabu', '2024-03-27 23:00:00', '2024-03-28 01:01:00', 50000, 14, 3),
+(62, '2024-05-08', 'Rabu', '2024-05-08 13:00:00', '2024-05-08 15:01:00', 50000, 13, 3),
+(63, '2024-05-08', 'Rabu', '2024-05-08 18:00:00', '2024-05-08 20:01:00', 50000, 11, 2),
+(64, '2024-05-12', 'Minggu', '2024-05-12 07:00:00', '2024-05-12 09:01:00', 40000, 9, 3),
+(65, '2024-05-12', 'Minggu', '2024-05-12 18:00:00', '2024-05-12 20:01:00', 40000, 1, 1),
+(66, '2024-05-12', 'Minggu', '2024-05-12 23:30:00', '2024-05-13 01:31:00', 40000, 1, 2),
+(67, '2024-05-13', 'Senin', '2024-05-13 00:10:00', '2024-05-13 02:11:00', 30000, 1, 2),
+(68, '2024-05-12', 'Minggu', '2024-05-12 23:00:00', '2024-05-13 01:01:00', 40000, 15, 6),
+(69, '2024-05-13', 'Senin', '2024-05-13 00:10:00', '2024-05-13 02:11:00', 30000, 12, 6),
+(70, '2024-05-12', 'Minggu', '2024-05-12 17:00:00', '2024-05-12 19:01:00', 40000, 13, 4),
+(71, '2024-05-12', 'Minggu', '2024-05-12 23:55:00', '2024-05-13 01:56:00', 40000, 13, 1),
+(72, '2024-05-14', 'Selasa', '2024-05-14 01:10:00', '2024-05-14 03:11:00', 30000, 12, 1),
+(73, '2024-05-13', 'Senin', '2024-05-13 23:30:00', '2024-05-14 01:31:00', 30000, 1, 1),
+(74, '2024-05-14', 'Selasa', '2024-05-14 22:22:00', '2024-05-15 00:23:00', 30000, 14, 1),
+(75, '2024-05-14', 'Selasa', '2024-05-14 19:30:00', '2024-05-14 21:31:00', 30000, 13, 1),
+(76, '2024-05-15', 'Rabu', '2024-05-15 10:40:00', '2024-05-15 12:20:00', 50000, 1, 1),
+(77, '2024-05-15', 'Rabu', '2024-05-15 07:42:00', '2024-05-15 09:43:00', 50000, 9, 2),
+(78, '2024-05-15', 'Rabu', '2024-05-15 15:00:00', '2024-05-15 16:40:00', 50000, 1, 1),
+(79, '2024-05-15', 'Rabu', '2024-05-15 15:00:00', '2024-05-15 16:40:00', 30000, 1, 11),
+(80, '2024-05-16', 'Kamis', '2024-05-16 18:00:00', '2024-05-16 19:40:00', 30000, 1, 1),
+(81, '2024-05-16', 'Kamis', '2024-05-16 23:50:00', '2024-05-17 01:51:00', 30000, 12, 11);
 
 -- --------------------------------------------------------
 
@@ -315,8 +527,8 @@ CREATE TABLE `seat` (
 --
 
 INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `status_seat`) VALUES
-(2283, '1', 'A', 1, 'Kosong'),
-(2284, '2', 'A', 1, 'Kosong'),
+(2283, '1', 'A', 1, 'Rusak'),
+(2284, '2', 'A', 1, 'Rusak'),
 (2285, '3', 'A', 1, 'Kosong'),
 (2286, '4', 'A', 1, 'Kosong'),
 (2287, '5', 'A', 1, 'Kosong'),
@@ -414,7 +626,7 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2379, '1', 'I', 1, 'Kosong'),
 (2380, '2', 'I', 1, 'Kosong'),
 (2381, '3', 'I', 1, 'Kosong'),
-(2382, '4', 'I', 1, 'Kosong'),
+(2382, '4', 'I', 1, 'Rusak'),
 (2383, '5', 'I', 1, 'Kosong'),
 (2384, '6', 'I', 1, 'Kosong'),
 (2385, '7', 'I', 1, 'Kosong'),
@@ -681,7 +893,7 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2646, '4', 'A', 3, 'Kosong'),
 (2647, '5', 'A', 3, 'Kosong'),
 (2648, '6', 'A', 3, 'Kosong'),
-(2649, '7', 'A', 3, 'Kosong'),
+(2649, '7', 'A', 3, 'Rusak'),
 (2650, '8', 'A', 3, 'Kosong'),
 (2651, '9', 'A', 3, 'Kosong'),
 (2652, '10', 'A', 3, 'Kosong'),
@@ -690,15 +902,15 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2655, '13', 'A', 3, 'Kosong'),
 (2656, '14', 'A', 3, 'Kosong'),
 (2657, '1', 'B', 3, 'Kosong'),
-(2658, '2', 'B', 3, 'Kosong'),
+(2658, '2', 'B', 3, ''),
 (2659, '3', 'B', 3, 'Kosong'),
-(2660, '4', 'B', 3, 'Kosong'),
-(2661, '5', 'B', 3, 'Kosong'),
+(2660, '4', 'B', 3, ''),
+(2661, '5', 'B', 3, ''),
 (2662, '6', 'B', 3, 'Kosong'),
 (2663, '7', 'B', 3, 'Kosong'),
-(2664, '8', 'B', 3, 'Kosong'),
+(2664, '8', 'B', 3, 'Rusak'),
 (2665, '9', 'B', 3, 'Kosong'),
-(2666, '10', 'B', 3, 'Kosong'),
+(2666, '10', 'B', 3, 'Rusak'),
 (2667, '11', 'B', 3, 'Kosong'),
 (2668, '12', 'B', 3, 'Kosong'),
 (2669, '13', 'B', 3, 'Kosong'),
@@ -711,8 +923,8 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2676, '6', 'C', 3, 'Kosong'),
 (2677, '7', 'C', 3, 'Kosong'),
 (2678, '8', 'C', 3, 'Kosong'),
-(2679, '9', 'C', 3, 'Kosong'),
-(2680, '10', 'C', 3, 'Kosong'),
+(2679, '9', 'C', 3, ''),
+(2680, '10', 'C', 3, ''),
 (2681, '11', 'C', 3, 'Kosong'),
 (2682, '12', 'C', 3, 'Kosong'),
 (2683, '13', 'C', 3, 'Kosong'),
@@ -762,7 +974,7 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2727, '1', 'G', 3, 'Kosong'),
 (2728, '2', 'G', 3, 'Kosong'),
 (2729, '3', 'G', 3, 'Kosong'),
-(2730, '4', 'G', 3, 'Kosong'),
+(2730, '4', 'G', 3, ''),
 (2731, '5', 'G', 3, 'Kosong'),
 (2732, '6', 'G', 3, 'Kosong'),
 (2733, '7', 'G', 3, 'Kosong'),
@@ -1011,198 +1223,6 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (2976, '12', 'L', 4, 'Kosong'),
 (2977, '13', 'L', 4, 'Kosong'),
 (2978, '14', 'L', 4, 'Kosong'),
-(2979, '1', 'A', 5, 'Kosong'),
-(2980, '2', 'A', 5, 'Kosong'),
-(2981, '3', 'A', 5, 'Kosong'),
-(2982, '4', 'A', 5, 'Kosong'),
-(2983, '5', 'A', 5, 'Kosong'),
-(2984, '6', 'A', 5, 'Kosong'),
-(2985, '7', 'A', 5, 'Kosong'),
-(2986, '8', 'A', 5, 'Kosong'),
-(2987, '9', 'A', 5, 'Kosong'),
-(2988, '10', 'A', 5, 'Kosong'),
-(2989, '11', 'A', 5, 'Kosong'),
-(2990, '12', 'A', 5, 'Kosong'),
-(2991, '1', 'B', 5, 'Kosong'),
-(2992, '2', 'B', 5, 'Kosong'),
-(2993, '3', 'B', 5, 'Kosong'),
-(2994, '4', 'B', 5, 'Kosong'),
-(2995, '5', 'B', 5, 'Kosong'),
-(2996, '6', 'B', 5, 'Kosong'),
-(2997, '7', 'B', 5, 'Kosong'),
-(2998, '8', 'B', 5, 'Kosong'),
-(2999, '9', 'B', 5, 'Kosong'),
-(3000, '10', 'B', 5, 'Kosong'),
-(3001, '11', 'B', 5, 'Kosong'),
-(3002, '12', 'B', 5, 'Kosong'),
-(3003, '1', 'C', 5, 'Kosong'),
-(3004, '2', 'C', 5, 'Kosong'),
-(3005, '3', 'C', 5, 'Kosong'),
-(3006, '4', 'C', 5, 'Kosong'),
-(3007, '5', 'C', 5, 'Kosong'),
-(3008, '6', 'C', 5, 'Kosong'),
-(3009, '7', 'C', 5, 'Kosong'),
-(3010, '8', 'C', 5, 'Kosong'),
-(3011, '9', 'C', 5, 'Kosong'),
-(3012, '10', 'C', 5, 'Kosong'),
-(3013, '11', 'C', 5, 'Kosong'),
-(3014, '12', 'C', 5, 'Kosong'),
-(3015, '1', 'D', 5, 'Kosong'),
-(3016, '2', 'D', 5, 'Kosong'),
-(3017, '3', 'D', 5, 'Kosong'),
-(3018, '4', 'D', 5, 'Kosong'),
-(3019, '5', 'D', 5, 'Kosong'),
-(3020, '6', 'D', 5, 'Kosong'),
-(3021, '7', 'D', 5, 'Kosong'),
-(3022, '8', 'D', 5, 'Kosong'),
-(3023, '9', 'D', 5, 'Kosong'),
-(3024, '10', 'D', 5, 'Kosong'),
-(3025, '11', 'D', 5, 'Kosong'),
-(3026, '12', 'D', 5, 'Kosong'),
-(3027, '1', 'E', 5, 'Kosong'),
-(3028, '2', 'E', 5, 'Kosong'),
-(3029, '3', 'E', 5, 'Kosong'),
-(3030, '4', 'E', 5, 'Kosong'),
-(3031, '5', 'E', 5, 'Kosong'),
-(3032, '6', 'E', 5, 'Kosong'),
-(3033, '7', 'E', 5, 'Kosong'),
-(3034, '8', 'E', 5, 'Kosong'),
-(3035, '9', 'E', 5, 'Kosong'),
-(3036, '10', 'E', 5, 'Kosong'),
-(3037, '11', 'E', 5, 'Kosong'),
-(3038, '12', 'E', 5, 'Kosong'),
-(3039, '1', 'F', 5, 'Kosong'),
-(3040, '2', 'F', 5, 'Kosong'),
-(3041, '3', 'F', 5, 'Kosong'),
-(3042, '4', 'F', 5, 'Kosong'),
-(3043, '5', 'F', 5, 'Kosong'),
-(3044, '6', 'F', 5, 'Kosong'),
-(3045, '7', 'F', 5, 'Kosong'),
-(3046, '8', 'F', 5, 'Kosong'),
-(3047, '9', 'F', 5, 'Kosong'),
-(3048, '10', 'F', 5, 'Kosong'),
-(3049, '11', 'F', 5, 'Kosong'),
-(3050, '12', 'F', 5, 'Kosong'),
-(3051, '1', 'G', 5, 'Kosong'),
-(3052, '2', 'G', 5, 'Kosong'),
-(3053, '3', 'G', 5, 'Kosong'),
-(3054, '4', 'G', 5, 'Kosong'),
-(3055, '5', 'G', 5, 'Kosong'),
-(3056, '6', 'G', 5, 'Kosong'),
-(3057, '7', 'G', 5, 'Kosong'),
-(3058, '8', 'G', 5, 'Kosong'),
-(3059, '9', 'G', 5, 'Kosong'),
-(3060, '10', 'G', 5, 'Kosong'),
-(3061, '11', 'G', 5, 'Kosong'),
-(3062, '12', 'G', 5, 'Kosong'),
-(3063, '1', 'H', 5, 'Kosong'),
-(3064, '2', 'H', 5, 'Kosong'),
-(3065, '3', 'H', 5, 'Kosong'),
-(3066, '4', 'H', 5, 'Kosong'),
-(3067, '5', 'H', 5, 'Kosong'),
-(3068, '6', 'H', 5, 'Kosong'),
-(3069, '7', 'H', 5, 'Kosong'),
-(3070, '8', 'H', 5, 'Kosong'),
-(3071, '9', 'H', 5, 'Kosong'),
-(3072, '10', 'H', 5, 'Kosong'),
-(3073, '11', 'H', 5, 'Kosong'),
-(3074, '12', 'H', 5, 'Kosong'),
-(3075, '1', 'I', 5, 'Kosong'),
-(3076, '2', 'I', 5, 'Kosong'),
-(3077, '3', 'I', 5, 'Kosong'),
-(3078, '4', 'I', 5, 'Kosong'),
-(3079, '5', 'I', 5, 'Kosong'),
-(3080, '6', 'I', 5, 'Kosong'),
-(3081, '7', 'I', 5, 'Kosong'),
-(3082, '8', 'I', 5, 'Kosong'),
-(3083, '9', 'I', 5, 'Kosong'),
-(3084, '10', 'I', 5, 'Kosong'),
-(3085, '11', 'I', 5, 'Kosong'),
-(3086, '12', 'I', 5, 'Kosong'),
-(3087, '1', 'J', 5, 'Kosong'),
-(3088, '2', 'J', 5, 'Kosong'),
-(3089, '3', 'J', 5, 'Kosong'),
-(3090, '4', 'J', 5, 'Kosong'),
-(3091, '5', 'J', 5, 'Kosong'),
-(3092, '6', 'J', 5, 'Kosong'),
-(3093, '7', 'J', 5, 'Kosong'),
-(3094, '8', 'J', 5, 'Kosong'),
-(3095, '9', 'J', 5, 'Kosong'),
-(3096, '10', 'J', 5, 'Kosong'),
-(3097, '11', 'J', 5, 'Kosong'),
-(3098, '12', 'J', 5, 'Kosong'),
-(3099, '1', 'K', 5, 'Kosong'),
-(3100, '2', 'K', 5, 'Kosong'),
-(3101, '3', 'K', 5, 'Kosong'),
-(3102, '4', 'K', 5, 'Kosong'),
-(3103, '5', 'K', 5, 'Kosong'),
-(3104, '6', 'K', 5, 'Kosong'),
-(3105, '7', 'K', 5, 'Kosong'),
-(3106, '8', 'K', 5, 'Kosong'),
-(3107, '9', 'K', 5, 'Kosong'),
-(3108, '10', 'K', 5, 'Kosong'),
-(3109, '11', 'K', 5, 'Kosong'),
-(3110, '12', 'K', 5, 'Kosong'),
-(3111, '1', 'L', 5, 'Kosong'),
-(3112, '2', 'L', 5, 'Kosong'),
-(3113, '3', 'L', 5, 'Kosong'),
-(3114, '4', 'L', 5, 'Kosong'),
-(3115, '5', 'L', 5, 'Kosong'),
-(3116, '6', 'L', 5, 'Kosong'),
-(3117, '7', 'L', 5, 'Kosong'),
-(3118, '8', 'L', 5, 'Kosong'),
-(3119, '9', 'L', 5, 'Kosong'),
-(3120, '10', 'L', 5, 'Kosong'),
-(3121, '11', 'L', 5, 'Kosong'),
-(3122, '12', 'L', 5, 'Kosong'),
-(3123, '1', 'M', 5, 'Kosong'),
-(3124, '2', 'M', 5, 'Kosong'),
-(3125, '3', 'M', 5, 'Kosong'),
-(3126, '4', 'M', 5, 'Kosong'),
-(3127, '5', 'M', 5, 'Kosong'),
-(3128, '6', 'M', 5, 'Kosong'),
-(3129, '7', 'M', 5, 'Kosong'),
-(3130, '8', 'M', 5, 'Kosong'),
-(3131, '9', 'M', 5, 'Kosong'),
-(3132, '10', 'M', 5, 'Kosong'),
-(3133, '11', 'M', 5, 'Kosong'),
-(3134, '12', 'M', 5, 'Kosong'),
-(3135, '1', 'N', 5, 'Kosong'),
-(3136, '2', 'N', 5, 'Kosong'),
-(3137, '3', 'N', 5, 'Kosong'),
-(3138, '4', 'N', 5, 'Kosong'),
-(3139, '5', 'N', 5, 'Kosong'),
-(3140, '6', 'N', 5, 'Kosong'),
-(3141, '7', 'N', 5, 'Kosong'),
-(3142, '8', 'N', 5, 'Kosong'),
-(3143, '9', 'N', 5, 'Kosong'),
-(3144, '10', 'N', 5, 'Kosong'),
-(3145, '11', 'N', 5, 'Kosong'),
-(3146, '12', 'N', 5, 'Kosong'),
-(3147, '1', 'O', 5, 'Kosong'),
-(3148, '2', 'O', 5, 'Kosong'),
-(3149, '3', 'O', 5, 'Kosong'),
-(3150, '4', 'O', 5, 'Kosong'),
-(3151, '5', 'O', 5, 'Kosong'),
-(3152, '6', 'O', 5, 'Kosong'),
-(3153, '7', 'O', 5, 'Kosong'),
-(3154, '8', 'O', 5, 'Kosong'),
-(3155, '9', 'O', 5, 'Kosong'),
-(3156, '10', 'O', 5, 'Kosong'),
-(3157, '11', 'O', 5, 'Kosong'),
-(3158, '12', 'O', 5, 'Kosong'),
-(3159, '1', 'P', 5, 'Kosong'),
-(3160, '2', 'P', 5, 'Kosong'),
-(3161, '3', 'P', 5, 'Kosong'),
-(3162, '4', 'P', 5, 'Kosong'),
-(3163, '5', 'P', 5, 'Kosong'),
-(3164, '6', 'P', 5, 'Kosong'),
-(3165, '7', 'P', 5, 'Kosong'),
-(3166, '8', 'P', 5, 'Kosong'),
-(3167, '9', 'P', 5, 'Kosong'),
-(3168, '10', 'P', 5, 'Kosong'),
-(3169, '11', 'P', 5, 'Kosong'),
-(3170, '12', 'P', 5, 'Kosong'),
 (3171, '1', 'A', 6, 'Kosong'),
 (3172, '2', 'A', 6, 'Kosong'),
 (3173, '3', 'A', 6, 'Kosong'),
@@ -1722,7 +1742,141 @@ INSERT INTO `seat` (`id_seat`, `number_seat`, `variable_seat`, `id_teater`, `sta
 (3687, '17', 'Z', 6, 'Kosong'),
 (3688, '18', 'Z', 6, 'Kosong'),
 (3689, '19', 'Z', 6, 'Kosong'),
-(3690, '20', 'Z', 6, 'Kosong');
+(3690, '20', 'Z', 6, 'Kosong'),
+(4782, '1', 'A', 10, 'Kosong'),
+(4783, '2', 'A', 10, 'Kosong'),
+(4784, '3', 'A', 10, 'Kosong'),
+(4785, '4', 'A', 10, 'Kosong'),
+(4786, '5', 'A', 10, 'Kosong'),
+(4787, '6', 'A', 10, 'Kosong'),
+(4788, '7', 'A', 10, 'Kosong'),
+(4789, '8', 'A', 10, 'Kosong'),
+(4790, '9', 'A', 10, 'Kosong'),
+(4791, '10', 'A', 10, 'Kosong'),
+(4792, '11', 'A', 10, 'Kosong'),
+(4793, '12', 'A', 10, 'Kosong'),
+(4794, '1', 'B', 10, 'Kosong'),
+(4795, '2', 'B', 10, 'Kosong'),
+(4796, '3', 'B', 10, 'Kosong'),
+(4797, '4', 'B', 10, 'Kosong'),
+(4798, '5', 'B', 10, 'Kosong'),
+(4799, '6', 'B', 10, 'Kosong'),
+(4800, '7', 'B', 10, 'Kosong'),
+(4801, '8', 'B', 10, 'Kosong'),
+(4802, '9', 'B', 10, 'Kosong'),
+(4803, '10', 'B', 10, 'Kosong'),
+(4804, '11', 'B', 10, 'Kosong'),
+(4805, '12', 'B', 10, 'Kosong'),
+(4806, '1', 'C', 10, 'Kosong'),
+(4807, '2', 'C', 10, 'Kosong'),
+(4808, '3', 'C', 10, 'Kosong'),
+(4809, '4', 'C', 10, 'Kosong'),
+(4810, '5', 'C', 10, 'Kosong'),
+(4811, '6', 'C', 10, 'Kosong'),
+(4812, '7', 'C', 10, 'Kosong'),
+(4813, '8', 'C', 10, 'Kosong'),
+(4814, '9', 'C', 10, 'Kosong'),
+(4815, '10', 'C', 10, 'Kosong'),
+(4816, '11', 'C', 10, 'Kosong'),
+(4817, '12', 'C', 10, 'Kosong'),
+(4818, '1', 'D', 10, 'Kosong'),
+(4819, '2', 'D', 10, 'Kosong'),
+(4820, '3', 'D', 10, 'Kosong'),
+(4821, '4', 'D', 10, 'Kosong'),
+(4822, '5', 'D', 10, 'Kosong'),
+(4823, '6', 'D', 10, 'Kosong'),
+(4824, '7', 'D', 10, 'Kosong'),
+(4825, '8', 'D', 10, 'Kosong'),
+(4826, '9', 'D', 10, 'Kosong'),
+(4827, '10', 'D', 10, 'Kosong'),
+(4828, '11', 'D', 10, 'Kosong'),
+(4829, '12', 'D', 10, 'Kosong'),
+(4830, '1', 'E', 10, 'Kosong'),
+(4831, '2', 'E', 10, 'Kosong'),
+(4832, '3', 'E', 10, 'Kosong'),
+(4833, '4', 'E', 10, 'Kosong'),
+(4834, '5', 'E', 10, 'Kosong'),
+(4835, '6', 'E', 10, 'Kosong'),
+(4836, '7', 'E', 10, 'Kosong'),
+(4837, '8', 'E', 10, 'Kosong'),
+(4838, '9', 'E', 10, 'Kosong'),
+(4839, '10', 'E', 10, 'Kosong'),
+(4840, '11', 'E', 10, 'Kosong'),
+(4841, '12', 'E', 10, 'Kosong'),
+(4842, '1', 'F', 10, 'Kosong'),
+(4843, '2', 'F', 10, 'Kosong'),
+(4844, '3', 'F', 10, 'Kosong'),
+(4845, '4', 'F', 10, 'Kosong'),
+(4846, '5', 'F', 10, 'Kosong'),
+(4847, '6', 'F', 10, 'Kosong'),
+(4848, '7', 'F', 10, 'Kosong'),
+(4849, '8', 'F', 10, 'Kosong'),
+(4850, '9', 'F', 10, 'Kosong'),
+(4851, '10', 'F', 10, 'Kosong'),
+(4852, '11', 'F', 10, 'Kosong'),
+(4853, '12', 'F', 10, 'Kosong'),
+(4854, '1', 'G', 10, 'Kosong'),
+(4855, '2', 'G', 10, 'Kosong'),
+(4856, '3', 'G', 10, 'Kosong'),
+(4857, '4', 'G', 10, 'Kosong'),
+(4858, '5', 'G', 10, 'Kosong'),
+(4859, '6', 'G', 10, 'Kosong'),
+(4860, '7', 'G', 10, 'Kosong'),
+(4861, '8', 'G', 10, 'Kosong'),
+(4862, '9', 'G', 10, 'Kosong'),
+(4863, '10', 'G', 10, 'Kosong'),
+(4864, '11', 'G', 10, 'Kosong'),
+(4865, '12', 'G', 10, 'Kosong'),
+(4866, '1', 'H', 10, 'Kosong'),
+(4867, '2', 'H', 10, 'Kosong'),
+(4868, '3', 'H', 10, 'Kosong'),
+(4869, '4', 'H', 10, 'Kosong'),
+(4870, '5', 'H', 10, 'Kosong'),
+(4871, '6', 'H', 10, 'Kosong'),
+(4872, '7', 'H', 10, 'Kosong'),
+(4873, '8', 'H', 10, 'Kosong'),
+(4874, '9', 'H', 10, 'Kosong'),
+(4875, '10', 'H', 10, 'Kosong'),
+(4876, '11', 'H', 10, 'Kosong'),
+(4877, '12', 'H', 10, 'Kosong'),
+(4878, '1', 'I', 10, 'Kosong'),
+(4879, '2', 'I', 10, 'Kosong'),
+(4880, '3', 'I', 10, 'Kosong'),
+(4881, '4', 'I', 10, 'Kosong'),
+(4882, '5', 'I', 10, 'Kosong'),
+(4883, '6', 'I', 10, 'Kosong'),
+(4884, '7', 'I', 10, 'Kosong'),
+(4885, '8', 'I', 10, 'Kosong'),
+(4886, '9', 'I', 10, 'Kosong'),
+(4887, '10', 'I', 10, 'Kosong'),
+(4888, '11', 'I', 10, 'Kosong'),
+(4889, '12', 'I', 10, 'Kosong'),
+(4890, '1', 'J', 10, 'Kosong'),
+(4891, '2', 'J', 10, 'Kosong'),
+(4892, '3', 'J', 10, 'Kosong'),
+(4893, '4', 'J', 10, 'Kosong'),
+(4894, '5', 'J', 10, 'Kosong'),
+(4895, '6', 'J', 10, 'Kosong'),
+(4896, '7', 'J', 10, 'Kosong'),
+(4897, '8', 'J', 10, 'Kosong'),
+(4898, '9', 'J', 10, 'Kosong'),
+(4899, '10', 'J', 10, 'Kosong'),
+(4900, '11', 'J', 10, 'Kosong'),
+(4901, '12', 'J', 10, 'Kosong'),
+(5058, '1', 'A', 11, 'Kosong'),
+(5059, '2', 'A', 11, 'Kosong'),
+(5060, '1', 'B', 11, ''),
+(5061, '2', 'B', 11, 'Rusak'),
+(5062, '1', 'C', 11, 'Kosong'),
+(5063, '2', 'C', 11, 'Kosong'),
+(5064, '1', 'D', 11, 'Kosong'),
+(5065, '2', 'D', 11, 'Kosong'),
+(5066, '1', 'E', 11, 'Kosong'),
+(5067, '2', 'E', 11, 'Kosong'),
+(5068, '1', 'F', 11, 'Kosong'),
+(5069, '2', 'F', 11, 'Kosong'),
+(5070, '1', 'G', 11, 'Kosong'),
+(5071, '2', 'G', 11, 'Kosong');
 
 -- --------------------------------------------------------
 
@@ -1744,8 +1898,9 @@ INSERT INTO `teater` (`id_teater`, `name_teater`) VALUES
 (2, '2'),
 (3, '3'),
 (4, '4'),
-(5, '5'),
-(6, '6');
+(6, '6'),
+(10, '511'),
+(11, '8');
 
 -- --------------------------------------------------------
 
@@ -1767,9 +1922,19 @@ CREATE TABLE `transaksi_topup` (
 --
 
 INSERT INTO `transaksi_topup` (`id_topup`, `date`, `id_user`, `total_topup`, `status_topup`, `bukti_pembayaran`) VALUES
+('197308765366', '2024-03-19 17:56:52', 2, 18000, 'Transaksi Berhasil', '197308765366.png'),
 ('281464546777', '2024-03-09 12:30:57', 2, 1000000, 'Transaksi Berhasil', '281464546777.png'),
+('286103329445', '2024-03-27 19:42:27', 17, 100000, 'Transaksi Berhasil', '286103329445.png'),
+('306174937777', '2024-03-27 15:53:16', 16, 90000, 'Transaksi Berhasil', '306174937777.png'),
 ('444071702847', '2024-03-07 19:52:22', 2, 10000, 'Transaksi Berhasil', '444071702847.png'),
+('463670643443', '2024-05-12 15:39:47', 2, 12000, 'Transaksi Berhasil', '463670643443.png'),
+('642996658033', '2024-05-15 11:21:56', 20, 100000, 'Transaksi Berhasil', '642996658033.png'),
+('672702423377', '2024-03-22 13:37:54', 2, 10000, 'Transaksi Berhasil', '672702423377.png'),
 ('704629469069', '2024-03-15 20:24:27', 2, 15000, 'Transaksi Berhasil', '704629469069.png'),
+('868477728282', '2024-05-15 11:28:55', 20, 15000, 'Kirim Bukti Pembayaran', ''),
+('881763297866', '2024-03-25 17:00:00', 14, 90000, 'Transaksi Gagal', '881763297866.png'),
+('905172326895', '2024-05-14 16:50:40', 2, 10000, 'Kirim Bukti Pembayaran', ''),
+('912218483626', '2024-03-22 12:39:08', 2, 190000, 'Transaksi Gagal', '912218483626.png'),
 ('972870919925', '2024-03-15 20:28:26', 3, 140000, 'Kirim Bukti Pembayaran', '');
 
 -- --------------------------------------------------------
@@ -1791,16 +1956,75 @@ CREATE TABLE `trx` (
 
 INSERT INTO `trx` (`trx`, `id_order`, `password_trx`, `status_cetak`) VALUES
 ('193320240307215', 15, '197605', 'Sudah Di Cetak'),
-('193320240307216', 16, '952664', 'Belum Di Cetak'),
+('193320240307216', 16, '952664', 'Sudah Di Cetak'),
 ('193320240307217', 17, '310855', 'Belum Di Cetak'),
 ('193320240308218', 18, '471092', 'Belum Di Cetak'),
 ('193320240309219', 19, '072393', 'Belum Di Cetak'),
 ('193320240309221', 21, '893747', 'Sudah Di Cetak'),
 ('193320240313222', 22, '864133', 'Belum Di Cetak'),
 ('193320240315424', 24, '023768', 'Sudah Di Cetak'),
-('193320240315426', 26, '812422', 'Belum Di Cetak'),
+('193320240315426', 26, '812422', 'Sudah Di Cetak'),
 ('193320240315427', 27, '687433', 'Sudah Di Cetak'),
-('193320240315428', 28, '216131', 'Belum Di Cetak');
+('193320240315428', 28, '216131', 'Belum Di Cetak'),
+('193320240319429', 29, '500699', 'Sudah Di Cetak'),
+('193320240322234', 34, '963240', 'Belum Di Cetak'),
+('193320240322435', 35, '215636', 'Sudah Di Cetak'),
+('193320240325236', 36, '863451', 'Belum Di Cetak'),
+('193320240325239', 39, '453502', 'Belum Di Cetak'),
+('193320240325437', 37, '702203', 'Sudah Di Cetak'),
+('193320240325438', 38, '062621', 'Sudah Di Cetak'),
+('1933202403271640', 40, '197846', 'Belum Di Cetak'),
+('1933202403271743', 43, '355125', 'Belum Di Cetak'),
+('193320240327245', 45, '267019', 'Belum Di Cetak'),
+('193320240327441', 41, '152455', 'Sudah Di Cetak'),
+('193320240327446', 46, '994921', 'Sudah Di Cetak'),
+('193320240508247', 47, '004029', 'Belum Di Cetak'),
+('193320240508248', 48, '888399', 'Belum Di Cetak'),
+('193320240508250', 50, '237485', 'Belum Di Cetak'),
+('193320240508349', 49, '908284', 'Belum Di Cetak'),
+('193320240512451', 51, '138512', 'Sudah Di Cetak'),
+('193320240514253', 53, '492566', 'Belum Di Cetak'),
+('193320240514269', 69, '404493', 'Belum Di Cetak'),
+('193320240514454', 54, '236386', 'Sudah Di Cetak'),
+('193320240514455', 55, '588520', 'Sudah Di Cetak'),
+('193320240514456', 56, '890476', 'Sudah Di Cetak'),
+('193320240514457', 57, '672709', 'Sudah Di Cetak'),
+('193320240514458', 58, '831561', 'Sudah Di Cetak'),
+('193320240514459', 59, '930219', 'Sudah Di Cetak'),
+('193320240514460', 60, '851624', 'Sudah Di Cetak'),
+('193320240514461', 61, '686920', 'Sudah Di Cetak'),
+('193320240514462', 62, '381988', 'Sudah Di Cetak'),
+('193320240514463', 63, '358811', 'Sudah Di Cetak'),
+('193320240514464', 64, '941325', 'Sudah Di Cetak'),
+('193320240514465', 65, '523156', 'Sudah Di Cetak'),
+('193320240514466', 66, '879431', 'Sudah Di Cetak'),
+('193320240514470', 70, '605512', 'Sudah Di Cetak'),
+('193320240514471', 71, '797285', 'Sudah Di Cetak'),
+('193320240514472', 72, '931383', 'Sudah Di Cetak'),
+('193320240514473', 73, '674243', 'Sudah Di Cetak'),
+('1933202405152093', 93, '942457', 'Sudah Di Cetak'),
+('193320240515292', 92, '096118', 'Belum Di Cetak'),
+('193320240515475', 75, '375607', 'Sudah Di Cetak'),
+('193320240515476', 76, '055455', 'Sudah Di Cetak'),
+('193320240515477', 77, '239150', 'Sudah Di Cetak'),
+('193320240515478', 78, '630281', 'Sudah Di Cetak'),
+('193320240515479', 79, '500326', 'Sudah Di Cetak'),
+('193320240515480', 80, '352541', 'Sudah Di Cetak'),
+('193320240515481', 81, '216405', 'Sudah Di Cetak'),
+('193320240515482', 82, '000591', 'Sudah Di Cetak'),
+('193320240515483', 83, '993752', 'Sudah Di Cetak'),
+('193320240515484', 84, '627011', 'Sudah Di Cetak'),
+('193320240515485', 85, '088813', 'Sudah Di Cetak'),
+('193320240515486', 86, '016506', 'Sudah Di Cetak'),
+('193320240515487', 87, '305320', 'Sudah Di Cetak'),
+('193320240515488', 88, '653556', 'Sudah Di Cetak'),
+('193320240515489', 89, '484449', 'Sudah Di Cetak'),
+('193320240515490', 90, '476880', 'Sudah Di Cetak'),
+('193320240515491', 91, '753844', 'Sudah Di Cetak'),
+('193320240515494', 94, '262739', 'Sudah Di Cetak'),
+('193320240516296', 96, '528071', 'Belum Di Cetak'),
+('193320240516297', 97, '052130', 'Belum Di Cetak'),
+('193320240516495', 95, '584572', 'Sudah Di Cetak');
 
 -- --------------------------------------------------------
 
@@ -1824,14 +2048,22 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `id_role`, `username`, `password`, `nama_user`, `telepon`, `saldo`) VALUES
 (1, 1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Dimas Aditya', '08757351233', 0),
-(2, 4, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', '0897564534', 1025001),
-(3, 4, 'kaka', '5541c7b5a06c39b267a5efae6628e003', 'Kaka', '08123123122', 220000),
+(2, 4, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'User', '0897564534', 155001),
+(3, 4, 'kaka', '5541c7b5a06c39b267a5efae6628e003', 'Kaka', '08123123122', 120000),
 (4, 3, 'kasir', 'c7911af3adbd12a035b289556d96470a', 'Kasir', '0832424234', 0),
-(5, 2, 'manager', '1d0258c2440a8d19e716292b231e3190', 'Manager', '087735431339', 1218691),
+(5, 2, 'manager', '1d0258c2440a8d19e716292b231e3190', 'Dimas Aditya', '087735431339', 2548691),
 (6, 4, 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 'tes', '08345424', 0),
 (7, 4, 'ZZ', 'dc18d83abfd9f87d396e8fd6b6ac0fe1', 'ZZ', '085634242', 0),
 (8, 4, 'aasdq', '8ca39209498cc55df0c7a39c6737bacc', 'Dimas', '1231231231', 0),
-(9, 1, 'dimas', '7d49e40f4b3d8f68c19406a58303f826', 'dimas', '8823131', 0);
+(9, 1, 'dimas', '7d49e40f4b3d8f68c19406a58303f826', 'dimas', '8823131', 0),
+(13, 2, 'asddsa', 'ec02c59dee6faaca3189bace969c22d3', 'asdss', '234243', 0),
+(14, 4, 'dimdim', 'e6fa959b9e8f9c638e0d82bf2c7dc5e7', 'Dimas', '08773233123', 0),
+(15, 3, 'asdasd', 'a8f5f167f44f4964e6c998dee827110c', 'Dimasssss', '123123123123', 0),
+(16, 4, 'qwe', '76d80224611fc919a5d54f0ff9fba446', 'qwe', '0709899', 30000),
+(17, 4, 'qwer', '962012d09b8170d912f0669f6d7d9d07', 'Dimas', '08693632', 40000),
+(18, 4, 'wer', '22c276a05aa7c90566ae2175bcc2a9b0', 'wer', '1313', 0),
+(19, 4, 'poi', 'd6e1c05c8a81c2ae74c7aedea5ec92c1', 'poi', '8079070', 0),
+(20, 4, 'samid', '183302b157a276e7304caab75d9f45d2', 'samid', '98799797', 0);
 
 --
 -- Indexes for dumped tables
@@ -1841,7 +2073,9 @@ INSERT INTO `user` (`id_user`, `id_role`, `username`, `password`, `nama_user`, `
 -- Indexes for table `detail_order`
 --
 ALTER TABLE `detail_order`
-  ADD PRIMARY KEY (`id_detail_order`);
+  ADD PRIMARY KEY (`id_detail_order`),
+  ADD KEY `id_order` (`id_order`,`id_seat`),
+  ADD KEY `id_seat` (`id_seat`);
 
 --
 -- Indexes for table `dimension`
@@ -1854,7 +2088,8 @@ ALTER TABLE `dimension`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`id_film`),
-  ADD KEY `id_dimension` (`id_dimension`);
+  ADD KEY `id_dimension` (`id_dimension`),
+  ADD KEY `id_genre` (`id_genre`);
 
 --
 -- Indexes for table `genre`
@@ -1868,8 +2103,7 @@ ALTER TABLE `genre`
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id_order`),
   ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_schedule` (`id_schedule`),
-  ADD KEY `order_ibfk_2` (`id_teater`);
+  ADD KEY `id_schedule` (`id_schedule`);
 
 --
 -- Indexes for table `price`
@@ -1889,7 +2123,8 @@ ALTER TABLE `role`
 ALTER TABLE `schedule`
   ADD PRIMARY KEY (`id_schedule`),
   ADD KEY `id_film` (`id_film`),
-  ADD KEY `id_teater` (`id_teater`);
+  ADD KEY `id_teater` (`id_teater`),
+  ADD KEY `day` (`day`);
 
 --
 -- Indexes for table `seat`
@@ -1908,7 +2143,8 @@ ALTER TABLE `teater`
 -- Indexes for table `transaksi_topup`
 --
 ALTER TABLE `transaksi_topup`
-  ADD PRIMARY KEY (`id_topup`);
+  ADD PRIMARY KEY (`id_topup`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `trx`
@@ -1932,31 +2168,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id_detail_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_detail_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
 
 --
 -- AUTO_INCREMENT for table `dimension`
 --
 ALTER TABLE `dimension`
-  MODIFY `id_dimension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_dimension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_film` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
-  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -1968,29 +2204,36 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `id_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_schedule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `seat`
 --
 ALTER TABLE `seat`
-  MODIFY `id_seat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3691;
+  MODIFY `id_seat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5072;
 
 --
 -- AUTO_INCREMENT for table `teater`
 --
 ALTER TABLE `teater`
-  MODIFY `id_teater` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_teater` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `detail_order`
+--
+ALTER TABLE `detail_order`
+  ADD CONSTRAINT `detail_order_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `order` (`id_order`),
+  ADD CONSTRAINT `detail_order_ibfk_2` FOREIGN KEY (`id_seat`) REFERENCES `seat` (`id_seat`) ON DELETE NO ACTION;
 
 --
 -- Constraints for table `film`
@@ -2003,7 +2246,6 @@ ALTER TABLE `film`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`id_schedule`) REFERENCES `schedule` (`id_schedule`),
-  ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`id_teater`) REFERENCES `teater` (`id_teater`),
   ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
@@ -2011,13 +2253,20 @@ ALTER TABLE `order`
 --
 ALTER TABLE `schedule`
   ADD CONSTRAINT `schedule_ibfk_1` FOREIGN KEY (`id_teater`) REFERENCES `teater` (`id_teater`),
-  ADD CONSTRAINT `schedule_ibfk_2` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`);
+  ADD CONSTRAINT `schedule_ibfk_2` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`),
+  ADD CONSTRAINT `schedule_ibfk_3` FOREIGN KEY (`day`) REFERENCES `price` (`day`);
 
 --
 -- Constraints for table `seat`
 --
 ALTER TABLE `seat`
   ADD CONSTRAINT `seat_ibfk_1` FOREIGN KEY (`id_teater`) REFERENCES `teater` (`id_teater`);
+
+--
+-- Constraints for table `transaksi_topup`
+--
+ALTER TABLE `transaksi_topup`
+  ADD CONSTRAINT `transaksi_topup_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
 -- Constraints for table `trx`

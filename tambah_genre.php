@@ -18,15 +18,18 @@
     }
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_genre.php">
-            <h1>Tambah Genre</h1>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Genre</h1>
+                <form method="post" action="proses_genre.php">
 
-            Nama Genre
+                    <label for="" class="fs-5 mt-3 mb-2">Nama Genre</label>
+                    <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Nama Genre" required>
+                    <button type="submit" name="simpan" class="btn btn-warning w-50">Simpan</button>
+                </form>
 
-            <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Nama Genre" required>
-            <button type="submit" name="simpan" class="btn btn-warning w-50">Simpan</button>
-        </form>
-
+            </div>
+        </div>
     </div>
 
 </body>

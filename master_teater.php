@@ -31,39 +31,44 @@ if ($_SESSION['id_role'] != 1) {
     $sql = "SELECT * FROM `teater` ORDER BY id_teater ASC";
     $teater = mysqli_query($conn, $sql);
     ?>
-    <div class="container mt-4">
-        <h1>Data Teater</h1>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Data Teater</h1>
 
-        <div class="mb-3">
-            <a class="btn btn-warning" href="tambah_teater.php"><i class="bi bi-person-add"></i>Tambah Data Teater</a>
+                <div class="mb-3 mt-4">
+                    <a class="btn btn-warning" href="tambah_teater.php"><i class="bi bi-person-add text-dark"></i>Tambah Data Teater</a>
+                </div>
+
+                <table id="example" class='table table-bordered table-striped table-hover'>
+                    <thead>
+                        <tr>
+                            <th>ID teater</th>
+                            <th>Nama teater</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($teater as $index => $row) { ?>
+                            <tr>
+                                <td><?= $index + 1; ?></td>
+                                <td><?= $row['name_teater']; ?></td>
+                                <td align="center"><a href="edit_teater.php?id=<?= $row['id_teater'] ?>">
+                                        <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
+                                    <a href="proses_teater.php?id=<?= $row['id_teater'] ?>" onclick="return konfirmasiHapus()">
+                                        <button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+
+
+                </table>
+            </div>
         </div>
-
-        <table id="example" class='table table-bordered table-striped table-hover'>
-            <thead>
-                <tr>
-                    <th>ID teater</th>
-                    <th>Nama teater</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($teater as $index => $row) { ?>
-                    <tr>
-                        <td><?= $index + 1; ?></td>
-                        <td><?= $row['name_teater']; ?></td>
-                        <td align="center"><a href="edit_teater.php?id=<?= $row['id_teater'] ?>">
-                                <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button></a> |
-                            <a href="proses_teater.php?id=<?= $row['id_teater'] ?>" onclick="return konfirmasiHapus()">
-                                <button class="btn btn-warning"><i class="bi bi-trash3"></i></button></a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-
-
-        </table>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>

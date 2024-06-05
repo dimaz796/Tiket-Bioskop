@@ -27,17 +27,21 @@
 
     ?>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Edit Genre</h1>
+                <form method="post" action="proses_genre.php">
+                    <input type="hidden" name="id_genre" value="<?= $id_genre ?>">
 
-        <form method="post" action="proses_genre.php">
-            <h1>Edit Genre</h1>
-            <input type="hidden" name="id_genre" value="<?= $id_genre ?>">
+                    Nama Genre
+                    <input type="text" name="nama" class="form-control w-50" value="<?= $nama_genre ?>"><br><br>
+                    <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
+                </form>
 
-            Nama Genre
-            <input type="text" name="nama" class="form-control w-50" value="<?= $nama_genre ?>"><br><br>
-            <button type="submit" name="ubah" class="btn btn-warning w-50">Ubah</button>
-        </form>
-
+            </div>
+        </div>
     </div>
+
 
 </body>
 

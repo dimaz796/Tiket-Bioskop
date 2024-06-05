@@ -44,45 +44,49 @@ $querry = mysqli_query($conn, $sql);
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
 
-        <h1>Detail Order</h1>
+                <h1 class="text-light">Detail Order</h1>
 
 
-        <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Detail Order</th>
-                    <th>Seat</th>
-                    <th>Harga</th>
-                </tr>
-            </thead>
+                <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Detail Order</th>
+                            <th>Seat</th>
+                            <th>Harga</th>
+                        </tr>
+                    </thead>
 
-            <?php
-            foreach ($querry as $index => $row) { ?>
-                <tr>
-                    <td><?= $index + 1 ?></td>
-                    <td><?php
-                        $id_seat = $row['id_seat'];
-                        $sql = "SELECT seat.variable_seat,seat.number_seat FROM seat
+                    <?php
+                    foreach ($querry as $index => $row) { ?>
+                        <tr>
+                            <td><?= $index + 1 ?></td>
+                            <td><?php
+                                $id_seat = $row['id_seat'];
+                                $sql = "SELECT seat.variable_seat,seat.number_seat FROM seat
                                       WHERE id_seat = $id_seat;";
-                        $seat = mysqli_query($conn, $sql);
-                        foreach ($seat as $st) {
-                            $variable = $st['variable_seat'];
-                            $number = $st['number_seat'];
-                            echo $variable . $number;
-                        }
-                        ?>
+                                $seat = mysqli_query($conn, $sql);
+                                foreach ($seat as $st) {
+                                    $variable = $st['variable_seat'];
+                                    $number = $st['number_seat'];
+                                    echo $variable . $number;
+                                }
+                                ?>
 
-                    </td>
-                    <td>
-                        <?= $row['price']; ?>
-                    </td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+                            </td>
+                            <td>
+                                <?= $row['price']; ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
 
+            </div>
+        </div>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

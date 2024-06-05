@@ -18,13 +18,19 @@
     }
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_role.php">
-            <h1>Tambah Role</h1>
-            Nama Role
-            <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Nama Role" required>
-            <button type="submit" name="simpan" class="btn btn-warning w-50 ">Simpan</button>
-        </form>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Role</h1>
+                <form method="post" action="proses_role.php">
 
+                    <label for="" class="fs-5 mt-3 mb-2">Nama Role</label>
+
+                    <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Nama Role" required>
+                    <button type="submit" name="simpan" class="btn btn-warning w-50 ">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

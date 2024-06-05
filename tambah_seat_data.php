@@ -18,26 +18,31 @@
     }
     $id = $_GET['id'];
     ?>
-    <div class="container">
-        <form method="post" action="proses_seat.php">
-            <h1>Tambah Data Kursi</h1>
-            <select name="variable" class="form-select w-50 h-50 enter mb-4 p-1" style="height: 25px; width: 610px;">
-                <option value="" class="bg-dark"></option>
-                <?php
-                $abjad = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-                foreach ($abjad as $index => $value) :
-                ?>
-                    <option value="<?= $value ?>" class="bg-dark"><?= $value ?></option>
-                <?php endforeach ?>
-            </select>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Kursi</h1>
+                <form method="post" action="proses_seat.php">
 
-            Kolom
-            <input type="number" name="kolom" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" placeholder="Kolom Ke Berapa">
+                    <select name="variable" class="form-select w-50 h-50 enter mb-4 p-1" style="height: 25px; width: 610px;">
+                        <option value="" class="bg-dark"></option>
+                        <?php
+                        $abjad = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+                        foreach ($abjad as $index => $value) :
+                        ?>
+                            <option value="<?= $value ?>" class="bg-dark"><?= $value ?></option>
+                        <?php endforeach ?>
+                    </select>
 
-            <input type="hidden" name="id" value="$id">
-            <button type="submit" name="tambahkan" class="btn btn-warning">Simpan</button>
-        </form>
+                    Kolom
+                    <input type="number" name="kolom" class="w-50 h-50 enter mb-4 p-1 rounded text-body-secondary" placeholder="Kolom Ke Berapa">
 
+                    <input type="hidden" name="id" value="$id">
+                    <button type="submit" name="tambahkan" class="btn btn-warning">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

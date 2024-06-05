@@ -18,13 +18,18 @@
     }
     ?>
     <div class="container mt-3">
-        <form method="post" action="proses_teater.php">
-            <h1>Tambah Teater</h1>
-            Teater
-            <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Teater" required>
-            <button type="submit" name="simpan" class="btn btn-warning">Simpan</button>
-        </form>
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Tambah Teater</h1>
+                <form method="post" action="proses_teater.php">
 
+                    <label for="" class="fs-5 mt-3 mb-2">Nama Teater</label>
+                    <input type="text" name="nama" class="form-control w-50 enter mb-4" placeholder=" Masukan Teater" required>
+                    <button type="submit" name="simpan" class="btn btn-warning">Simpan</button>
+                </form>
+
+            </div>
+        </div>
     </div>
 
 </body>

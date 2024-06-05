@@ -26,7 +26,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 WHERE user.id_user = $id_user AND order.status_order = 'Belum Bayar'
@@ -55,78 +55,84 @@ $count = mysqli_num_rows($querry);
 </head>
 
 <body>
-    <div class="container">
-        <?php
-        if ($count == 0) {
-            echo "<h1 class='mt-4'>Anda Belum Order</h1>
-        <label>Silahkan Order Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
+    <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+
+                <div class="mb-3 mt-4">
+                    <?php
+                    if ($count == 0) {
+                        echo "<h1 class='mt-4'>Anda Tidak Memiliki Transaksi</h1>
+        <label>Silahkan Transaksi Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
         ";
-        } else {
-        ?>
-
-            <h1 class="mt-4">Orderan Anda</h1>
-
-
-            <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Order</th>
-                        <th>Judul film</th>
-                        <th>Tanggal Order</th>
-                        <th>Jadwal</th>
-                        <th>Teater</th>
-                        <th>Atas Nama</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Waktu Pembayaran</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-
-                <?php
-                foreach ($querry as $index => $row) {
-                    if ($row['status_order'] == 'Belum Bayar') {
-                        $status = 'danger';
                     } else {
-                        $status = 'success';
-                    }
-                    $id_order = $row['id_order'];
-                ?>
-                    <tr>
-                        <td><?= $index + 1 ?></td>
-                        <td><?= $row['title']; ?></td>
-                        <td><?= $row['date']; ?></td>
-                        <td><?php $clock = substr($row['clock'], 11);
-                            $clock = substr($clock, 0, -3);
-                            echo $clock; ?>
-                        </td>
-                        <td><?= $row['name_teater']; ?></td>
-                        <td><?= $row['nama_user']; ?></td>
-                        <td>Rp. <?= number_format($row['total']); ?></td>
-                        <td>
-                            <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
-                        </td>
-                        <td>
-                            <span id="countdown" class="text-dark fw-medium fs-6"></span>
-                        </td>
-                        <td align="center">
+                    ?>
 
-                            <a href="pembayaran.php?id_order=<?= $row['id_order'] ?>&total=<?= $row['total'] ?>">
-                                <button class="btn btn-success"><i class="bi bi-credit-card"></i></button>
-                            </a>
-                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
-                                <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
-                            </a>
-                            <a href="proses_transaksi.php?id_order=<?= $row['id_order'] ?>&pesan=hapus" onclick="return konfirmasiHapus()">
-                                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        <?php } ?>
-    </div>
+                        <h1 class="text-light">Menunggu Pembayaran</h1>
+
+
+                        <table id="example" class="table table-bordered table-striped table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Order</th>
+                                    <th>Judul film</th>
+                                    <th>Tanggal Order</th>
+                                    <th>Jadwal</th>
+                                    <th>Teater</th>
+                                    <th>Atas Nama</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Waktu Pembayaran</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <?php
+                            foreach ($querry as $index => $row) {
+                                if ($row['status_order'] == 'Belum Bayar') {
+                                    $status = 'danger';
+                                } else {
+                                    $status = 'success';
+                                }
+                                $id_order = $row['id_order'];
+                            ?>
+                                <tr>
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= $row['title']; ?></td>
+                                    <td><?= $row['date']; ?></td>
+                                    <td><?php $clock = substr($row['clock'], 11);
+                                        $clock = substr($clock, 0, -3);
+                                        echo $clock; ?>
+                                    </td>
+                                    <td><?= $row['name_teater']; ?></td>
+                                    <td><?= $row['nama_user']; ?></td>
+                                    <td>Rp. <?= number_format($row['total']); ?></td>
+                                    <td>
+                                        <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
+                                    </td>
+                                    <td>
+                                        <span id="countdown" class="text-dark fw-medium fs-6"></span>
+                                    </td>
+                                    <td align="center">
+
+                                        <a href="pembayaran.php?id_order=<?= $row['id_order'] ?>&total=<?= $row['total'] ?>">
+                                            <button class="btn btn-success"><i class="bi bi-credit-card"></i></button>
+                                        </a>
+                                        <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
+                                            <button class="btn btn-primary"><i class="bi bi-journal-text"></i></button>
+                                        </a>
+                                        <a href="proses_transaksi.php?id_order=<?= $row['id_order'] ?>&pesan=hapus" onclick="return konfirmasiHapus()">
+                                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>

@@ -30,7 +30,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 WHERE user.id_user = $id_user AND order.status_order = 'Sudah Di Bayar'
@@ -48,7 +48,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 WHERE user.id_user = $id_user AND order.status_order = 'Sudah Di Bayar' AND order.date = '$date_now'
@@ -80,84 +80,88 @@ include "assets/phpqrcode/qrlib.php";
 </head>
 
 <body>
-    <div class="container pt-4">
-        <?php
+    <div class="container mt-3">
+        <div class="card bg-dark" style="width: 110%;">
+            <div class="card-body bg-dark rounded p-4">
 
-        if ($count == 0) {
-            echo "<h1>Tidak Ada Riwayat Transaksi</h1>
+                <div class="mb-3 mt-4">
+                    <?php
+
+                    if ($count == 0) {
+                        echo "<h1>Tidak Ada Riwayat Transaksi</h1>
         <label>Silahkan Order Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
         ";
-        } else {
-        ?>
-            <?php if ($date_now == $date_order) { ?>
-                <h1>Riwayat Transaksi Hari Ini</h1>
+                    } else {
+                    ?>
+                        <?php if ($date_now == $date_order) { ?>
+                            <h1>Data Riwayat Transaksi Hari Ini</h1>
 
-                <table class="table table-bordered table-striped table-hover mt-4" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>kode transaksi</th>
-                            <th>Judul film</th>
-                            <th>Tanggal Order </th>
-                            <th>Jam Tayang</th>
-                            <th>Teater</th>
-                            <th>Atas Nama</th>
-                            <th>Total</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
+                            <table class="table table-bordered table-striped table-hover mt-4" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>kode transaksi</th>
+                                        <th>Judul film</th>
+                                        <th>Tanggal Order </th>
+                                        <th>Jam Tayang</th>
+                                        <th>Teater</th>
+                                        <th>Atas Nama</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
 
-                    <?php
-                    foreach ($querry_now as $index => $row) {
-                        if ($row['status_order'] == 'Belum Bayar') {
-                            $status = 'danger';
-                        } else {
-                            $status = 'success';
-                        } ?>
-                        <tr>
-                            <td>
                                 <?php
-                                if (isset($row['trx'])) {
+                                foreach ($querry_now as $index => $row) {
+                                    if ($row['status_order'] == 'Belum Bayar') {
+                                        $status = 'danger';
+                                    } else {
+                                        $status = 'success';
+                                    } ?>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                            if (isset($row['trx'])) {
 
-                                    $tempdir = "assets/img/img-qrqode/";
-                                    if (!file_exists($tempdir))
-                                        mkdir($tempdir, 0755);
-                                    $file_name = $row['trx'] . ".png";
-                                    $file_path = $tempdir . $file_name;
+                                                $tempdir = "assets/img/img-qrqode/";
+                                                if (!file_exists($tempdir))
+                                                    mkdir($tempdir, 0755);
+                                                $file_name = $row['trx'] . ".png";
+                                                $file_path = $tempdir . $file_name;
 
-                                    QRcode::png($file_name, $file_path, "H", 6, 4);
-                                }
-                                echo $row['trx'];
-                                ?>
-                            </td>
-                            <td><?= $row['title']; ?></td>
-                            <td><?= $row['date'] ?></td>
-                            <td><?php $clock = substr($row['clock'], 11);
-                                $clock = substr($clock, 0, -3);
-                                echo $clock; ?>
-                            </td>
-                            <td><?= $row['name_teater']; ?></td>
-                            <td><?= $row['nama_user']; ?></td>
-                            <td>Rp. <?= number_format($row['total']); ?></td>
-                            <td>
-                                <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
-                            </td>
-                            <td align="center">
+                                                QRcode::png($file_name, $file_path, "H", 6, 4);
+                                            }
+                                            echo $row['trx'];
+                                            ?>
+                                        </td>
+                                        <td><?= $row['title']; ?></td>
+                                        <td><?= $row['date'] ?></td>
+                                        <td><?php $clock = substr($row['clock'], 11);
+                                            $clock = substr($clock, 0, -3);
+                                            echo $clock; ?>
+                                        </td>
+                                        <td><?= $row['name_teater']; ?></td>
+                                        <td><?= $row['nama_user']; ?></td>
+                                        <td>Rp. <?= number_format($row['total']); ?></td>
+                                        <td>
+                                            <div class="bg-<?= $status ?> text-center rounded-2"><?= $row['status_order']; ?></div>
+                                        </td>
+                                        <td align="center">
 
-                                <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
-                                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                </a>
-                                <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
-                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                                </a>
+                                            <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
+                                                <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                                            </a>
+                                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
+                                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                            </a>
 
-                            </td>
-                        </tr>
-                    <?php } ?>
-                    </tbody>
-                </table>
-            <?php }
-            $sql = "SELECT film.title,order.id_order,order.date,user.nama_user,user.id_user,schedule.clock,teater.name_teater,order.status_order,order.total,trx.trx FROM `order`
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php }
+                        $sql = "SELECT film.title,order.id_order,order.date,user.nama_user,user.id_user,schedule.clock,teater.name_teater,order.status_order,order.total,trx.trx FROM `order`
                 INNER JOIN trx 
                 ON trx.id_order = order.id_order
                 INNER JOIN schedule 
@@ -165,88 +169,90 @@ include "assets/phpqrcode/qrlib.php";
                 INNER JOIN user 
                 ON user.id_user = order.id_user
                 INNER JOIN teater 
-                ON teater.id_teater = order.id_teater
+                ON teater.id_teater = schedule.id_teater
                 INNER JOIN film 
                 ON film.id_film = schedule.id_film
                 WHERE user.id_user = $id_user AND order.status_order = 'Sudah Di Bayar' AND order.date != '$date_now'
                 ORDER BY date DESC 
                 ";
-            $querry_not_now = mysqli_query($conn, $sql);
-            $count_trx = mysqli_num_rows($querry_not_now);
-            if ($count_trx > 0) { ?>
-                <h1>Riwayat Transaksi Anda</h1>
+                        $querry_not_now = mysqli_query($conn, $sql);
+                        $count_trx = mysqli_num_rows($querry_not_now);
+                        if ($count_trx > 0) { ?>
+                            <h1>Riwayat Transaksi Anda</h1>
 
-                <small class="text-warning">*Di Urutkan Dari Yang Terbaru</small>
-                <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>kode transaksi</th>
-                            <th>Judul film</th>
-                            <th>Tanggal Order </th>
-                            <th>Jam Tayang</th>
-                            <th>Teater</th>
-                            <th>Atas Nama</th>
-                            <th>Total</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
+                            <small class="text-warning">*Di Urutkan Dari Yang Terbaru</small>
+                            <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>kode transaksi</th>
+                                        <th>Judul film</th>
+                                        <th>Tanggal Order </th>
+                                        <th>Jam Tayang</th>
+                                        <th>Teater</th>
+                                        <th>Atas Nama</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+
+                                <?php
+                                foreach ($querry_not_now as $index => $row) {
+                                    if ($row['status_order'] == 'Belum Bayar') {
+                                        $status = 'danger';
+                                    } else {
+                                        $status = 'success';
+                                    } ?>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                            if (isset($row['trx'])) {
+
+                                                $tempdir = "assets/img/img-qrqode/";
+                                                if (!file_exists($tempdir))
+                                                    mkdir($tempdir, 0755);
+                                                $file_name = $row['trx'] . ".png";
+                                                $file_path = $tempdir . $file_name;
+
+                                                QRcode::png($file_name, $file_path, "H", 6, 4);
+                                            }
+                                            echo $row['trx'];
+                                            ?>
+                                        </td>
+                                        <td><?= $row['title']; ?></td>
+                                        <td><?= $row['date'] ?></td>
+                                        <td><?php $clock = substr($row['clock'], 11);
+                                            $clock = substr($clock, 0, -3);
+                                            echo $clock; ?>
+                                        </td>
+                                        <td><?= $row['name_teater']; ?></td>
+                                        <td><?= $row['nama_user']; ?></td>
+                                        <td>Rp. <?= number_format($row['total']); ?></td>
+                                        <td>
+                                            <div class="bg-<?= $status ?> text-center rounded-2"><label class="ps-2 pe-2 pt-1 pb-1"><?= $row['status_order']; ?></label></div>
+                                        </td>
+                                        <td align="center">
+                                            <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
+                                                <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                                            </a>
+                                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
+                                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php } else {
+                        }
+                        ?>
 
                     <?php
-                    foreach ($querry_not_now as $index => $row) {
-                        if ($row['status_order'] == 'Belum Bayar') {
-                            $status = 'danger';
-                        } else {
-                            $status = 'success';
-                        } ?>
-                        <tr>
-                            <td>
-                                <?php
-                                if (isset($row['trx'])) {
-
-                                    $tempdir = "assets/img/img-qrqode/";
-                                    if (!file_exists($tempdir))
-                                        mkdir($tempdir, 0755);
-                                    $file_name = $row['trx'] . ".png";
-                                    $file_path = $tempdir . $file_name;
-
-                                    QRcode::png($file_name, $file_path, "H", 6, 4);
-                                }
-                                echo $row['trx'];
-                                ?>
-                            </td>
-                            <td><?= $row['title']; ?></td>
-                            <td><?= $row['date'] ?></td>
-                            <td><?php $clock = substr($row['clock'], 11);
-                                $clock = substr($clock, 0, -3);
-                                echo $clock; ?>
-                            </td>
-                            <td><?= $row['name_teater']; ?></td>
-                            <td><?= $row['nama_user']; ?></td>
-                            <td>Rp. <?= number_format($row['total']); ?></td>
-                            <td>
-                                <div class="bg-<?= $status ?> text-center rounded-2"><label class="ps-2 pe-2 pt-1 pb-1"><?= $row['status_order']; ?></label></div>
-                            </td>
-                            <td align="center">
-                                <a href="tiket_order.php?id_order=<?= encrypt($row['id_order']) ?>">
-                                    <button class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                </a>
-                                <a href="detail_order.php?id_order=<?= encrypt($row['id_order']) ?>">
-                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                    </tbody>
-                </table>
-            <?php } else {
-            }
-            ?>
-
-        <?php
-        }
-        ?>
-    </div>
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>

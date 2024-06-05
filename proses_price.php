@@ -6,6 +6,15 @@ if (isset($_POST['simpan'])) {
     $price = $_POST['price'];
     $day = $_POST['day'];
 
+    if ($price < 0) {
+        echo "
+		<script>
+        alert('Harga Tidak Sah');
+        window.location.href='tambah_price.php';
+		</script>";
+        die;
+    }
+
     // Cek Hari Apakah Sudah Terisi
     $sql = "SELECT day FROM `price` WHERE day = '$day'";
     $cek_hari = mysqli_query($conn, $sql);
@@ -38,7 +47,15 @@ if (isset($_POST['simpan'])) {
 
     $price = $_POST['price'];
     $day = $_POST['day'];
-    echo $day;
+
+    if ($price < 0) {
+        echo "
+            <script>
+            alert('Harga Tidak Sah');
+            window.location.href='edit_price.php?day=$day';
+            </script>";
+        die;
+    }
     $result = mysqli_query($conn, "UPDATE `price` SET `price` = '$price' WHERE `price`.`day` = '$day'");
 
     if ($result) {

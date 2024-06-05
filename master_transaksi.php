@@ -36,7 +36,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 WHERE order.status_order = 'Sudah Di Bayar'
@@ -60,84 +60,90 @@ $count = mysqli_num_rows($querry);
 </head>
 
 <body>
-    <div class="container pt-4">
-        <?php
-        if ($count == 0) {
-            echo "<h1>Tidak Ada Riwayat Transaksi</h1>
+
+    <?php
+    if ($count == 0) {
+        echo "<h1>Tidak Ada Riwayat Transaksi</h1>
         <label>Silahkan Order Terlebih Dahulu <a href='index.php'>Klik Disini</a></label>
         ";
-        } else {
-        ?>
+    } else {
+    ?>
+        <div class="container mt-3">
+            <div class="card bg-dark ">
+                <div class="card-body bg-dark rounded p-4">
+                    <h1 class="text-light">Data Transaksi</h1>
 
-            <h1>Riwayat Transaksi</h1>
+                    <div class="mb-3 mt-4">
 
-            <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>kode transaksi</th>
-                        <th>Judul film</th>
-                        <th>Tanggal Pemesanan</th>
-                        <th>Jam</th>
-                        <th>Teater</th>
-                        <th>Atas Nama</th>
-                        <th>Total</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
+                        <table id="example" class="table table-bordered table-striped table-hover mt-4" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>kode transaksi</th>
+                                    <th>Judul film</th>
+                                    <th>Tanggal Pemesanan</th>
+                                    <th>Jam</th>
+                                    <th>Teater</th>
+                                    <th>Atas Nama</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
 
-                <?php
-                foreach ($querry as $index => $row) {
-                    if ($row['status_order'] == 'Belum Bayar') {
-                        $status = 'danger';
-                    } else {
-                        $status = 'success';
-                    } ?>
-                    <tr>
-                        <td>
                             <?php
-                            echo $row['trx'];
-                            ?>
-                        </td>
-                        <td><?= $row['title']; ?></td>
-                        <td><?= $row['date'] ?></td>
-                        <td><?= $row['clock']; ?></td>
-                        <td><?= $row['name_teater']; ?></td>
-                        <td><?= $row['nama_user']; ?></td>
-                        <td>Rp. <?= number_format($row['total']); ?></td>
-                        <td>
-                            <div class="bg-<?= $status ?> text-center rounded-2 d-flex"><small class="p-1"><?= $row['status_order']; ?></small></div>
-                        </td>
-                        <td align="center">
-                            <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
-                                <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                            </a>
+                            foreach ($querry as $index => $row) {
+                                if ($row['status_order'] == 'Belum Bayar') {
+                                    $status = 'danger';
+                                } else {
+                                    $status = 'success';
+                                } ?>
+                                <tr>
+                                    <td>
+                                        <?php
+                                        echo $row['trx'];
+                                        ?>
+                                    </td>
+                                    <td><?= $row['title']; ?></td>
+                                    <td><?= $row['date'] ?></td>
+                                    <td><?= $row['clock']; ?></td>
+                                    <td><?= $row['name_teater']; ?></td>
+                                    <td><?= $row['nama_user']; ?></td>
+                                    <td>Rp. <?= number_format($row['total']); ?></td>
+                                    <td>
+                                        <div class="bg-<?= $status ?> text-center rounded-2 d-flex"><small class="p-1"><?= $row['status_order']; ?></small></div>
+                                    </td>
+                                    <td align="center">
+                                        <a href="detail_order.php?id_order=<?= encrypt($row['id_order'])  ?>">
+                                            <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                        </a>
 
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        <?php } ?>
-    </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            });
 
-        function konfirmasiHapus() {
-            var agree = confirm("Apakah Anda yakin ingin menghapus Transaksi Ini?");
-            if (agree) {
-                return true;
-            } else {
-                return false;
+            function konfirmasiHapus() {
+                var agree = confirm("Apakah Anda yakin ingin menghapus Transaksi Ini?");
+                if (agree) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 </html>

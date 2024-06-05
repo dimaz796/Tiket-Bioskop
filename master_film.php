@@ -45,55 +45,58 @@ foreach ($querry as $isi) {
 
 <body>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
+                <h1 class="text-light">Data Film</h1>
 
-        <h1>Data Film</h1>
+                <div class="mb-4 mt-4">
+                    <a class="btn btn-warning fw-semibold me-auto" href="tambah_film.php"><i class="bi bi-person-add text-black me-1"></i>Tambah Data Film</a>
+                </div>
 
-        <div class="mb-4 mt-4">
-            <a class="btn btn-warning fw-semibold me-auto" href="tambah_film.php"><i class="bi bi-person-add text-black me-1"></i>Tambah Data Film</a>
+                <table id="example" class="table table-bordered table-striped table-hover " style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID Film</th>
+                            <th>Judul film</th>
+
+                            <th>Di Buat</th>
+                            <th>Di Perbaharui</th>
+                            <th>Tayang</th>
+                            <th>Berakhir</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <?php
+                    foreach ($querry as $index => $row) { ?>
+                        <tr>
+                            <td><?= $index + 1; ?></td>
+                            <td><?= $row['title']; ?></td>
+                            <td><?= $row['created_at']; ?></td>
+                            <td><?= $row['update_at']; ?></td>
+                            <td><?= $row['tayang']; ?></td>
+                            <td><?= $row['berakhir']; ?></td>
+                            <td><?= $row['status_film']; ?></td>
+                            <td align="center" style="width: 15%;">
+
+                                <a href="film_detail.php?id=<?= $row['id_film'] ?>">
+                                    <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
+                                </a>
+                                <a href="edit_film.php?id=<?= $row['id_film'] ?>">
+                                    <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
+                                </a>
+                                <a href="proses_film.php?id=<?= $row['id_film'] ?>" onclick="return konfirmasiHapus()">
+                                    <button class="btn btn-warning"><i class="bi bi-trash3"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-
-        <table id="example" class="table table-bordered table-striped table-hover " style="width:100%">
-            <thead>
-                <tr>
-                    <th>ID Film</th>
-                    <th>Judul film</th>
-
-                    <th>Di Buat</th>
-                    <th>Di Perbaharui</th>
-                    <th>Tayang</th>
-                    <th>Berakhir</th>
-                    <th>Status</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-
-            <?php
-            foreach ($querry as $index => $row) { ?>
-                <tr>
-                    <td><?= $index + 1; ?></td>
-                    <td><?= $row['title']; ?></td>
-                    <td><?= $row['created_at']; ?></td>
-                    <td><?= $row['update_at']; ?></td>
-                    <td><?= $row['tayang']; ?></td>
-                    <td><?= $row['berakhir']; ?></td>
-                    <td><?= $row['status_film']; ?></td>
-                    <td align="center" style="width: 15%;">
-
-                        <a href="film_detail.php?id=<?= $row['id_film'] ?>">
-                            <button class="btn btn-dark"><i class="bi bi-journal-text"></i></button>
-                        </a>
-                        <a href="edit_film.php?id=<?= $row['id_film'] ?>">
-                            <button class="btn btn-dark"><i class="bi bi-pencil-square"></i></button>
-                        </a>
-                        <a href="proses_film.php?id=<?= $row['id_film'] ?>" onclick="return konfirmasiHapus()">
-                            <button class="btn btn-warning"><i class="bi bi-trash3"></i></button>
-                        </a>
-                    </td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
-
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>

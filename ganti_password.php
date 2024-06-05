@@ -23,22 +23,26 @@
     $DimasA = mysqli_fetch_all($role);
     ?>
     <div class="container mt-3">
+        <div class="card bg-dark ">
+            <div class="card-body bg-dark rounded p-4">
 
-        <form method="post" action="proses_user.php">
-            <h1>Ganti Password</h1>
+                <form method="post" action="proses_user.php">
+                    <h1>Ganti Password</h1>
 
-            Password Sebelumnya
-            <input type="text" name="password_sebelumnya" class="form-control w-50 enter mb-4 mt-1" placeholder=" Masukan Password Sebelumnya" required>
+                    Password Sebelumnya
+                    <input type="text" name="password_sebelumnya" class="form-control w-50 enter mb-4 mt-1" placeholder=" Masukan Password Sebelumnya" required>
 
-            Password Baru
-            <input type="password" name="password1" class="form-control w-50 enter mb-4" placeholder=" Masukan Password Baru" required>
+                    Password Baru
+                    <input type="password" name="password1" class="form-control w-50 enter mb-4" placeholder=" Masukan Password Baru" required>
 
-            Konfirmasi Password Baru
-            <input type="password" name="password2" class="form-control w-50 enter mb-4" placeholder=" Konfirmasi Password Baru" required>
+                    Konfirmasi Password Baru
+                    <input type="password" name="password2" class="form-control w-50 enter mb-4" placeholder=" Konfirmasi Password Baru" required>
 
-            <input type="hidden" name="id_user" value="<?= $id_user ?>">
-            <button type="submit" name="ganti" class="btn btn-warning w-50 enter mb-4">Ganti</button>
-        </form>
+                    <input type="hidden" name="id_user" value="<?= $id_user ?>">
+                    <button type="submit" name="ganti" class="btn btn-warning w-50 enter mb-4">Ganti</button>
+                </form>
+            </div>
+        </div>
     </div>
 
 </body>

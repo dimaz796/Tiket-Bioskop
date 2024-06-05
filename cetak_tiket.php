@@ -33,7 +33,7 @@ ON schedule.id_schedule = order.id_schedule
 INNER JOIN user 
 ON user.id_user = order.id_user
 INNER JOIN teater 
-ON teater.id_teater = order.id_teater
+ON teater.id_teater = schedule.id_teater
 INNER JOIN film 
 ON film.id_film = schedule.id_film
 INNER JOIN detail_order 
@@ -99,7 +99,7 @@ $order = mysqli_query($conn, $sql);
                 </tr>
             </table>
         <?php } ?>
-        <a href="cetak.php" class="btn btn-primary d-flex justify-content-center align-items-center mt-5">Kembali</a>
+        <!-- <a href="cetak.php" class="btn btn-primary d-flex justify-content-center align-items-center mt-5">Kembali</a> -->
     </div>
 </body>
 
