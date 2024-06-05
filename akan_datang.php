@@ -73,10 +73,11 @@ $count = mysqli_num_rows($querry);
                         </div>
                     </div>
                 <?php endforeach; ?>
-            <?php }
-            ?>
         </div>
-        <!-- Daftar Film -->
+    </div>
+<?php }
+?>
+<!-- Daftar Film -->
 </body>
 
 </html>

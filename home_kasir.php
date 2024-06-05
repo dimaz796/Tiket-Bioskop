@@ -169,6 +169,8 @@ $nama_user = $_SESSION['nama_user'];
             </div>
         </div>
     </div>
+    <?php include "assets/Footer/footer.php" ?>
+
 </body>
 
 </html>

@@ -47,6 +47,16 @@ $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $total_role = $row['total'];
 
+$sql = "SELECT COUNT(*) AS total FROM `transaksi_topup`";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_topup = $row['total'];
+
+$sql = "SELECT COUNT(*) AS total FROM `price`";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_price = $row['total'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,6 +157,28 @@ $total_role = $row['total'];
                             <p class="fs-5">Role</p>
                         </div>
                         <i class="bi bi bi-file-earmark-person-fill fs-1 primary-text rounded-circle p-3 mb-3"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <a href="master_topup.php" class="btn btn-dark w-100 border border-light">
+                    <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2"><?= $total_topup ?></h3>
+                            <p class="fs-5">Topup</p>
+                        </div>
+                        <i class="bi bi-wallet2 fs-1 primary-text rounded-circle p-3 mb-3"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <a href="master_price.php" class="btn btn-dark w-100 border border-light">
+                    <div class="p-3 shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2"><?= $total_price ?></h3>
+                            <p class="fs-5">Harga</p>
+                        </div>
+                        <i class="bi bi-coin fs-1 primary-text rounded-circle p-3 mb-3"></i>
                     </div>
                 </a>
             </div>

@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <?php include "navbar.php";
-if ($_SESSION['id_role'] == 2) {
+if ($_SESSION['id_role'] != 2) {
     echo "
     <script>
     window.location.href='login.php?pesan=kemana';
@@ -159,6 +159,8 @@ if ($_SESSION['id_role'] == 2) {
             </div>
         </div>
     </div>
+    <?php include "assets/Footer/footer.php" ?>
+
 </body>
 
 </html>

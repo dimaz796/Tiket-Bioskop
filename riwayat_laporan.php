@@ -1,6 +1,6 @@
 <?php
 include "navbar.php";
-if ($_SESSION['id_role'] != 1) {
+if ((!isset($_SESSION['id_role'])) || ($_SESSION['id_role'] == 3) || ($_SESSION['id_role'] == 4)) {
     echo "
     <script>
     window.location.href='login.php?pesan=kemana';

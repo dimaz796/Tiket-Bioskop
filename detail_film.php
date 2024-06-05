@@ -99,6 +99,8 @@ while ($film_data = mysqli_fetch_array($result)) {
             <!-- Keterangan Penutup -->
         </div>
     </div>
+    <?php include "assets/Footer/footer.php" ?>
+
 </body>
 
 </html>

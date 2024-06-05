@@ -32,7 +32,7 @@ $querry = mysqli_query($conn, $sql);
     <title>Data Film Berlangsung</title>
 </head>
 
-<body class="body">
+<body>
     <div class="container mt-3">
         <div class="fs-3 fw-semibold">Film Berlangsung</div>
         <!-- Daftar Film -->
@@ -67,6 +67,7 @@ $querry = mysqli_query($conn, $sql);
             <?php endforeach ?>
         </div>
         <!-- Daftar Film -->
+    </div>
 
 </body>
 

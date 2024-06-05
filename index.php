@@ -110,7 +110,8 @@ foreach ($cekfilm as $isi) {
             <?php endforeach ?>
         </div>
         <!-- Daftar Film -->
-
+    </div>
+    <?php include "assets/Footer/footer.php" ?>
 </body>
 
 </html>
